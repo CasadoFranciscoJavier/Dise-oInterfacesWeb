@@ -1,0 +1,122 @@
+/* Estilos base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las columnas se ajusten en varias filas si es necesario */
+  /*gap: 1px; Espacio entre columnas */
+}
+
+.col {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  flex: 1 1 100%; /* Cada columna ocupa el 100% del ancho en dispositivos pequeños */
+}
+
+/* Media query para pantallas más grandes 
+@media only screen and (min-width: 768px) {
+  .col {
+    flex: 1 1 33.33%; Las columnas se dividen en tres partes iguales en pantallas grandes 
+  }
+}*/
+
+/* Estilos para dispositivos móviles (smartphones)    este ejercicio no haria falta, cambiamo el color de la linea 20 a red y ya hacem,os directamente los otros dos*/
+@media only screen and (max-width: 600px) {
+  .col {
+    background-color: red;
+  }
+}
+
+/* Estilos para tabletas */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .col {
+    background-color: yellow;
+  }
+}
+
+/* Estilos para pantallas de escritorio */
+@media only screen and (min-width: 1025px){
+  .col {
+    background-color: green;
+  }
+}
+
+/*ejercicio2*/
+
+/* Estilos para móviles (máx. 480px) */
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 14px; 
+  }
+}
+
+/* Estilos para tabletas (481px – 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 18px; 
+  }
+}
+
+/* Estilos para escritorios (mín. 769px) */
+@media only screen and (min-width: 769px) {
+  body {
+    font-size: 22px; /
+  }
+}
+
+
+
+
+
+/* === EJERCICIO 5 === */
+
+/* MÓVILES: columnas apiladas (una debajo de otra) */
+@media only screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .col {
+    flex: 1 1 100%;
+  }
+}
+
+/* TABLETAS: dos columnas arriba, una debajo */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .container {
+    flex-direction: row;
+   
+  }
+
+  .col {
+    flex: 1 1 50%; 
+  }
+
+  .col:nth-child(3) {
+    flex: 1 1 100%; /* Tercera columna ocupa toda la fila */
+  }
+}
+
+/* ESCRITORIO: tres columnas en una sola fila */
+@media only screen and (min-width: 769px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .col {
+    flex: 1 1 33.33%;
+  }
+}
+
+
+
