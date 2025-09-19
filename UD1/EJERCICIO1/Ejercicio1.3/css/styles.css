@@ -56,7 +56,7 @@ body {
 /* Estilos para móviles (máx. 480px) */
 @media only screen and (max-width: 480px) {
   body {
-    font-size: 14px; 
+    font-size: 14px; /* esta linea deberia ir en la linea 24*/
   }
 }
 
