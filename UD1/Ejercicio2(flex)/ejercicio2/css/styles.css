@@ -1,0 +1,49 @@
+/* Estilos base para los ejercicios de Flexbox */
+
+/* Ejercicio 2: align-items
+Crea un contenedor con altura fija (por ejemplo, 300px) y 3 cajas de diferentes alturas. Aplica:
+
+align-items: stretch; → Todas las cajas se estiran a la altura del contenedor.
+align-items: flex-start; → Todas las cajas se alinean arriba.
+align-items: center; → Todas las cajas se centran verticalmente.
+align-items: flex-end; → Todas las cajas se alinean abajo.
+align-items: baseline; → Todas las cajas se alinean por su línea base del texto. */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  border: 2px solid #333;
+  padding: 10px;
+  height: 300px; /* altura fija para probar align-items y align-self */
+  gap: 10px;
+  align-items: stretch;
+  align-items: flex-start;
+  align-items: center; 
+  align-items: flex-end;
+  align-items: baseline;
+}
+
+.box {
+  background-color: #87ceeb;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  border-radius: 4px;
+  flex: 0 0 100px; /* ancho base para ver mejor los efectos */
+}

@@ -1,0 +1,58 @@
+/* Estilos base para los ejercicios de Flexbox */
+
+/* Ejercicio 3: order
+Crea un contenedor con 3 cajas numeradas (1, 2 y 3). Modifica el orden visual aplicando:
+
+order: 3; en la primera caja → ahora aparece al final.
+order: -1; en la tercera caja → ahora aparece la primera.
+Diferentes valores de order para reorganizar las tres cajas como quieras. */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  border: 2px solid #333;
+  padding: 10px;
+  height: 300px; /* altura fija para probar align-items y align-self */
+  gap: 10px;
+}
+
+.box {
+  background-color: #87ceeb;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  border-radius: 4px;
+  flex: 0 0 100px; /* ancho base para ver mejor los efectos */
+}
+
+.box:nth-child(1) {
+    order: 3; 
+  }
+
+  .box:nth-child(3) {
+    order: -1; 
+  }
+
+  .box:nth-child(4) {
+    order: 2; 
+  }
+
+  .box:nth-child(5) {
+    order: 2; 
+  }

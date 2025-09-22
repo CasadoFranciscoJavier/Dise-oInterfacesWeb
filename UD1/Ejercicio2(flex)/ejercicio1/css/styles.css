@@ -1,0 +1,49 @@
+/* Estilos base para los ejercicios de Flexbox */
+
+/* Ejercicio 1: flex-direction
+Crea un contenedor con 4 cajas (div.col) y prueba estas variantes:
+
+flex-direction: row; → Las cajas deben alinearse en fila (por defecto).
+flex-direction: row-reverse; → Las cajas se invierten horizontalmente.
+flex-direction: column; → Las cajas deben apilarse en columna.
+flex-direction: column-reverse; → Las cajas se apilan en columna invertida. */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-direction: column;
+  border: 2px solid #333;
+  padding: 10px;
+  height: 300px; /* altura fija para probar align-items y align-self */
+  gap: 10px;
+  
+}
+
+.box {
+  background-color: #87ceeb;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  border-radius: 4px;
+  flex: 0 0 100px; /* ancho base para ver mejor los efectos */
+  
+}
+
+
