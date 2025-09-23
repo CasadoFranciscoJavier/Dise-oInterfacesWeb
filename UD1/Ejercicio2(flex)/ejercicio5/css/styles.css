@@ -1,5 +1,12 @@
 /* Estilos base para los ejercicios de Flexbox */
 
+/* Ejercicio 5: flex-wrap
+Crea un contenedor con ancho fijo (por ejemplo, 500px) y 6 cajas grandes (200px de ancho cada una). Aplica:
+
+flex-wrap: nowrap; → Las cajas se desbordan en una sola fila.
+flex-wrap: wrap; → Las cajas se ajustan en varias filas automáticamente.
+flex-wrap: wrap-reverse; → Igual que el anterior, pero las filas aparecen en orden inverso. */
+
 * {
   box-sizing: border-box;
   margin: 0;
