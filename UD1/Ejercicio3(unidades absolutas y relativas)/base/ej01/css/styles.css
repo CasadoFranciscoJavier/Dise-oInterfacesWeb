@@ -1,0 +1,26 @@
+/* Ejercicio 1 (PT) — Comparando px, em y rem en tipografía
+Objetivo: Comprender cómo cambian los tamaños de fuente y espaciados al usar px, em y rem, y detectar la herencia en elementos anidados.
+
+Tareas:
+
+Define el tamaño base del documento.
+Aplica px en el Bloque A, em en el Bloque B y rem en el Bloque C.
+Documenta (en un comentario) qué ocurre cuando cambias el tamaño del contenedor en el bloque con em. */
+
+
+html { font-size: 16px; }
+.wrapper { max-width: 60rem; margin: 0 auto; padding: 1.5rem; }
+.bloque { margin-block: 1.5rem; padding: 1rem; border: 1px solid #ddd; }
+
+/* A: px */
+.bloque--px h2 { font-size: 20px; }
+.bloque--px p  { font-size: 16px; margin-block: 12px; }
+
+/* B: em (nota el efecto en elementos internos) */
+.bloque--em { font-size: 1.125em; /* 18px respecto a 16px raíz */ }
+.bloque--em h2 { font-size: 1.25em; /* 22.5px efectivos */ }
+.bloque--em p  { font-size: 1em; margin-block: 0.75em; }
+
+/* C: rem (independiente del contenedor) */
+.bloque--rem h2 { font-size: 1.5rem; }
+.bloque--rem p  { font-size: 1rem; margin-block: 0.75rem; }

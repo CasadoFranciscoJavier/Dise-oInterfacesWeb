@@ -1,0 +1,41 @@
+/* Ejercicio 4 (PT) — Layout Fluido con Columnas usando %
+Objetivo: Practicar un layout de 2–3 columnas fluidas usando % para anchos y rem para separaciones.
+
+Tareas:
+
+Crea un header, un main con columnas y un footer.
+Usa % para los anchos de columna.
+Gestiona márgenes y paddings con rem. */
+
+
+/* TODO: Define un contenedor general si lo necesitas */
+/* TODO: Crea columnas con anchos en % y separaciones en rem */
+
+html { font-size: 16px; }
+.site-header,
+.site-footer {
+    /* TODO: Espaciado con rem */
+}
+
+.site-main {
+    /* TODO: Distribución de columnas (inline-block/flex) */
+}
+
+.col {
+    /* TODO: Márgenes/padding en rem; ancho en % */
+}
+
+.col--a {
+    /* TODO */
+}
+
+.col--b {
+    /* TODO */
+}
+
+/* .col--c {  Opcional } */
+
+
+
+
+

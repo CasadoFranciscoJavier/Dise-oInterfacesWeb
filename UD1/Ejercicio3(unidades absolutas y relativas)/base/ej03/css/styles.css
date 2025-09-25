@@ -1,0 +1,41 @@
+/* Ejercicio 3 (PT) — Sección “Hero” con vh y vw
+Objetivo: Construir una cabecera a pantalla completa que utilice vh para la altura y vw/% para el contenido interno.
+
+Tareas:
+- Haz que la sección hero ocupe el 100vh.
+- Controla la anchura interna con % o vw.
+- Ajusta el tamaño de título y botón con unidades relativas.
+*/
+
+html { font-size: 16px; }
+
+.hero {
+  height: 100vh;                 /* ocupa la pantalla completa */
+  display: flex;
+  align-items: center;           /* centrado vertical */
+  justify-content: center;       /* centrado horizontal */
+  background: linear-gradient(135deg, #4a90e2, #12d0dd);
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+}
+
+.hero__inner {
+  width: 100%;                    /* ancho relativo */
+  max-width: 60rem;              /* límite */
+  margin: 0 auto;
+}
+
+.hero__title {
+  font-size: 2.5rem;              /* relativo */
+  margin-bottom: 1.5rem;
+}
+
+.hero__cta {
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;       /* padding en rem */
+  border: 2px solid #fff;        /* borde correcto */
+  border-radius: 0.5rem;         /* esquinas redondeadas */
+  color: #fff;
+ 
+}
