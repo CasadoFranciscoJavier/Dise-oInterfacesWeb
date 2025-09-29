@@ -1,42 +1,30 @@
-/* Estilos base para los ejercicios de Flexbox */
-/* Ejercicio 4: align-self
-Crea un contenedor con align-items: center; y 3 cajas. Cambia la alineación de cada caja individualmente:
-
-A la primera caja → align-self: flex-start;
-A la segunda caja → align-self: flex-end;
-A la tercera caja → align-self: stretch;
-Prueba también align-self: baseline; en una de ellas. */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-}
-
-h1 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; padding: 20px; }
+h1 { margin-bottom: 16px; }
+h2 { margin: 20px 0 8px; }
 .container {
   display: flex;
+  gap: 8px;
   border: 2px solid #333;
   padding: 10px;
-  height: 300px; /* altura fija para probar align-items y align-self */
-  gap: 10px;
+  min-height: 80px;
 }
-
 .box {
-  background-color: #87ceeb;
+  background: #87ceeb;
   color: #fff;
   font-weight: bold;
   text-align: center;
-  padding: 20px;
+  padding: 16px;
   border-radius: 4px;
-  flex: 0 0 100px; /* ancho base para ver mejor los efectos */
 }
+
+.base { height: 200px; align-items: center; }
+.alto-1 { height: 40px; }
+.alto-2 { height: 80px; }
+.alto-3 { height: 120px; }
+.txt-lg { font-size: 26px; }
+
+.self-start { align-self: flex-start; }
+.self-end { align-self: flex-end; }
+.self-stretch { align-self: stretch; }
+.self-baseline { align-self: baseline; }
