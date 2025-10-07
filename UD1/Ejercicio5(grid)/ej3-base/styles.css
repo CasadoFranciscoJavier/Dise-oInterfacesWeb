@@ -16,17 +16,17 @@ body {
 
 
 
-.header { background-color: #d1e4ff; } /* Azul claro */
-.nav { background-color: #e5ffe5; } /* Verde claro */
-.main { background-color: #ffffcc; } /* Amarillo pálido */
-.aside { background-color: #ffe599; } /* Naranja pálido */
-.footer { background-color: #ffd6e7; } /* Rosa pálido */
+.header { background-color: #d1e4ff; } 
+.nav { background-color: #e5ffe5; } 
+.main { background-color: #ffffcc; }
+.aside { background-color: #ffe599; } 
+.footer { background-color: #ffd6e7; } 
 
 
 
 
 .layout {
-    min-height: 100vh;
+    min-height: 50vh;
     display: grid;
     
     /* 📱 Layout Móvil: Una sola columna, las filas se apilan automáticamente */
@@ -53,18 +53,20 @@ body {
 
 
 
-/* A partir de 1024px (o el valor que decidas para "escritorio") */
 @media (min-width: 1024px) {
     
     .layout {
-        /* 💻 Layout Escritorio: 2 columnas, con 1fr para Nav y el resto para Main/Aside */
         grid-template-columns: 250px 1fr; /* Columna Nav fija (ej: 250px) y el resto para el contenido */
-        
+         /* grid-template-rows: 125px 1fr; */
         /* 💻 Redefinición de las áreas para el layout de 2 columnas */
         grid-template-areas:
-            "header header"  /* Fila 1: Header ocupa 2 columnas */
-            "nav    main"   /* Fila 2: Nav a la izquierda, Main a la derecha */
-            "nav    aside"  /* Fila 3: Nav se extiende abajo, Aside a la derecha */
-            "footer footer"; /* Fila 4: Footer ocupa 2 columnas */
+            "header header"  
+            "nav    main"  
+            "nav    aside"  
+            "footer footer"; 
+
+        max-height: 200px
     }
+    /* .main { min-height: 200px; }
+    .aside { height: 1rem;} */
 }
