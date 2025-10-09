@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    margin: 16px
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 1000px;
+    margin: 0 auto
+}
+
+.card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 12px;
+    background: #fff
+}
+
+/* TODO: hacer IMG fluida sin distorsión */
+/* **Tareas**
+1. Crea una cuadrícula simple de tarjetas con imagen y título.
+2. Haz que todas las imágenes sean **fluidas** (no deben desbordar su contenedor en móvil).
+3. Asegura que **no se distorsionen** al cambiar el ancho de la página.
+4. Añade un borde y sombra ligera a cada tarjeta. */
+img {
+      max-width: 100%;
+  height: auto;
+  border-radius: 29px;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+}
+
+@media (min-width:768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr)
+    }
+}

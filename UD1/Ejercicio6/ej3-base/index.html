@@ -1,0 +1,47 @@
+<!-- 
+## 🧩 Ejercicio 3 — Densidad de píxeles (1x/2x) + `picture` (art direction)
+**Objetivo:** Mejorar nitidez en pantallas Retina con **descriptores de densidad** (`1x`, `2x`) y cambiar **composición** con `picture`.
+
+**Tareas**
+1. Implementa un `<img>` con `srcset` usando **1x/2x**.
+2. Crea un **hero** con `<picture>` que muestre:
+   - Imagen vertical en móviles.
+   - Imagen horizontal en escritorio (≥ 1024px).
+3. Asegura que el hero **cubra** el ancho y mantenga proporción con `object-fit: cover`. -->
+
+
+
+<!doctype html>
+<html lang="es">
+<head>
+ <meta charset="utf-8">
+ <title>Ej3 - 1x/2x + picture (BASE)</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <h1>1x/2x + picture (BASE)</h1>
+ <section>
+  <h2>Imagen con densidades</h2>
+    <img class="avatar" 
+    src="https://picsum.photos/seed/avatar/200/200" 
+    srcset="https://picsum.photos/seed/avatar/200/200 1x, 
+        https://picsum.photos/seed/avatar/400/400 2x"
+    alt="Avatar">
+ </section>
+ <section class="hero">
+  <h2>Hero responsive (picture)</h2>
+    <picture>
+      <source media="(min-width: 1024px)" 
+       srcset="https://picsum.photos/seed/hero-desktop/1200/500 1x, 
+           https://picsum.photos/seed/hero-desktop/2400/1000 2x">
+   
+      <img class="hero-img" 
+     src="https://picsum.photos/seed/hero-mobile/600/900" 
+     srcset="https://picsum.photos/seed/hero-mobile/600/900 1x, 
+         https://picsum.photos/seed/hero-mobile/1200/1800 2x" 
+     alt="Hero responsive">
+  </picture>
+ </section>
+</body>
+</html>
