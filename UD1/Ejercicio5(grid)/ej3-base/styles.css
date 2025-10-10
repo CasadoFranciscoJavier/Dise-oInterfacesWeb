@@ -11,7 +11,7 @@ body {
 /* Estilos de las cajas (Box) */
 .box {
     padding: 16px;
-    font-weight: bold; /* Para destacar los nombres de las áreas */
+    font-weight: bold; /* Para destacar los nombres de las áreas. */
 }
 
 
