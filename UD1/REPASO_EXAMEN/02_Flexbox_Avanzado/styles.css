@@ -1,0 +1,272 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.ejercicio {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ejercicio h2 {
+  margin-bottom: 15px;
+  color: #004466;
+  font-size: 18px;
+}
+
+.flex-container {
+  display: flex;
+  border: 2px solid #333;
+  padding: 10px;
+  background-color: #e8f4f8;
+}
+
+.box {
+  background-color: #4a90e2;
+  color: white;
+  padding: 15px 25px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.alto-200 {
+  height: 200px;
+}
+
+
+/* ========================================
+   EJERCICIO 1: flex-grow
+   - flex-grow: 1 → El elemento crece para ocupar el espacio disponible
+   - flex-grow: 2 → Crece el doble que un elemento con flex-grow: 1
+   ======================================== */
+.flex-grow-1 {
+  flex-grow: 1; /* Crece para ocupar espacio disponible */
+  background-color: #e74c3c; /* Color distinto para resaltar */
+}
+
+
+/* ========================================
+   EJERCICIO 2: flex-shrink
+   - flex-shrink: 0 → El elemento NO se encoge cuando falta espacio
+   - Por defecto, flex-shrink es 1 (los elementos se encogen proporcionalmente)
+   ======================================== */
+.ancho-300 {
+  flex: 0 1 300px; /* No crece, sí encoge, base 300px */
+}
+
+.no-shrink {
+  flex-shrink: 0; /* NO se encoge */
+  background-color: #e74c3c;
+}
+
+
+/* ========================================
+   EJERCICIO 3: order
+   - Por defecto todos los elementos tienen order: 0
+   - Los elementos se ordenan de menor a mayor valor de order
+   - Valores negativos van primero
+   ======================================== */
+.order-1 {
+  order: 1;
+  background-color: #27ae60;
+}
+
+.order-2 {
+  order: 2;
+  background-color: #f39c12;
+}
+
+.order-3 {
+  order: 3;
+  background-color: #e74c3c;
+}
+
+
+/* ========================================
+   EJERCICIO 4: align-self
+   - Sobrescribe el align-items del contenedor para un elemento individual
+   - Valores: flex-start, center, flex-end, stretch, baseline
+   ======================================== */
+.self-start {
+  align-self: flex-start;
+  background-color: #e74c3c;
+}
+
+.self-center {
+  align-self: center;
+  background-color: #f39c12;
+}
+
+.self-end {
+  align-self: flex-end;
+  background-color: #27ae60;
+}
+
+.self-stretch {
+  align-self: stretch; /* Se estira para ocupar toda la altura */
+  background-color: #9b59b6;
+}
+
+
+/* ========================================
+   EJERCICIO 5: justify-content variaciones
+   - space-around: Espacio igual alrededor de cada elemento
+   - space-evenly: Espacio totalmente igual entre todos los elementos
+   - space-between: Espacio solo entre elementos (no en los bordes)
+   ======================================== */
+.space-around {
+  justify-content: space-around;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+
+/* ========================================
+   EJERCICIO 6: margin-left: auto
+   - Empuja el elemento hacia la derecha
+   - Muy útil para navbars (logo a la izquierda, login a la derecha)
+   ======================================== */
+.push-right {
+  margin-left: auto; /* Empuja el elemento a la derecha */
+  background-color: #e74c3c;
+}
+
+
+/* ========================================
+   EJERCICIO 7: flex-basis
+   - Define el tamaño inicial del elemento antes de distribuir el espacio
+   - Es como un "ancho preferido"
+   ======================================== */
+.basis-100 {
+  flex-basis: 100px;
+  background-color: #e74c3c;
+}
+
+.basis-200 {
+  flex-basis: 200px;
+  background-color: #27ae60;
+}
+
+.basis-150 {
+  flex-basis: 150px;
+  background-color: #f39c12;
+}
+
+
+/* ========================================
+   EJERCICIO 8: Propiedad flex completa
+   - flex: [grow] [shrink] [basis]
+   - flex: 1 → equivale a flex: 1 1 0
+   - flex: 0 0 100px → no crece, no encoge, tamaño fijo
+   ======================================== */
+.flex-1-0-100 {
+  flex: 1 0 100px; /* Crece x1, no encoge, base 100px */
+  background-color: #3498db;
+}
+
+.flex-2-0-100 {
+  flex: 2 0 100px; /* Crece x2, no encoge, base 100px */
+  background-color: #e74c3c;
+}
+
+
+/* ========================================
+   EJERCICIO 9: Tarjeta con botón al fondo
+   - La tarjeta usa flex-direction: column
+   - El botón tiene margin-top: auto para ir al fondo
+   - Muy útil en diseños de tarjetas
+   ======================================== */
+.tarjetas {
+  display: flex;
+  gap: 20px;
+  align-items: stretch; /* Todas las tarjetas tienen la misma altura */
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column; /* Los elementos dentro se apilan verticalmente */
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.tarjeta h3 {
+  margin-bottom: 10px;
+  color: #004466;
+}
+
+.tarjeta p {
+  margin-bottom: 15px;
+  color: #666;
+  flex-grow: 1; /* El párrafo crece para ocupar espacio disponible */
+}
+
+.btn-fondo {
+  margin-top: auto; /* Empuja el botón al fondo de la tarjeta */
+  padding: 10px 20px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-fondo:hover {
+  background-color: #357abd;
+}
+
+
+/* ========================================
+   EJERCICIO 10: align-items: stretch
+   - Por defecto en flexbox, align-items es stretch
+   - Hace que todos los elementos tengan la misma altura
+   ======================================== */
+.stretch {
+  align-items: stretch;
+}
+
+.stretch .box {
+  /* No poner height fijo, stretch necesita que el elemento se pueda estirar */
+}
+
+
+/* ========================================
+   RESUMEN FLEXBOX AVANZADO
+
+   PROPIEDADES DEL CONTENEDOR:
+   - align-items: stretch    → Elementos misma altura
+   - justify-content: ...    → space-around, space-evenly, space-between
+
+   PROPIEDADES DE LOS ELEMENTOS:
+   - flex-grow: 1           → Crece para llenar espacio
+   - flex-shrink: 0         → NO se encoge
+   - flex-basis: 200px      → Tamaño base
+   - flex: 1 0 100px        → grow shrink basis
+   - order: 2               → Cambiar orden visual
+   - align-self: center     → Alineación individual
+   - margin-left: auto      → Empujar a la derecha
+   - margin-top: auto       → Empujar abajo (en columna)
+   ======================================== */

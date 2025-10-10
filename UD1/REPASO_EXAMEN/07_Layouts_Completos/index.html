@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repaso Layouts Completos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Ejercicios Layouts Completos</h1>
+
+  <!-- Ejercicio 1: Header-Content-Footer -->
+  <section class="ejercicio">
+    <h2>1. Layout básico: Header - Content - Footer</h2>
+    <div class="layout-1">
+      <header class="header-1">Header</header>
+      <main class="content-1">Content</main>
+      <footer class="footer-1">Footer</footer>
+    </div>
+  </section>
+
+  <!-- Ejercicio 2: Header-Sidebar-Content-Footer -->
+  <section class="ejercicio">
+    <h2>2. Layout con Sidebar (Flexbox)</h2>
+    <div class="layout-2">
+      <header class="header-2">Header</header>
+      <div class="main-container-2">
+        <aside class="sidebar-2">Sidebar</aside>
+        <main class="content-2">Main Content</main>
+      </div>
+      <footer class="footer-2">Footer</footer>
+    </div>
+  </section>
+
+  <!-- Ejercicio 3: Layout con Grid Areas -->
+  <section class="ejercicio">
+    <h2>3. Layout con Grid Template Areas</h2>
+    <div class="layout-3">
+      <header class="header-3">Header</header>
+      <nav class="nav-3">Nav</nav>
+      <main class="main-3">Main</main>
+      <aside class="aside-3">Aside</aside>
+      <footer class="footer-3">Footer</footer>
+    </div>
+  </section>
+
+  <!-- Ejercicio 4: Navbar responsive -->
+  <section class="ejercicio">
+    <h2>4. Navbar responsive (logo + menu + CTA)</h2>
+    <nav class="navbar">
+      <div class="logo">LOGO</div>
+      <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+      <a href="#" class="cta">Empezar</a>
+    </nav>
+  </section>
+
+  <!-- Ejercicio 5: Tarjetas responsive -->
+  <section class="ejercicio">
+    <h2>5. Tarjetas con Flexbox (botón al fondo)</h2>
+    <div class="cards-flex">
+      <article class="card">
+        <h3>Tarjeta 1</h3>
+        <p>Descripción corta.</p>
+        <button class="btn">Acción</button>
+      </article>
+      <article class="card">
+        <h3>Tarjeta 2</h3>
+        <p>Esta tarjeta tiene mucho más contenido para demostrar que el botón siempre queda al fondo de la tarjeta.</p>
+        <button class="btn">Acción</button>
+      </article>
+      <article class="card">
+        <h3>Tarjeta 3</h3>
+        <p>Contenido medio aquí para ver el efecto.</p>
+        <button class="btn">Acción</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- Ejercicio 6: Hero Section -->
+  <section class="ejercicio">
+    <h2>6. Hero Section (100vh)</h2>
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Título Impactante</h1>
+        <p>Subtítulo explicativo del producto o servicio</p>
+        <button class="hero-btn">Llamada a la acción</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 7: Pricing Tables -->
+  <section class="ejercicio">
+    <h2>7. Pricing Tables (tarjetas destacadas)</h2>
+    <div class="pricing">
+      <article class="plan">
+        <h3>Básico</h3>
+        <p class="precio">$9/mes</p>
+        <ul>
+          <li>1 proyecto</li>
+          <li>Soporte email</li>
+        </ul>
+        <button class="btn-plan">Elegir</button>
+      </article>
+      <article class="plan destacado">
+        <span class="badge">Popular</span>
+        <h3>Pro</h3>
+        <p class="precio">$29/mes</p>
+        <ul>
+          <li>10 proyectos</li>
+          <li>Soporte prioritario</li>
+          <li>Analytics</li>
+        </ul>
+        <button class="btn-plan">Elegir</button>
+      </article>
+      <article class="plan">
+        <h3>Enterprise</h3>
+        <p class="precio">$99/mes</p>
+        <ul>
+          <li>Proyectos ilimitados</li>
+          <li>Soporte 24/7</li>
+        </ul>
+        <button class="btn-plan">Elegir</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- Ejercicio 8: Grid de imágenes (Galería) -->
+  <section class="ejercicio">
+    <h2>8. Galería de imágenes con Grid</h2>
+    <div class="galeria">
+      <figure class="galeria-item">
+        <img src="https://picsum.photos/seed/g1/400/300" alt="Foto 1">
+        <figcaption>Foto 1</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://picsum.photos/seed/g2/400/300" alt="Foto 2">
+        <figcaption>Foto 2</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://picsum.photos/seed/g3/400/300" alt="Foto 3">
+        <figcaption>Foto 3</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://picsum.photos/seed/g4/400/300" alt="Foto 4">
+        <figcaption>Foto 4</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://picsum.photos/seed/g5/400/300" alt="Foto 5">
+        <figcaption>Foto 5</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://picsum.photos/seed/g6/400/300" alt="Foto 6">
+        <figcaption>Foto 6</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Ejercicio 9: Centrado perfecto -->
+  <section class="ejercicio">
+    <h2>9. Centrado perfecto (horizontal + vertical)</h2>
+    <div class="centrado">
+      <div class="caja-centrada">
+        <p>Contenido perfectamente centrado</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 10: Holy Grail Layout -->
+  <section class="ejercicio">
+    <h2>10. Holy Grail Layout (Grid)</h2>
+    <div class="holy-grail">
+      <header class="hg-header">Header</header>
+      <nav class="hg-nav">Nav</nav>
+      <main class="hg-main">Main Content</main>
+      <aside class="hg-aside">Aside</aside>
+      <footer class="hg-footer">Footer</footer>
+    </div>
+  </section>
+
+</body>
+</html>

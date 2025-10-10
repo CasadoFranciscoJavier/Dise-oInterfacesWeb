@@ -1,0 +1,571 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.ejercicio {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ejercicio h2 {
+  margin-bottom: 15px;
+  color: #004466;
+  font-size: 18px;
+}
+
+
+/* ========================================
+   EJERCICIO 1: Layout básico Header-Content-Footer
+   - Estructura vertical simple
+   - Flexbox con flex-direction: column
+   ======================================== */
+.layout-1 {
+  display: flex;
+  flex-direction: column; /* Elementos apilados verticalmente */
+  min-height: 300px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.header-1,
+.footer-1 {
+  background-color: #34495e;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.content-1 {
+  flex: 1; /* Ocupa todo el espacio disponible */
+  background-color: #ecf0f1;
+  padding: 20px;
+}
+
+
+/* ========================================
+   EJERCICIO 2: Layout con Sidebar (Flexbox)
+   - Header y Footer: ancho completo
+   - Main container: Flexbox horizontal
+   - Sidebar: ancho fijo
+   - Content: crece para llenar espacio
+   ======================================== */
+.layout-2 {
+  border: 2px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.header-2,
+.footer-2 {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.main-container-2 {
+  display: flex;
+  flex-direction: column; /* Móvil: apilado */
+  min-height: 200px;
+}
+
+.sidebar-2 {
+  background-color: #95a5a6;
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.content-2 {
+  flex: 1; /* Ocupa el resto del espacio */
+  background-color: #ecf0f1;
+  padding: 20px;
+}
+
+/* Desktop: sidebar a la izquierda */
+@media (min-width: 768px) {
+  .main-container-2 {
+    flex-direction: row; /* Horizontal */
+  }
+
+  .sidebar-2 {
+    flex: 0 0 250px; /* Ancho fijo de 250px */
+  }
+}
+
+
+/* ========================================
+   EJERCICIO 3: Layout con Grid Template Areas
+   - Define áreas con nombres
+   - Muy visual y fácil de reorganizar
+   - Responsive cambiando el template
+   ======================================== */
+.layout-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto auto;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "aside"
+    "footer";
+  min-height: 400px;
+  gap: 0;
+  border: 2px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.header-3 { grid-area: header; background-color: #34495e; }
+.nav-3 { grid-area: nav; background-color: #3498db; }
+.main-3 { grid-area: main; background-color: #ecf0f1; }
+.aside-3 { grid-area: aside; background-color: #95a5a6; }
+.footer-3 { grid-area: footer; background-color: #2c3e50; }
+
+.header-3,
+.nav-3,
+.main-3,
+.aside-3,
+.footer-3 {
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.main-3 {
+  color: #333;
+}
+
+/* Desktop: layout más complejo */
+@media (min-width: 1024px) {
+  .layout-3 {
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "header header header"
+      "nav    nav    nav"
+      "aside  main   main"
+      "footer footer footer";
+  }
+}
+
+
+/* ========================================
+   EJERCICIO 4: Navbar responsive
+   - Logo a la izquierda
+   - Menu en el centro
+   - CTA a la derecha (margin-left: auto)
+   ======================================== */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #004466;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 4px;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #12d0dd;
+}
+
+.cta {
+  margin-left: auto; /* Empuja el botón a la derecha */
+  padding: 10px 20px;
+  background-color: #12d0dd;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.cta:hover {
+  background-color: #0eb8c5;
+}
+
+
+/* ========================================
+   EJERCICIO 5: Tarjetas con Flexbox
+   - Tarjetas con altura igual (align-items: stretch)
+   - Botón al fondo (margin-top: auto)
+   - Responsive: 1, 2 o 3 columnas
+   ======================================== */
+.cards-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: stretch; /* Todas las tarjetas con la misma altura */
+}
+
+.card {
+  display: flex;
+  flex-direction: column; /* Contenido apilado verticalmente */
+  flex: 1 1 100%; /* Móvil: 1 columna */
+  min-width: 250px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  color: #004466;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 15px;
+  flex-grow: 1; /* El párrafo crece para ocupar espacio */
+}
+
+.btn {
+  margin-top: auto; /* Empuja el botón al fondo */
+  padding: 10px 20px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #357abd;
+}
+
+/* Tablet: 2 columnas */
+@media (min-width: 768px) {
+  .card {
+    flex: 1 1 calc(50% - 10px);
+  }
+}
+
+/* Desktop: 3 columnas */
+@media (min-width: 1024px) {
+  .card {
+    flex: 1 1 calc(33.33% - 14px);
+  }
+}
+
+
+/* ========================================
+   EJERCICIO 6: Hero Section
+   - 100vh para pantalla completa
+   - Centrado perfecto con Flexbox
+   - Imagen de fondo (opcional)
+   ======================================== */
+.hero {
+  height: 50vh; /* 50% de la altura del viewport */
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  background: linear-gradient(135deg, #4a90e2, #12d0dd);
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.hero-btn {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  background-color: white;
+  color: #4a90e2;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+
+/* ========================================
+   EJERCICIO 7: Pricing Tables
+   - Flexbox para las tarjetas
+   - Tarjeta destacada con flex-grow
+   - Badge para "Popular"
+   ======================================== */
+.pricing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 280px;
+  padding: 30px;
+  background-color: white;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.plan h3 {
+  color: #004466;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.precio {
+  font-size: 32px;
+  font-weight: bold;
+  color: #4a90e2;
+  margin-bottom: 20px;
+}
+
+.plan ul {
+  list-style: none;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.plan ul li {
+  padding: 10px 0;
+  color: #666;
+  border-bottom: 1px solid #eee;
+}
+
+.btn-plan {
+  padding: 12px 30px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.btn-plan:hover {
+  background-color: #357abd;
+}
+
+/* Plan destacado */
+.destacado {
+  border-color: #4a90e2;
+  border-width: 3px;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background-color: #e74c3c;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+/* ========================================
+   EJERCICIO 8: Galería de imágenes con Grid
+   - Grid responsive automático con auto-fit
+   - Hover effect en las imágenes
+   ======================================== */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.galeria-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.galeria-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.galeria-item figcaption {
+  padding: 15px;
+  background-color: #f9f9f9;
+  text-align: center;
+  color: #666;
+}
+
+
+/* ========================================
+   EJERCICIO 9: Centrado perfecto
+   - Flexbox con justify-content y align-items
+   - Técnica muy común
+   ======================================== */
+.centrado {
+  height: 300px;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  background-color: #e8f4f8;
+  border-radius: 8px;
+}
+
+.caja-centrada {
+  background-color: #4a90e2;
+  color: white;
+  padding: 30px 60px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+/* ========================================
+   EJERCICIO 10: Holy Grail Layout
+   - Layout clásico con Grid
+   - Header arriba, Nav debajo, Main central, Aside lateral, Footer abajo
+   ======================================== */
+.holy-grail {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto auto;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "aside"
+    "footer";
+  min-height: 400px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.hg-header { grid-area: header; background-color: #2c3e50; }
+.hg-nav { grid-area: nav; background-color: #34495e; }
+.hg-main { grid-area: main; background-color: #ecf0f1; color: #333; }
+.hg-aside { grid-area: aside; background-color: #95a5a6; }
+.hg-footer { grid-area: footer; background-color: #2c3e50; }
+
+.hg-header,
+.hg-nav,
+.hg-main,
+.hg-aside,
+.hg-footer {
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+/* Desktop: layout en grid complejo */
+@media (min-width: 1024px) {
+  .holy-grail {
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "header header header"
+      "nav    nav    nav"
+      "aside  main   main"
+      "footer footer footer";
+  }
+}
+
+
+/* ========================================
+   RESUMEN LAYOUTS COMPLETOS
+
+   TÉCNICAS COMUNES:
+   1. Flexbox con flex-direction: column → Apilado vertical
+   2. Flexbox con flex-direction: row → Horizontal
+   3. margin-left: auto → Empujar a la derecha
+   4. margin-top: auto → Empujar abajo (en columna)
+   5. flex: 1 → Crecer para ocupar espacio
+   6. align-items: stretch → Altura igual
+   7. Grid template areas → Layouts con nombres
+   8. 100vh → Pantalla completa
+   9. Centrado: justify-content + align-items center
+
+   PATRONES DE LAYOUT:
+   - Header-Content-Footer
+   - Header-Sidebar-Content-Footer
+   - Holy Grail (Header-Nav-Sidebar-Main-Footer)
+   - Navbar (Logo-Menu-CTA)
+   - Tarjetas (Cards con botón al fondo)
+   - Hero Section (Pantalla completa centrada)
+   - Pricing Tables (Tarjetas destacadas)
+   - Galería (Grid responsive automático)
+
+   RESPONSIVE:
+   - Mobile first: columna por defecto
+   - Tablet: 2 columnas o sidebar pequeño
+   - Desktop: 3+ columnas o sidebar completo
+   ======================================== */

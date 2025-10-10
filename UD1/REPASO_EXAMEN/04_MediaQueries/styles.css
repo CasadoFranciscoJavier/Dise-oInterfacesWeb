@@ -1,0 +1,463 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.ejercicio {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ejercicio h2 {
+  margin-bottom: 15px;
+  color: #004466;
+  font-size: 18px;
+}
+
+.info, .nota {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+
+/* ========================================
+   EJERCICIO 1: Cambio de color según viewport
+   - Media queries con min-width y max-width
+   - Breakpoints estándar: 600px, 1024px
+   ======================================== */
+.caja-colores {
+  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+  background-color: red; /* Por defecto: móvil */
+  color: white;
+}
+
+/* Móvil: menos de 600px (ya aplicado por defecto) */
+
+/* Tablet: entre 600px y 1024px */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .caja-colores {
+    background-color: #f39c12; /* Amarillo */
+  }
+}
+
+/* Desktop: más de 1024px */
+@media only screen and (min-width: 1025px) {
+  .caja-colores {
+    background-color: #27ae60; /* Verde */
+  }
+}
+
+
+/* ========================================
+   EJERCICIO 2: Font-size responsive
+   - Cambiar tamaño de texto según pantalla
+   - Mejora la legibilidad en diferentes dispositivos
+   ======================================== */
+.caja-font {
+  padding: 20px;
+  background-color: #e8f4f8;
+  border-radius: 4px;
+}
+
+.texto-responsive {
+  font-size: 14px; /* Móvil por defecto */
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #004466;
+}
+
+/* Tablet: 481px - 768px */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .texto-responsive {
+    font-size: 18px;
+  }
+}
+
+/* Desktop: más de 769px */
+@media only screen and (min-width: 769px) {
+  .texto-responsive {
+    font-size: 22px;
+  }
+}
+
+
+/* ========================================
+   EJERCICIO 3: Columnas responsive con Flexbox
+   - Mobile first: 1 columna por defecto
+   - Tablet: 2 columnas
+   - Desktop: 3 columnas
+   ======================================== */
+.grid-responsive {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.grid-responsive .col {
+  flex: 1 1 100%; /* Móvil: columna completa */
+  background-color: #4a90e2;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Tablet: 2 columnas (cada una ocupa 50%) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .grid-responsive .col {
+    flex: 1 1 calc(50% - 10px); /* 50% menos el gap */
+  }
+}
+
+/* Desktop: 3 columnas (cada una ocupa 33.33%) */
+@media only screen and (min-width: 769px) {
+  .grid-responsive .col {
+    flex: 1 1 calc(33.33% - 10px);
+  }
+}
+
+
+/* ========================================
+   EJERCICIO 4: Mostrar/Ocultar elementos
+   - display: none para ocultar
+   - nth-child para seleccionar elementos específicos
+   ======================================== */
+.contenedor-ocultar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex: 1 1 100px;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+  color: white;
+}
+
+.visible-movil {
+  background-color: #e74c3c; /* Rojo */
+}
+
+.visible-tablet {
+  background-color: #f39c12; /* Naranja */
+}
+
+.visible-desktop {
+  background-color: #27ae60; /* Verde */
+}
+
+/* Móvil: solo mostrar la primera */
+@media only screen and (max-width: 480px) {
+  .item:nth-child(n+2) {
+    display: none; /* Oculta desde el 2º elemento */
+  }
+}
+
+/* Tablet: mostrar las dos primeras */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .item:nth-child(n+3) {
+    display: none; /* Oculta desde el 3er elemento */
+  }
+}
+
+/* Desktop: mostrar todas (por defecto) */
+
+
+/* ========================================
+   EJERCICIO 5: flex-direction responsive
+   - column en móvil (apilado)
+   - row en tablet+ (horizontal)
+   ======================================== */
+.flex-direccion {
+  display: flex;
+  flex-direction: column; /* Móvil: apilado */
+  gap: 10px;
+}
+
+.flex-direccion .caja {
+  background-color: #9b59b6;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Tablet+: horizontal */
+@media only screen and (min-width: 481px) {
+  .flex-direccion {
+    flex-direction: row;
+  }
+}
+
+
+/* ========================================
+   EJERCICIO 6: Gap responsive
+   - Sin gap en móvil (ahorrar espacio)
+   - Gap pequeño en tablet
+   - Gap grande en desktop
+   ======================================== */
+.flex-gap {
+  display: flex;
+  gap: 0; /* Móvil: sin gap */
+}
+
+.flex-gap .caja {
+  flex: 1;
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Tablet: gap de 10px */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .flex-gap {
+    gap: 10px;
+  }
+}
+
+/* Desktop: gap de 30px */
+@media only screen and (min-width: 769px) {
+  .flex-gap {
+    gap: 30px;
+  }
+}
+
+
+/* ========================================
+   EJERCICIO 7: Anchos proporcionales
+   - En tablet, la columna central es el doble de ancha
+   - Útil para destacar contenido principal
+   ======================================== */
+.flex-proporcional {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.col-prop {
+  flex: 1 1 100%; /* Móvil: todas iguales, 100% */
+  background-color: #4a90e2;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Tablet: columna destacada es el doble */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .col-prop {
+    flex: 1 1 25%; /* Columnas normales */
+  }
+
+  .col-destacada {
+    flex: 2 1 50%; /* Columna destacada: doble de ancha */
+    background-color: #e74c3c;
+  }
+}
+
+/* Desktop: todas iguales otra vez */
+@media only screen and (min-width: 769px) {
+  .col-prop {
+    flex: 1 1 33.33%;
+  }
+
+  .col-destacada {
+    flex: 1 1 33.33%;
+    background-color: #e74c3c; /* Mantiene color distinto */
+  }
+}
+
+
+/* ========================================
+   EJERCICIO 8: Layout completo responsive
+   - Móvil: todo apilado verticalmente
+   - Desktop: header arriba, sidebar izquierda, content derecha
+   ======================================== */
+.layout-completo {
+  border: 2px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.layout-header,
+.layout-footer {
+  background-color: #34495e;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.layout-main {
+  display: flex;
+  flex-direction: column; /* Móvil: apilado */
+}
+
+.layout-sidebar,
+.layout-content {
+  padding: 20px;
+}
+
+.layout-sidebar {
+  background-color: #95a5a6;
+  color: white;
+  font-weight: bold;
+}
+
+.layout-content {
+  background-color: #ecf0f1;
+  flex: 1; /* Ocupa el espacio restante */
+}
+
+/* Desktop: sidebar a la izquierda */
+@media only screen and (min-width: 768px) {
+  .layout-main {
+    flex-direction: row; /* Horizontal */
+  }
+
+  .layout-sidebar {
+    flex: 0 0 250px; /* Ancho fijo de 250px */
+  }
+}
+
+
+/* ========================================
+   EJERCICIO 9: Tarjetas con Grid responsive
+   - Mobile first con Grid
+   - auto-fit para ajuste automático
+   ======================================== */
+.tarjetas-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Móvil: 1 columna */
+  gap: 15px;
+}
+
+.tarjeta {
+  background-color: #3498db;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Tablet: 2 columnas */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .tarjetas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 4 columnas */
+@media only screen and (min-width: 769px) {
+  .tarjetas-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+/* ========================================
+   EJERCICIO 10: Media Query por orientación
+   - portrait: vertical (móvil normal)
+   - landscape: horizontal (móvil girado o desktop)
+   ======================================== */
+.caja-orientacion {
+  padding: 40px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.mensaje-portrait,
+.mensaje-landscape {
+  display: none; /* Ocultar ambos por defecto */
+}
+
+/* Modo vertical (portrait) */
+@media (orientation: portrait) {
+  .caja-orientacion {
+    background-color: #3498db;
+    color: white;
+  }
+
+  .mensaje-portrait {
+    display: block;
+  }
+}
+
+/* Modo horizontal (landscape) */
+@media (orientation: landscape) {
+  .caja-orientacion {
+    background-color: #27ae60;
+    color: white;
+  }
+
+  .mensaje-landscape {
+    display: block;
+  }
+}
+
+
+/* ========================================
+   RESUMEN MEDIA QUERIES
+
+   SINTAXIS:
+   @media only screen and (condición) { ... }
+
+   CONDICIONES COMUNES:
+   - (min-width: 768px)              → Mínimo 768px
+   - (max-width: 767px)              → Máximo 767px
+   - (min-width: 481px) and (max-width: 768px)  → Rango
+   - (orientation: portrait)         → Vertical
+   - (orientation: landscape)        → Horizontal
+
+   BREAKPOINTS ESTÁNDAR:
+   - Móvil: < 480px o < 600px
+   - Tablet: 481px-768px o 600px-1024px
+   - Desktop: > 769px o > 1024px
+
+   ESTRATEGIA MOBILE FIRST:
+   1. Estilos base para móvil
+   2. @media (min-width: ...) para pantallas más grandes
+   3. Ir añadiendo complejidad según crece la pantalla
+
+   PROPIEDADES QUE SUELEN CAMBIAR:
+   - flex-direction (column → row)
+   - flex (1 1 100% → 1 1 33%)
+   - display (block → none para ocultar)
+   - gap (0 → 20px)
+   - font-size (14px → 22px)
+   - grid-template-columns (1fr → repeat(3, 1fr))
+   ======================================== */

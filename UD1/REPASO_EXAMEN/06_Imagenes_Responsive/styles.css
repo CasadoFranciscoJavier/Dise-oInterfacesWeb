@@ -1,0 +1,347 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.ejercicio {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ejercicio h2 {
+  margin-bottom: 15px;
+  color: #004466;
+  font-size: 18px;
+}
+
+.info {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
+
+
+/* ========================================
+   EJERCICIO 1: Imagen fluida básica
+   - max-width: 100% → No se sale del contenedor
+   - height: auto → Mantiene la proporción
+   - display: block → Elimina espacio debajo de la imagen
+   ======================================== */
+.contenedor-basico {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 2px dashed #ddd;
+  padding: 10px;
+}
+
+.contenedor-basico img {
+  max-width: 100%; /* No supera el ancho del contenedor */
+  height: auto; /* Mantiene la proporción de aspecto */
+  display: block; /* Elimina el espacio inline debajo */
+  border-radius: 8px;
+}
+
+
+/* ========================================
+   EJERCICIO 2: object-fit: cover
+   - Cubre todo el contenedor
+   - Recorta la imagen si es necesario
+   - Mantiene la proporción original
+   - Útil para miniaturas o cards
+   ======================================== */
+.contenedor-cover {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.img-cover {
+  width: 300px; /* Ancho fijo */
+  height: 300px; /* Alto fijo (contenedor cuadrado) */
+  object-fit: cover; /* Recorta para cubrir el área */
+  border-radius: 8px;
+  display: block;
+}
+
+
+/* ========================================
+   EJERCICIO 3: object-fit: contain
+   - La imagen completa es visible
+   - Puede dejar espacios vacíos
+   - Mantiene la proporción original
+   - Útil para logos o cuando no se puede recortar
+   ======================================== */
+.contenedor-contain {
+  max-width: 300px;
+  margin: 0 auto;
+  background-color: #e8f4f8; /* Para ver los espacios vacíos */
+}
+
+.img-contain {
+  width: 300px;
+  height: 300px;
+  object-fit: contain; /* La imagen completa cabe dentro */
+  border-radius: 8px;
+  display: block;
+}
+
+
+/* ========================================
+   EJERCICIO 4: srcset con descriptores de ancho
+   - srcset: lista de imágenes con sus anchos (400w, 800w, 1200w)
+   - sizes: indica al navegador qué tamaño usar según viewport
+   - El navegador elige la imagen óptima automáticamente
+   - Ahorra ancho de banda en móviles
+   ======================================== */
+.contenedor-srcset {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contenedor-srcset img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/*
+   En el HTML:
+   srcset="imagen-400.jpg 400w, imagen-800.jpg 800w"
+   sizes="(max-width: 600px) 100vw, 50vw"
+
+   Significado:
+   - Si pantalla < 600px: usa 100vw (ancho completo)
+   - Si pantalla > 600px: usa 50vw (mitad del ancho)
+   - El navegador elige la imagen del srcset que mejor se ajuste
+*/
+
+
+/* ========================================
+   EJERCICIO 5: picture element (art direction)
+   - Permite usar DIFERENTES imágenes según pantalla
+   - source con media queries
+   - Útil para: horizontal en desktop, vertical en móvil
+   ======================================== */
+.contenedor-picture {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contenedor-picture picture {
+  display: block;
+}
+
+.contenedor-picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/*
+   En el HTML:
+   <picture>
+     <source media="(min-width: 1024px)" srcset="desktop.jpg">
+     <source media="(min-width: 600px)" srcset="tablet.jpg">
+     <img src="mobile.jpg" alt="...">
+   </picture>
+
+   Desktop: desktop.jpg (horizontal)
+   Tablet: tablet.jpg (cuadrada)
+   Móvil: mobile.jpg (vertical)
+*/
+
+
+/* ========================================
+   EJERCICIO 6: aspect-ratio
+   - Propiedad moderna para mantener proporción
+   - aspect-ratio: 16/9 → proporción 16:9
+   - Más simple que el truco del padding-bottom
+   ======================================== */
+.contenedor-aspect {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.img-aspect {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Mantiene proporción 16:9 */
+  object-fit: cover; /* Cubre el área */
+  border-radius: 8px;
+  display: block;
+}
+
+
+/* ========================================
+   EJERCICIO 7: Background image responsive
+   - background-size: cover → Cubre todo el contenedor
+   - background-position: center → Centra la imagen
+   - Útil para heroes, banners, etc.
+   ======================================== */
+.contenedor-bg {
+  width: 100%;
+  height: 300px;
+  background-image: url('https://picsum.photos/1200/400');
+  background-size: cover; /* Cubre todo el área */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.contenedor-bg p {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  padding: 20px;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 4px;
+}
+
+
+/* ========================================
+   EJERCICIO 8: Galería con Grid
+   - Grid con auto-fit para responsive automático
+   - Todas las imágenes fluidas
+   ======================================== */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.galeria-grid img {
+  width: 100%; /* Ocupa el ancho completo de la celda */
+  height: 200px; /* Altura fija para uniformidad */
+  object-fit: cover; /* Recorta para mantener proporción */
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.galeria-grid img:hover {
+  transform: translateY(-5px); /* Efecto hover */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+
+/* ========================================
+   EJERCICIO 9: figure y figcaption
+   - Elemento semántico para imágenes con descripción
+   - figcaption: texto descriptivo de la imagen
+   ======================================== */
+.figura-responsive {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.figura-responsive img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.figura-responsive figcaption {
+  padding: 15px;
+  background-color: #f9f9f9;
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+  font-style: italic;
+}
+
+
+/* ========================================
+   EJERCICIO 10: Lazy loading
+   - loading="lazy" en el HTML
+   - Carga la imagen solo cuando está cerca del viewport
+   - Mejora el rendimiento inicial
+   ======================================== */
+.contenedor-lazy {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contenedor-lazy img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/*
+   En el HTML:
+   <img src="imagen.jpg" alt="..." loading="lazy">
+
+   Valores:
+   - lazy: carga diferida (solo cuando está visible)
+   - eager: carga inmediata (por defecto)
+   - auto: el navegador decide
+*/
+
+
+/* ========================================
+   RESUMEN IMÁGENES RESPONSIVE
+
+   TÉCNICAS BÁSICAS:
+   - max-width: 100%                     → Imagen fluida
+   - height: auto                        → Mantiene proporción
+   - display: block                      → Elimina espacio debajo
+
+   OBJECT-FIT (para contenedores fijos):
+   - object-fit: cover                   → Recorta, cubre el área
+   - object-fit: contain                 → Se ve completa, puede dejar espacios
+   - object-fit: fill                    → Se estira (deforma)
+
+   SRCSET (diferentes tamaños):
+   - srcset="img-400.jpg 400w, ..."      → Lista de imágenes
+   - sizes="(max-width: 600px) 100vw"    → Tamaño según viewport
+
+   PICTURE (art direction):
+   - <picture> + <source>                → Diferentes imágenes según pantalla
+   - Útil para: horizontal/vertical
+
+   ASPECT-RATIO:
+   - aspect-ratio: 16/9                  → Mantiene proporción moderna
+
+   BACKGROUND IMAGE:
+   - background-size: cover              → Cubre el contenedor
+   - background-position: center         → Centra la imagen
+
+   OPTIMIZACIÓN:
+   - loading="lazy"                      → Carga diferida
+   - WebP, AVIF                          → Formatos modernos más ligeros
+
+   BUENAS PRÁCTICAS:
+   1. Siempre usar alt en imágenes
+   2. Optimizar el tamaño de las imágenes
+   3. Usar srcset para diferentes resoluciones
+   4. Usar picture para art direction
+   5. Lazy loading para imágenes fuera del viewport
+   ======================================== */

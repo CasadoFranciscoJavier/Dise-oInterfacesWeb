@@ -1,0 +1,315 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================
+   CONFIGURACIÓN ROOT
+   - html tiene font-size: 16px por defecto
+   - rem se calcula SIEMPRE basándose en este valor
+   ======================================== */
+html {
+  font-size: 16px; /* 1rem = 16px */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.ejercicio {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ejercicio h2 {
+  margin-bottom: 15px;
+  color: #004466;
+  font-size: 18px;
+}
+
+
+/* ========================================
+   EJERCICIO 1: px (píxeles)
+   - Unidad ABSOLUTA
+   - 1px = 1 píxel en la pantalla
+   - NO cambia con el zoom o configuración del usuario
+   ======================================== */
+.caja-px {
+  width: 300px;      /* Ancho fijo de 300 píxeles */
+  height: 100px;     /* Alto fijo de 100 píxeles */
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.caja-px p {
+  font-size: 16px;   /* Tamaño de fuente fijo de 16 píxeles */
+}
+
+
+/* ========================================
+   EJERCICIO 2: em (relativa al PADRE)
+   - Unidad RELATIVA al font-size del elemento padre
+   - Se MULTIPLICA en elementos anidados (herencia)
+   - 2em en un hijo de 20px = 40px
+   - 2em en un nieto que heredó 40px = 80px
+   ======================================== */
+.padre-em {
+  font-size: 20px;           /* Base: 20px */
+  background-color: #e8f4f8;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.hijo-em {
+  font-size: 1.5em;          /* 1.5 × 20px = 30px */
+  background-color: #c3e6f5;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.nieto-em {
+  font-size: 2em;            /* 2 × 30px (del padre) = 60px */
+  background-color: #9dd4ed;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+
+/* ========================================
+   EJERCICIO 3: rem (relativa al ROOT)
+   - Unidad RELATIVA al font-size del elemento html
+   - NO se multiplica en elementos anidados
+   - SIEMPRE se calcula desde html (16px por defecto)
+   - Más predecible que em
+   ======================================== */
+.padre-rem {
+  font-size: 24px;           /* Este tamaño NO afecta a rem */
+  background-color: #e8f4f8;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.hijo-rem {
+  font-size: 1.5rem;         /* 1.5 × 16px (html) = 24px */
+  background-color: #c3e6f5;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.nieto-rem {
+  font-size: 2rem;           /* 2 × 16px (html) = 32px (NO se multiplica) */
+  background-color: #9dd4ed;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+
+/* ========================================
+   EJERCICIO 4: % (porcentaje)
+   - Unidad RELATIVA al tamaño del contenedor padre
+   - width: 50% = 50% del ancho del padre
+   - height: 50% = 50% de la altura del padre (si está definida)
+   ======================================== */
+.contenedor-porcentaje {
+  width: 500px;              /* Contenedor de 500px */
+  background-color: #e8f4f8;
+  padding: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.caja-50 {
+  width: 50%;                /* 50% de 500px = 250px */
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+.caja-75 {
+  width: 75%;                /* 75% de 500px = 375px */
+  background-color: #27ae60;
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+.caja-100 {
+  width: 100%;               /* 100% de 500px = 500px */
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+
+/* ========================================
+   EJERCICIO 5: vh (viewport height)
+   - 1vh = 1% de la ALTURA del viewport (ventana del navegador)
+   - 100vh = altura completa de la ventana
+   - Útil para secciones hero o de pantalla completa
+   ======================================== */
+.caja-vh {
+  height: 50vh;              /* 50% de la altura del viewport */
+  background-color: #9b59b6;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 4px;
+}
+
+
+/* ========================================
+   EJERCICIO 6: vw (viewport width)
+   - 1vw = 1% del ANCHO del viewport (ventana del navegador)
+   - 100vw = ancho completo de la ventana
+   - Útil para elementos que deben escalar con la ventana
+   ======================================== */
+.caja-vw {
+  width: 80vw;               /* 80% del ancho del viewport */
+  background-color: #f39c12;
+  color: white;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.caja-vw p:first-child {
+  font-size: 5vw;            /* Font-size que escala con el ancho */
+  font-weight: bold;
+}
+
+
+/* ========================================
+   EJERCICIO 7: Combinación de unidades
+   - width: 90% hace el elemento fluido
+   - max-width: 600px evita que sea demasiado ancho
+   - Patrón muy común en diseño responsive
+   ======================================== */
+.caja-combinada {
+  width: 90%;                /* Fluido: 90% del contenedor */
+  max-width: 600px;          /* Pero nunca más de 600px */
+  background-color: #27ae60;
+  color: white;
+  padding: 20px;
+  margin: 0 auto;            /* Centrar horizontalmente */
+  border-radius: 4px;
+  text-align: center;
+}
+
+
+/* ========================================
+   EJERCICIO 8: Padding y Margin con unidades
+   - padding con rem: escalable, consistente
+   - margin con em: relativo al font-size del elemento
+   ======================================== */
+.caja-espaciado {
+  background-color: #e74c3c;
+  color: white;
+  padding: 2rem;             /* 2 × 16px = 32px de padding */
+  margin: 1em auto;          /* margin relativo al font-size de este elemento */
+  max-width: 500px;
+  border-radius: 4px;
+  font-size: 18px;           /* 1em = 18px para este elemento */
+}
+
+
+/* ========================================
+   EJERCICIO 9: Imagen fluida
+   - width: 100% hace que la imagen se adapte al contenedor
+   - height: auto mantiene la proporción de aspecto
+   - max-width: 100% evita que se estire más que su tamaño original
+   ======================================== */
+.contenedor-imagen {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contenedor-imagen img {
+  width: 100%;               /* Se adapta al ancho del contenedor */
+  max-width: 100%;           /* No se estira más que el tamaño original */
+  height: auto;              /* Mantiene la proporción */
+  display: block;            /* Elimina espacio debajo de la imagen */
+  border-radius: 8px;
+}
+
+.contenedor-imagen p {
+  margin-top: 10px;
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+
+/* ========================================
+   EJERCICIO 10: Tarjeta responsive
+   - Combina %, rem, auto para un diseño responsive
+   - width: 90% + max-width: 30rem = fluido pero controlado
+   - padding/margin con rem = consistente y escalable
+   ======================================== */
+.tarjeta-responsive {
+  width: 90%;                /* Fluido */
+  max-width: 30rem;          /* 30 × 16px = 480px máximo */
+  padding: 1.5rem;           /* 1.5 × 16px = 24px */
+  margin: 2rem auto;         /* 32px arriba/abajo, centrado horizontal */
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.tarjeta-responsive h3 {
+  font-size: 1.5rem;         /* 24px */
+  color: #004466;
+  margin-bottom: 1rem;       /* 16px */
+}
+
+.tarjeta-responsive p {
+  font-size: 1rem;           /* 16px */
+  color: #666;
+  margin-bottom: 0.5rem;     /* 8px */
+}
+
+
+/* ========================================
+   RESUMEN DE UNIDADES CSS
+
+   ABSOLUTAS:
+   - px                      → Píxeles fijos
+
+   RELATIVAS:
+   - em                      → Relativa al font-size del PADRE (se multiplica)
+   - rem                     → Relativa al font-size del HTML (root)
+   - %                       → Porcentaje del tamaño del CONTENEDOR
+   - vh                      → % de la ALTURA del viewport
+   - vw                      → % del ANCHO del viewport
+
+   BUENAS PRÁCTICAS:
+   - Usa rem para font-size (escalable y predecible)
+   - Usa % para anchos fluidos
+   - Combina % con max-width para controlar el crecimiento
+   - Usa vh/vw para secciones de pantalla completa
+   - Evita px para text (problemas de accesibilidad)
+   ======================================== */

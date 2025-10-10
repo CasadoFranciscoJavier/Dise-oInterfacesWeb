@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repaso Media Queries</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Ejercicios Media Queries</h1>
+
+  <!-- Ejercicio 1: Cambio de color según viewport -->
+  <section class="ejercicio">
+    <h2>1. Cambio de color por tamaño de pantalla</h2>
+    <div class="caja-colores">
+      <p><strong>Móvil (&lt;600px):</strong> Rojo</p>
+      <p><strong>Tablet (600px-1024px):</strong> Amarillo</p>
+      <p><strong>Desktop (&gt;1024px):</strong> Verde</p>
+      <p class="nota">Redimensiona la ventana para ver el cambio</p>
+    </div>
+  </section>
+
+  <!-- Ejercicio 2: Cambio de tamaño de fuente -->
+  <section class="ejercicio">
+    <h2>2. Font-size responsive</h2>
+    <div class="caja-font">
+      <p class="texto-responsive">Este texto cambia de tamaño según la pantalla</p>
+      <ul>
+        <li>Móvil (&lt;480px): 14px</li>
+        <li>Tablet (481px-768px): 18px</li>
+        <li>Desktop (&gt;769px): 22px</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Ejercicio 3: Número de columnas variable -->
+  <section class="ejercicio">
+    <h2>3. Columnas responsive con Flexbox</h2>
+    <div class="grid-responsive">
+      <div class="col">Columna 1</div>
+      <div class="col">Columna 2</div>
+      <div class="col">Columna 3</div>
+    </div>
+    <p class="info">Móvil: 1 col | Tablet: 2 cols | Desktop: 3 cols</p>
+  </section>
+
+  <!-- Ejercicio 4: Ocultar elementos -->
+  <section class="ejercicio">
+    <h2>4. Mostrar/Ocultar elementos según viewport</h2>
+    <div class="contenedor-ocultar">
+      <div class="item visible-movil">SOLO MÓVIL</div>
+      <div class="item visible-tablet">MÓVIL y TABLET</div>
+      <div class="item visible-desktop">TODAS</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 5: Cambiar dirección del flex -->
+  <section class="ejercicio">
+    <h2>5. flex-direction responsive</h2>
+    <div class="flex-direccion">
+      <div class="caja">Primera</div>
+      <div class="caja">Segunda</div>
+      <div class="caja">Tercera</div>
+    </div>
+    <p class="info">Móvil: column | Tablet+: row</p>
+  </section>
+
+  <!-- Ejercicio 6: Gap responsive -->
+  <section class="ejercicio">
+    <h2>6. Espaciado (gap) responsive</h2>
+    <div class="flex-gap">
+      <div class="caja">A</div>
+      <div class="caja">B</div>
+      <div class="caja">C</div>
+    </div>
+    <p class="info">Móvil: sin gap | Tablet: 10px | Desktop: 30px</p>
+  </section>
+
+  <!-- Ejercicio 7: Ancho proporcional -->
+  <section class="ejercicio">
+    <h2>7. Anchos proporcionales responsive</h2>
+    <div class="flex-proporcional">
+      <div class="col-prop">1</div>
+      <div class="col-prop col-destacada">2 (destacada)</div>
+      <div class="col-prop">3</div>
+    </div>
+    <p class="info">Tablet: columna 2 es el doble de ancha</p>
+  </section>
+
+  <!-- Ejercicio 8: Layout completo responsive -->
+  <section class="ejercicio">
+    <h2>8. Layout Header-Sidebar-Content</h2>
+    <div class="layout-completo">
+      <header class="layout-header">Header</header>
+      <div class="layout-main">
+        <aside class="layout-sidebar">Sidebar</aside>
+        <main class="layout-content">Content</main>
+      </div>
+      <footer class="layout-footer">Footer</footer>
+    </div>
+    <p class="info">Móvil: apilado | Desktop: sidebar a la izquierda</p>
+  </section>
+
+  <!-- Ejercicio 9: Tarjetas responsive -->
+  <section class="ejercicio">
+    <h2>9. Tarjetas con Grid responsive</h2>
+    <div class="tarjetas-grid">
+      <div class="tarjeta">Tarjeta 1</div>
+      <div class="tarjeta">Tarjeta 2</div>
+      <div class="tarjeta">Tarjeta 3</div>
+      <div class="tarjeta">Tarjeta 4</div>
+    </div>
+    <p class="info">Móvil: 1 col | Tablet: 2 cols | Desktop: 4 cols</p>
+  </section>
+
+  <!-- Ejercicio 10: Orientación -->
+  <section class="ejercicio">
+    <h2>10. Media Query por orientación</h2>
+    <div class="caja-orientacion">
+      <p class="mensaje-portrait">📱 MODO VERTICAL (portrait)</p>
+      <p class="mensaje-landscape">🖥️ MODO HORIZONTAL (landscape)</p>
+    </div>
+  </section>
+
+</body>
+</html>

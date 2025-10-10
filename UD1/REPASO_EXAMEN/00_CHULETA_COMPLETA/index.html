@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHULETA COMPLETA - UD1 Diseño Interfaces Web</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER PRINCIPAL -->
+  <header class="main-header">
+    <div class="logo">LOGO</div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#flexbox">Flexbox</a></li>
+        <li><a href="#grid">Grid</a></li>
+        <li><a href="#unidades">Unidades</a></li>
+        <li><a href="#imagenes">Imágenes</a></li>
+      </ul>
+    </nav>
+    <button class="cta-btn">Contacto</button>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Chuleta Completa UD1</h1>
+      <p>Diseño de Interfaces Web - Todos los conceptos en un solo lugar</p>
+      <button class="hero-btn">Comenzar</button>
+    </div>
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL CON SIDEBAR -->
+  <div class="layout-principal">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h3>Índice Rápido</h3>
+      <ul class="sidebar-menu">
+        <li><a href="#flexbox">1. Flexbox</a></li>
+        <li><a href="#grid">2. Grid</a></li>
+        <li><a href="#unidades">3. Unidades</a></li>
+        <li><a href="#media-queries">4. Media Queries</a></li>
+        <li><a href="#imagenes">5. Imágenes</a></li>
+        <li><a href="#layouts">6. Layouts</a></li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- SECCIÓN 1: FLEXBOX -->
+      <section id="flexbox" class="seccion">
+        <h2 class="seccion-titulo">1. Flexbox</h2>
+
+        <div class="concepto">
+          <h3>Contenedor Flex básico</h3>
+          <div class="demo flex-basico">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+          </div>
+          <code>display: flex;</code>
+        </div>
+
+        <div class="concepto">
+          <h3>justify-content: space-between</h3>
+          <div class="demo flex-space-between">
+            <div class="box">A</div>
+            <div class="box">B</div>
+            <div class="box">C</div>
+          </div>
+          <code>justify-content: space-between;</code>
+        </div>
+
+        <div class="concepto">
+          <h3>align-items: center</h3>
+          <div class="demo flex-align-center">
+            <div class="box">Centrado</div>
+          </div>
+          <code>align-items: center; justify-content: center;</code>
+        </div>
+
+        <div class="concepto">
+          <h3>flex-direction: column</h3>
+          <div class="demo flex-column">
+            <div class="box">Arriba</div>
+            <div class="box">Medio</div>
+            <div class="box">Abajo</div>
+          </div>
+          <code>flex-direction: column;</code>
+        </div>
+
+        <div class="concepto">
+          <h3>margin-left: auto (empujar derecha)</h3>
+          <div class="demo flex-push">
+            <div class="box">Izquierda</div>
+            <div class="box push-right">Derecha</div>
+          </div>
+          <code>.push-right { margin-left: auto; }</code>
+        </div>
+
+        <div class="concepto">
+          <h3>Tarjetas con botón al fondo</h3>
+          <div class="tarjetas-ejemplo">
+            <div class="tarjeta">
+              <h4>Título</h4>
+              <p>Contenido variable aquí.</p>
+              <button class="btn-tarjeta">Acción</button>
+            </div>
+            <div class="tarjeta">
+              <h4>Título Largo</h4>
+              <p>Esta tarjeta tiene mucho más contenido para demostrar que el botón queda siempre al fondo.</p>
+              <button class="btn-tarjeta">Acción</button>
+            </div>
+          </div>
+          <code>.tarjeta { display: flex; flex-direction: column; }<br>.btn { margin-top: auto; }</code>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 2: GRID -->
+      <section id="grid" class="seccion">
+        <h2 class="seccion-titulo">2. CSS Grid</h2>
+
+        <div class="concepto">
+          <h3>Grid básico (3 columnas)</h3>
+          <div class="demo grid-basico">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+          <code>display: grid;<br>grid-template-columns: repeat(3, 1fr);<br>gap: 10px;</code>
+        </div>
+
+        <div class="concepto">
+          <h3>grid-column (ocupar 2 columnas)</h3>
+          <div class="demo grid-span">
+            <div class="item span-2">Ocupa 2 columnas</div>
+            <div class="item">Normal</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+          </div>
+          <code>.span-2 { grid-column: span 2; }</code>
+        </div>
+
+        <div class="concepto">
+          <h3>Grid responsive (auto-fit)</h3>
+          <div class="demo grid-autofit">
+            <div class="item">Auto 1</div>
+            <div class="item">Auto 2</div>
+            <div class="item">Auto 3</div>
+            <div class="item">Auto 4</div>
+          </div>
+          <code>grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));</code>
+        </div>
+
+        <div class="concepto">
+          <h3>Grid Template Areas</h3>
+          <div class="demo grid-areas">
+            <div class="item area-header">Header</div>
+            <div class="item area-sidebar">Sidebar</div>
+            <div class="item area-main">Main</div>
+            <div class="item area-footer">Footer</div>
+          </div>
+          <code>grid-template-areas:<br>"header header"<br>"sidebar main"<br>"footer footer";</code>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 3: UNIDADES -->
+      <section id="unidades" class="seccion">
+        <h2 class="seccion-titulo">3. Unidades CSS</h2>
+
+        <div class="concepto">
+          <h3>px (absoluta)</h3>
+          <div class="demo">
+            <div class="caja-px">width: 200px | font-size: 16px</div>
+          </div>
+          <code>Unidad absoluta, tamaño fijo</code>
+        </div>
+
+        <div class="concepto">
+          <h3>rem (relativa al root)</h3>
+          <div class="demo">
+            <div class="caja-rem">font-size: 1.5rem = 24px (1.5 × 16px)</div>
+          </div>
+          <code>1rem = font-size del html (16px por defecto)</code>
+        </div>
+
+        <div class="concepto">
+          <h3>% (porcentaje del padre)</h3>
+          <div class="contenedor-porcentaje">
+            <div class="caja-porcentaje">width: 50%</div>
+          </div>
+          <code>Relativo al tamaño del contenedor padre</code>
+        </div>
+
+        <div class="concepto">
+          <h3>vh / vw (viewport)</h3>
+          <div class="caja-viewport">
+            height: 30vh (30% del viewport)
+          </div>
+          <code>1vh = 1% de la altura | 1vw = 1% del ancho</code>
+        </div>
+
+        <div class="concepto">
+          <h3>Combinación: width + max-width</h3>
+          <div class="caja-combinada">
+            width: 90% | max-width: 400px
+          </div>
+          <code>Fluido pero controlado</code>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 4: MEDIA QUERIES -->
+      <section id="media-queries" class="seccion">
+        <h2 class="seccion-titulo">4. Media Queries</h2>
+
+        <div class="concepto">
+          <h3>Breakpoints responsive</h3>
+          <div class="demo caja-responsive">
+            Redimensiona la ventana<br>
+            Móvil: Rojo | Tablet: Amarillo | Desktop: Verde
+          </div>
+          <code>
+            @media (max-width: 600px) { ... } /* Móvil */<br>
+            @media (min-width: 601px) and (max-width: 1024px) { ... } /* Tablet */<br>
+            @media (min-width: 1025px) { ... } /* Desktop */
+          </code>
+        </div>
+
+        <div class="concepto">
+          <h3>Columnas responsive</h3>
+          <div class="demo grid-responsive">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+          </div>
+          <code>Móvil: 1 col | Tablet: 2 cols | Desktop: 4 cols</code>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 5: IMÁGENES -->
+      <section id="imagenes" class="seccion">
+        <h2 class="seccion-titulo">5. Imágenes Responsive</h2>
+
+        <div class="concepto">
+          <h3>Imagen fluida</h3>
+          <div class="demo">
+            <img src="https://picsum.photos/seed/chuleta1/600/300" alt="Ejemplo" class="img-fluida">
+          </div>
+          <code>max-width: 100%; height: auto;</code>
+        </div>
+
+        <div class="concepto">
+          <h3>object-fit: cover</h3>
+          <div class="demo">
+            <img src="https://picsum.photos/seed/chuleta2/800/400" alt="Cover" class="img-cover">
+          </div>
+          <code>width: 300px; height: 200px; object-fit: cover;</code>
+        </div>
+
+        <div class="concepto">
+          <h3>Galería con Grid</h3>
+          <div class="galeria-mini">
+            <img src="https://picsum.photos/seed/g1/300/200" alt="1">
+            <img src="https://picsum.photos/seed/g2/300/200" alt="2">
+            <img src="https://picsum.photos/seed/g3/300/200" alt="3">
+            <img src="https://picsum.photos/seed/g4/300/200" alt="4">
+          </div>
+          <code>grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));</code>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 6: LAYOUTS -->
+      <section id="layouts" class="seccion">
+        <h2 class="seccion-titulo">6. Layouts Completos</h2>
+
+        <div class="concepto">
+          <h3>Navbar (Logo + Menu + CTA)</h3>
+          <nav class="navbar-ejemplo">
+            <div class="logo-nav">LOGO</div>
+            <ul class="menu-nav">
+              <li><a href="#">Inicio</a></li>
+              <li><a href="#">Servicios</a></li>
+            </ul>
+            <button class="cta-nav">CTA</button>
+          </nav>
+          <code>.cta { margin-left: auto; }</code>
+        </div>
+
+        <div class="concepto">
+          <h3>Centrado perfecto</h3>
+          <div class="demo centrado-perfecto">
+            <div class="caja-centrada">CENTRADO</div>
+          </div>
+          <code>display: flex; justify-content: center; align-items: center;</code>
+        </div>
+
+        <div class="concepto">
+          <h3>Pricing Cards</h3>
+          <div class="pricing-ejemplo">
+            <div class="plan">
+              <h4>Básico</h4>
+              <p class="precio">$9/mes</p>
+              <button class="btn-plan">Elegir</button>
+            </div>
+            <div class="plan destacado">
+              <span class="badge">Popular</span>
+              <h4>Pro</h4>
+              <p class="precio">$29/mes</p>
+              <button class="btn-plan">Elegir</button>
+            </div>
+            <div class="plan">
+              <h4>Enterprise</h4>
+              <p class="precio">$99/mes</p>
+              <button class="btn-plan">Elegir</button>
+            </div>
+          </div>
+          <code>flex: 1; .destacado { transform: scale(1.05); }</code>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <p>Chuleta de Repaso UD1 - Diseño de Interfaces Web</p>
+    <p>Todos los conceptos esenciales en un solo documento</p>
+  </footer>
+
+</body>
+</html>

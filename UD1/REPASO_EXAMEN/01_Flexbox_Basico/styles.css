@@ -1,0 +1,157 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Estilos para cada ejercicio */
+.ejercicio {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ejercicio h2 {
+  margin-bottom: 15px;
+  color: #004466;
+  font-size: 18px;
+}
+
+/* Contenedor flex base */
+.flex-container {
+  display: flex; /* Activa flexbox */
+  border: 2px solid #333;
+  padding: 10px;
+  background-color: #e8f4f8;
+}
+
+/* Las cajas dentro del contenedor */
+.box {
+  background-color: #4a90e2;
+  color: white;
+  padding: 15px 25px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 4px;
+  /* flex: 1; <- Por defecto, las cajas no crecen */
+}
+
+/* ========================================
+   EJERCICIO 1: Contenedor Flex Simple
+   - display: flex convierte el contenedor en flexbox
+   - Por defecto: flex-direction: row (horizontal)
+   - Por defecto: justify-content: flex-start (al inicio)
+   ======================================== */
+/* Ya está aplicado en .flex-container */
+
+
+/* ========================================
+   EJERCICIO 2: flex-direction: row-reverse
+   - Invierte el orden de los elementos (de derecha a izquierda)
+   ======================================== */
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+
+/* ========================================
+   EJERCICIO 3: flex-direction: column
+   - Los elementos se apilan verticalmente
+   ======================================== */
+.column {
+  flex-direction: column;
+}
+
+
+/* ========================================
+   EJERCICIO 4: justify-content: space-between
+   - Distribuye el espacio entre los elementos
+   - El primer elemento va al inicio, el último al final
+   ======================================== */
+.space-between {
+  justify-content: space-between;
+}
+
+
+/* ========================================
+   EJERCICIO 5: align-items: center
+   - Centra los elementos en el eje transversal (vertical si flex-direction es row)
+   ======================================== */
+.align-center {
+  align-items: center;
+}
+
+/* Clase auxiliar para dar altura al contenedor */
+.alto-200 {
+  height: 200px;
+}
+
+
+/* ========================================
+   EJERCICIO 6: flex-wrap: wrap
+   - Permite que los elementos se envuelvan en varias líneas
+   - Sin wrap, todos los elementos se comprimen en una línea
+   ======================================== */
+.wrap {
+  flex-wrap: wrap;
+}
+
+.wrap .box {
+  flex: 0 0 150px; /* No crece, no encoge, ancho fijo de 150px */
+  margin: 5px; /* Pequeño margen para visualizar mejor */
+}
+
+
+/* ========================================
+   EJERCICIO 7: gap
+   - Crea separación entre los elementos flex
+   - Más moderno y limpio que usar margin en cada elemento
+   ======================================== */
+.gap-20 {
+  gap: 20px;
+}
+
+
+/* ========================================
+   EJERCICIO 8: Centrado perfecto
+   - justify-content: center → centra horizontalmente
+   - align-items: center → centra verticalmente
+   - Técnica muy usada para centrar contenido
+   ======================================== */
+.centrado-perfecto {
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ========================================
+   RESUMEN DE PROPIEDADES FLEXBOX BÁSICAS
+
+   CONTENEDOR (padre):
+   - display: flex;              → Activa flexbox
+   - flex-direction: row;        → Dirección horizontal (por defecto)
+   - flex-direction: column;     → Dirección vertical
+   - justify-content: ...        → Alinea en eje principal
+   - align-items: ...            → Alinea en eje transversal
+   - flex-wrap: wrap;            → Permite saltos de línea
+   - gap: 20px;                  → Separación entre elementos
+
+   ELEMENTOS (hijos):
+   - flex: 1;                    → Crece para ocupar espacio disponible
+   - flex: 0 0 100px;            → No crece, no encoge, tamaño fijo
+   ======================================== */

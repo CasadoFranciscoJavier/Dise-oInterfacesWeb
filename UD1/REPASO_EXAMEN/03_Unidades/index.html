@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repaso Unidades CSS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Ejercicios Unidades CSS</h1>
+
+  <!-- Ejercicio 1: px (absoluta) -->
+  <section class="ejercicio">
+    <h2>1. Unidades Absolutas - px (píxeles)</h2>
+    <div class="caja-px">
+      <p>Ancho: 300px | Alto: 100px</p>
+      <p>Font-size: 16px</p>
+    </div>
+  </section>
+
+  <!-- Ejercicio 2: em (relativa al padre) -->
+  <section class="ejercicio">
+    <h2>2. Unidades Relativas - em (relativa al padre)</h2>
+    <div class="padre-em">
+      <p>Padre: font-size 20px</p>
+      <div class="hijo-em">
+        <p>Hijo: font-size 1.5em = 30px (1.5 × 20px)</p>
+        <div class="nieto-em">
+          <p>Nieto: font-size 2em = 60px (2 × 30px del padre)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 3: rem (relativa al root) -->
+  <section class="ejercicio">
+    <h2>3. Unidades Relativas - rem (relativa a html)</h2>
+    <div class="padre-rem">
+      <p>Padre: font-size 24px (pero rem NO lo usa)</p>
+      <div class="hijo-rem">
+        <p>Hijo: font-size 1.5rem = 24px (1.5 × 16px del html)</p>
+        <div class="nieto-rem">
+          <p>Nieto: font-size 2rem = 32px (2 × 16px del html)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 4: % (porcentaje del padre) -->
+  <section class="ejercicio">
+    <h2>4. Porcentaje - % (relativo al contenedor)</h2>
+    <div class="contenedor-porcentaje">
+      Contenedor: 500px de ancho
+      <div class="caja-50">Ancho: 50% = 250px</div>
+      <div class="caja-75">Ancho: 75% = 375px</div>
+      <div class="caja-100">Ancho: 100% = 500px</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 5: vh (viewport height) -->
+  <section class="ejercicio">
+    <h2>5. Viewport Units - vh (altura del viewport)</h2>
+    <div class="caja-vh">
+      <p>Alto: 50vh (50% de la altura de la ventana)</p>
+      <p>Redimensiona la ventana para ver el efecto</p>
+    </div>
+  </section>
+
+  <!-- Ejercicio 6: vw (viewport width) -->
+  <section class="ejercicio">
+    <h2>6. Viewport Units - vw (ancho del viewport)</h2>
+    <div class="caja-vw">
+      <p>Ancho: 80vw (80% del ancho de la ventana)</p>
+      <p>Font-size: 5vw (se escala con el ancho)</p>
+    </div>
+  </section>
+
+  <!-- Ejercicio 7: Combinación de unidades -->
+  <section class="ejercicio">
+    <h2>7. Combinación de unidades (max-width)</h2>
+    <div class="caja-combinada">
+      <p>width: 90% | max-width: 600px</p>
+      <p>Nunca será más ancha que 600px aunque 90% sea mayor</p>
+    </div>
+  </section>
+
+  <!-- Ejercicio 8: Padding y Margin con diferentes unidades -->
+  <section class="ejercicio">
+    <h2>8. Padding y Margin con unidades</h2>
+    <div class="caja-espaciado">
+      <p>Padding: 2rem (32px)</p>
+      <p>Margin: 1em (relativo al font-size de este elemento)</p>
+    </div>
+  </section>
+
+  <!-- Ejercicio 9: Imagen fluida -->
+  <section class="ejercicio">
+    <h2>9. Imagen fluida con %</h2>
+    <div class="contenedor-imagen">
+      <img src="https://picsum.photos/800/400" alt="Imagen de ejemplo">
+      <p>width: 100% | max-width: 100% | height: auto</p>
+    </div>
+  </section>
+
+  <!-- Ejercicio 10: Tarjeta responsive -->
+  <section class="ejercicio">
+    <h2>10. Tarjeta responsive (combinación de unidades)</h2>
+    <div class="tarjeta-responsive">
+      <h3>Título de la tarjeta</h3>
+      <p>width: 90%, max-width: 30rem</p>
+      <p>padding: 1.5rem, margin: 2rem auto</p>
+      <p>font-size: 1rem (16px)</p>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repaso Flexbox Avanzado</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Ejercicios Flexbox Avanzado</h1>
+
+  <!-- Ejercicio 1: flex-grow -->
+  <section class="ejercicio">
+    <h2>1. flex-grow (elemento central crece)</h2>
+    <div class="flex-container">
+      <div class="box">Fijo</div>
+      <div class="box flex-grow-1">CRECE</div>
+      <div class="box">Fijo</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 2: flex-shrink -->
+  <section class="ejercicio">
+    <h2>2. flex-shrink (cajas anchas, algunas no se encogen)</h2>
+    <div class="flex-container">
+      <div class="box ancho-300 no-shrink">NO ENCOGE</div>
+      <div class="box ancho-300">Encoge</div>
+      <div class="box ancho-300">Encoge</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 3: order -->
+  <section class="ejercicio">
+    <h2>3. order (cambiar orden visual)</h2>
+    <div class="flex-container">
+      <div class="box order-3">Primero (order: 3)</div>
+      <div class="box order-1">Segundo (order: 1)</div>
+      <div class="box order-2">Tercero (order: 2)</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 4: align-self -->
+  <section class="ejercicio">
+    <h2>4. align-self (alineación individual)</h2>
+    <div class="flex-container alto-200">
+      <div class="box self-start">flex-start</div>
+      <div class="box self-center">center</div>
+      <div class="box self-end">flex-end</div>
+      <div class="box self-stretch">stretch</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 5: justify-content variaciones -->
+  <section class="ejercicio">
+    <h2>5a. justify-content: space-around</h2>
+    <div class="flex-container space-around">
+      <div class="box">A</div>
+      <div class="box">B</div>
+      <div class="box">C</div>
+    </div>
+  </section>
+
+  <section class="ejercicio">
+    <h2>5b. justify-content: space-evenly</h2>
+    <div class="flex-container space-evenly">
+      <div class="box">A</div>
+      <div class="box">B</div>
+      <div class="box">C</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 6: margin-left: auto -->
+  <section class="ejercicio">
+    <h2>6. margin-left: auto (empujar a la derecha)</h2>
+    <div class="flex-container">
+      <div class="box">Logo</div>
+      <div class="box">Menu</div>
+      <div class="box push-right">Login</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 7: flex-basis -->
+  <section class="ejercicio">
+    <h2>7. flex-basis (tamaño base antes de crecer/encoger)</h2>
+    <div class="flex-container">
+      <div class="box basis-100">basis: 100px</div>
+      <div class="box basis-200">basis: 200px</div>
+      <div class="box basis-150">basis: 150px</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 8: Propiedad flex completa -->
+  <section class="ejercicio">
+    <h2>8. Propiedad flex (grow shrink basis)</h2>
+    <div class="flex-container">
+      <div class="box flex-1-0-100">flex: 1 0 100px</div>
+      <div class="box flex-2-0-100">flex: 2 0 100px</div>
+      <div class="box flex-1-0-100">flex: 1 0 100px</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 9: Tarjeta con botón al fondo -->
+  <section class="ejercicio">
+    <h2>9. Tarjeta con botón al fondo (margin-top: auto)</h2>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <h3>Tarjeta 1</h3>
+        <p>Texto corto.</p>
+        <button class="btn-fondo">Acción</button>
+      </div>
+      <div class="tarjeta">
+        <h3>Tarjeta 2</h3>
+        <p>Esta tarjeta tiene mucho más texto para demostrar que el botón siempre queda al fondo, independientemente del contenido.</p>
+        <button class="btn-fondo">Acción</button>
+      </div>
+      <div class="tarjeta">
+        <h3>Tarjeta 3</h3>
+        <p>Texto medio aquí.</p>
+        <button class="btn-fondo">Acción</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 10: align-items: stretch -->
+  <section class="ejercicio">
+    <h2>10. align-items: stretch (altura igual)</h2>
+    <div class="flex-container stretch">
+      <div class="box">Contenido pequeño</div>
+      <div class="box">Este tiene mucho más contenido y por eso crece en altura, pero stretch hace que todos tengan la misma altura</div>
+      <div class="box">Medio</div>
+    </div>
+  </section>
+
+</body>
+</html>

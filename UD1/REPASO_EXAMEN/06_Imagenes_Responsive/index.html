@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repaso Imágenes Responsive</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Ejercicios Imágenes Responsive</h1>
+
+  <!-- Ejercicio 1: Imagen fluida básica -->
+  <section class="ejercicio">
+    <h2>1. Imagen fluida básica (max-width: 100%)</h2>
+    <div class="contenedor-basico">
+      <img src="https://picsum.photos/800/400" alt="Imagen de ejemplo">
+      <p class="info">Se adapta al contenedor sin deformarse</p>
+    </div>
+  </section>
+
+  <!-- Ejercicio 2: object-fit cover -->
+  <section class="ejercicio">
+    <h2>2. object-fit: cover (recorta manteniendo ratio)</h2>
+    <div class="contenedor-cover">
+      <img src="https://picsum.photos/800/400" alt="Imagen cover" class="img-cover">
+      <p class="info">Contenedor fijo 300x300, imagen se recorta</p>
+    </div>
+  </section>
+
+  <!-- Ejercicio 3: object-fit contain -->
+  <section class="ejercicio">
+    <h2>3. object-fit: contain (se ve completa)</h2>
+    <div class="contenedor-contain">
+      <img src="https://picsum.photos/800/400" alt="Imagen contain" class="img-contain">
+      <p class="info">La imagen completa cabe en el contenedor</p>
+    </div>
+  </section>
+
+  <!-- Ejercicio 4: srcset con descriptores de ancho -->
+  <section class="ejercicio">
+    <h2>4. srcset (diferentes tamaños según pantalla)</h2>
+    <div class="contenedor-srcset">
+      <img
+        src="https://picsum.photos/400/300"
+        srcset="https://picsum.photos/400/300 400w,
+                https://picsum.photos/800/600 800w,
+                https://picsum.photos/1200/900 1200w"
+        sizes="(max-width: 600px) 100vw,
+               (max-width: 1000px) 50vw,
+               33vw"
+        alt="Imagen con srcset">
+      <p class="info">El navegador elige la imagen según el tamaño de pantalla</p>
+    </div>
+  </section>
+
+  <!-- Ejercicio 5: picture element (art direction) -->
+  <section class="ejercicio">
+    <h2>5. picture (diferentes imágenes según pantalla)</h2>
+    <div class="contenedor-picture">
+      <picture>
+        <!-- Desktop: imagen horizontal -->
+        <source media="(min-width: 1024px)"
+                srcset="https://picsum.photos/seed/desktop/1200/400">
+        <!-- Tablet: imagen cuadrada -->
+        <source media="(min-width: 600px)"
+                srcset="https://picsum.photos/seed/tablet/800/800">
+        <!-- Móvil: imagen vertical (por defecto) -->
+        <img src="https://picsum.photos/seed/mobile/400/600"
+             alt="Imagen responsive con picture">
+      </picture>
+      <p class="info">Móvil: vertical | Tablet: cuadrada | Desktop: horizontal</p>
+    </div>
+  </section>
+
+  <!-- Ejercicio 6: aspect-ratio -->
+  <section class="ejercicio">
+    <h2>6. aspect-ratio (mantener proporción)</h2>
+    <div class="contenedor-aspect">
+      <img src="https://picsum.photos/800/400" alt="Imagen con aspect-ratio" class="img-aspect">
+      <p class="info">aspect-ratio: 16/9 mantiene la proporción</p>
+    </div>
+  </section>
+
+  <!-- Ejercicio 7: Background image responsive -->
+  <section class="ejercicio">
+    <h2>7. Background image (background-size: cover)</h2>
+    <div class="contenedor-bg">
+      <p>Texto sobre imagen de fondo</p>
+    </div>
+  </section>
+
+  <!-- Ejercicio 8: Galería de imágenes fluidas -->
+  <section class="ejercicio">
+    <h2>8. Galería con Grid (imágenes fluidas)</h2>
+    <div class="galeria-grid">
+      <img src="https://picsum.photos/seed/1/400/300" alt="Foto 1">
+      <img src="https://picsum.photos/seed/2/400/300" alt="Foto 2">
+      <img src="https://picsum.photos/seed/3/400/300" alt="Foto 3">
+      <img src="https://picsum.photos/seed/4/400/300" alt="Foto 4">
+      <img src="https://picsum.photos/seed/5/400/300" alt="Foto 5">
+      <img src="https://picsum.photos/seed/6/400/300" alt="Foto 6">
+    </div>
+  </section>
+
+  <!-- Ejercicio 9: Imagen con figura y caption -->
+  <section class="ejercicio">
+    <h2>9. figure y figcaption (semántico)</h2>
+    <figure class="figura-responsive">
+      <img src="https://picsum.photos/seed/figure/600/400" alt="Paisaje hermoso">
+      <figcaption>Descripción de la imagen con figcaption</figcaption>
+    </figure>
+  </section>
+
+  <!-- Ejercicio 10: Lazy loading -->
+  <section class="ejercicio">
+    <h2>10. Lazy loading (carga diferida)</h2>
+    <div class="contenedor-lazy">
+      <img src="https://picsum.photos/seed/lazy/800/400"
+           alt="Imagen con lazy loading"
+           loading="lazy">
+      <p class="info">loading="lazy" carga la imagen solo cuando está visible</p>
+    </div>
+  </section>
+
+</body>
+</html>

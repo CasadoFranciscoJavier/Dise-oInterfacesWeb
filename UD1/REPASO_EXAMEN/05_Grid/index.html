@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repaso CSS Grid</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Ejercicios CSS Grid</h1>
+
+  <!-- Ejercicio 1: Grid básico -->
+  <section class="ejercicio">
+    <h2>1. Grid básico (3 columnas)</h2>
+    <div class="grid-basico">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 2: grid-template-columns con fr -->
+  <section class="ejercicio">
+    <h2>2. Fracciones (fr) - columnas proporcionales</h2>
+    <div class="grid-fracciones">
+      <div class="item">1fr</div>
+      <div class="item">2fr (doble)</div>
+      <div class="item">1fr</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 3: gap -->
+  <section class="ejercicio">
+    <h2>3. Gap (espaciado entre celdas)</h2>
+    <div class="grid-gap">
+      <div class="item">A</div>
+      <div class="item">B</div>
+      <div class="item">C</div>
+      <div class="item">D</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 4: grid-column (ocupar varias columnas) -->
+  <section class="ejercicio">
+    <h2>4. grid-column (elemento ocupa varias columnas)</h2>
+    <div class="grid-column">
+      <div class="item span-2">Ocupa 2 columnas (1/3)</div>
+      <div class="item">Normal</div>
+      <div class="item">Normal</div>
+      <div class="item">Normal</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 5: grid-row (ocupar varias filas) -->
+  <section class="ejercicio">
+    <h2>5. grid-row (elemento ocupa varias filas)</h2>
+    <div class="grid-row">
+      <div class="item">1</div>
+      <div class="item span-row">Ocupa 2 filas</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 6: Posicionamiento exacto -->
+  <section class="ejercicio">
+    <h2>6. Posicionamiento exacto con líneas</h2>
+    <div class="grid-posicion">
+      <div class="item pos-1">Columna 1-3, Fila 1-2</div>
+      <div class="item pos-2">Col 3-4, Fila 1-3</div>
+      <div class="item pos-3">Col 1-2, Fila 2-3</div>
+      <div class="item pos-4">Col 2-3, Fila 2-3</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 7: repeat() -->
+  <section class="ejercicio">
+    <h2>7. repeat() - repetir columnas</h2>
+    <div class="grid-repeat">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 8: auto-fit + minmax -->
+  <section class="ejercicio">
+    <h2>8. auto-fit + minmax (responsive automático)</h2>
+    <div class="grid-autofit">
+      <div class="item">Auto 1</div>
+      <div class="item">Auto 2</div>
+      <div class="item">Auto 3</div>
+      <div class="item">Auto 4</div>
+      <div class="item">Auto 5</div>
+      <div class="item">Auto 6</div>
+    </div>
+    <p class="info">Redimensiona la ventana para ver el efecto</p>
+  </section>
+
+  <!-- Ejercicio 9: grid-template-areas -->
+  <section class="ejercicio">
+    <h2>9. grid-template-areas (layout con nombres)</h2>
+    <div class="grid-areas">
+      <div class="item area-header">Header</div>
+      <div class="item area-sidebar">Sidebar</div>
+      <div class="item area-main">Main</div>
+      <div class="item area-footer">Footer</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 10: Grid complejo combinado -->
+  <section class="ejercicio">
+    <h2>10. Grid complejo (combinación de técnicas)</h2>
+    <div class="grid-complejo">
+      <div class="item complejo-1">1 (2x2)</div>
+      <div class="item complejo-2">2</div>
+      <div class="item complejo-3">3</div>
+      <div class="item complejo-4">4 (2 cols)</div>
+      <div class="item complejo-5">5</div>
+      <div class="item complejo-6">6</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 11: justify-items y align-items -->
+  <section class="ejercicio">
+    <h2>11. Alineación de items (justify + align)</h2>
+    <div class="grid-alineacion">
+      <div class="item-pequeño">Centrado</div>
+      <div class="item-pequeño">Centrado</div>
+      <div class="item-pequeño">Centrado</div>
+      <div class="item-pequeño">Centrado</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 12: Grid con media queries -->
+  <section class="ejercicio">
+    <h2>12. Grid responsive con media queries</h2>
+    <div class="grid-responsive">
+      <div class="item">Card 1</div>
+      <div class="item">Card 2</div>
+      <div class="item">Card 3</div>
+      <div class="item">Card 4</div>
+      <div class="item">Card 5</div>
+      <div class="item">Card 6</div>
+    </div>
+    <p class="info">Móvil: 1 col | Tablet: 2 cols | Desktop: 3 cols</p>
+  </section>
+
+</body>
+</html>
