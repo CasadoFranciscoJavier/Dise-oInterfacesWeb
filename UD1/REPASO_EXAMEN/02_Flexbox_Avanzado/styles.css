@@ -232,6 +232,7 @@ h1 {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+  box-shadow:#004466 0 2px 4px -1px;
 }
 
 .btn-fondo:hover {
