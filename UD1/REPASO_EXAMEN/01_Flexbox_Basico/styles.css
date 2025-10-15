@@ -93,7 +93,7 @@ h1 {
    - Centra los elementos en el eje transversal (vertical si flex-direction es row)
    ======================================== */
 .align-center {
-  align-items: center;
+  align-items:center;
 }
 
 /* Clase auxiliar para dar altura al contenedor */
@@ -106,6 +106,7 @@ h1 {
    EJERCICIO 6: flex-wrap: wrap
    - Permite que los elementos se envuelvan en varias líneas
    - Sin wrap, todos los elementos se comprimen en una línea
+   - le indica a los elementos hijos (items flex) que se muevan a una nueva línea si no caben en la línea actual.
    ======================================== */
 .wrap {
   flex-wrap: wrap;
