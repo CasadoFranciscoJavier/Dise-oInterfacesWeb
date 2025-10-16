@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHULETA COMPLETA - UD1 Diseño Interfaces Web</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- HEADER PRINCIPAL -->
+  <header class="main-header">
+    <div class="nombre">Javi Casado</div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#sobreMi">Sobre mí</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="contenedor-picture">
+      <picture>
+        <!-- Desktop: imagen horizontal -->
+        <source media="(min-width: 1024px)"
+                srcset="./img/chikito_escritorio.webp">
+        <!-- Tablet: imagen cuadrada -->
+        <source media="(min-width: 600px)"
+                srcset="./img/chikito_tablet.webp">
+        <!-- Móvil: imagen vertical (por defecto) -->
+        <img src="./img/chikito_movil.jpg"
+             alt="Imagen responsive con picture">
+      </picture>
+    </div>
+  </section>
+
+    <!-- SECCIÓN DE PROYECTOS -->
+  <section class="proyectos">
+  <h2>Proyectos</h2>
+  <div class="galeria-grid">
+    
+    <figure class="proyecto-item">
+      <img src="https://picsum.photos/seed/1/400/300" alt="Proyecto 1">
+      <figcaption>Proyecto 1</figcaption>
+    </figure>
+    
+    <figure class="proyecto-item">
+      <img src="https://picsum.photos/seed/2/400/300" alt="Proyecto 2">
+      <figcaption>Proyecto 2</figcaption>
+    </figure>
+
+    <figure class="proyecto-item">
+      <img src="https://picsum.photos/seed/3/400/300" alt="Proyecto 3">
+      <figcaption>Proyecto 3</figcaption>
+    </figure>
+
+    <figure class="proyecto-item">
+      <img src="https://picsum.photos/seed/4/400/300" alt="Proyecto 4">
+      <figcaption>Proyecto 4</figcaption>
+    </figure>
+    <figure class="proyecto-item">
+      <img src="https://picsum.photos/seed/5/400/300" alt="Proyecto 5">
+      <figcaption>Proyecto 5</figcaption>
+    </figure>
+    <figure class="proyecto-item">
+      <img src="https://picsum.photos/seed/6/400/300" alt="Proyecto 6">
+      <figcaption>Proyecto 6</figcaption>
+    </figure>
+    
+  </div>
+</section>
+
+<section id="contacto" class="seccion-contacto">
+    <h2>Contacto</h2>
+    <p>Puedes encontrarnos en nuestra oficina central:</p>
+    
+    <div class="mapa-responsive">
+        <iframe 
+            src="URL_DE_TU_MAPA_DE_GOOGLE_MAPS" 
+            width="600" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación de la oficina en Google Maps">
+        </iframe>
+    </div>
+
+    <div class="formulario-contacto">
+        <h3>Envíanos un mensaje</h3>
+        <form action="#" method="POST">
+            <div class="grupo-form">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="grupo-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="grupo-form">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+        </form>
+    </div>
+</section>
+
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <p>Chuleta de Repaso UD1 - Diseño de Interfaces Web</p>
+    <p>Todos los conceptos esenciales en un solo documento</p>
+  </footer>
+
+</body>
+</html>
