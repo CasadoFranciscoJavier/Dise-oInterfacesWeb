@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Restaurante La Buena Mesa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/style.css">
+    </head>
+<body>
+    <header class="site-header sticky"> 
+        <div class="brand">La Buena Mesa</div>
+        <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="menu" id="menu" hidden>
+            <a href="#inicio">Inicio</a>
+            <a href="#carta">Carta</a>
+            <a href="#galeria">Galería</a>
+            <a href="#ubicacion">Ubicación</a>
+        </nav>
+        <div class="overlay" hidden></div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Bienvenidos a La Buena Mesa</h1>
+            <a href="#contacto" class="cta-button">Reserva tu mesa</a>
+        </div>
+       <picture>
+        <source media="(min-width: 1024px)"
+                srcset="https://picsum.photos/seed/desktop/1200/400">
+        <source media="(min-width: 600px)"
+                srcset="https://picsum.photos/seed/tablet/800/800">
+        <img src="https://picsum.photos/seed/mobile/400/600"
+             alt="Imagen responsive con picture">
+      </picture>
+    </section>
+    
+    <section id="carta" class="carta">
+        <h2>Nuestra Carta</h2>
+        <div class="carta-grid">
+            <div class="carta-seccion entrantes">
+                <h3>Entrantes</h3>
+                <ul>
+                    <li>Patatas Bravas - 5,00€</li>
+                    <li>Ensalada de la Casa - 8,50€</li>
+                </ul>
+            </div>
+            <div class="carta-seccion principales">
+                <h3>Platos Principales</h3>
+                <ul>
+                    <li>Hamburguesa La Mesa (con patatas) - 12,50€</li>
+                    <li>Lomo de Bacalao - 18,00€</li>
+                    <li>Pollo a la Brasa - 14,00€</li>
+                </ul>
+            </div>
+            <div class="carta-seccion postres">
+                <h3>Postres</h3>
+                <ul>
+                    <li>Tarta de Queso - 4,50€</li>
+                    <li>Helado de Vainilla - 3,50€</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="galeria">
+        <h2>Galería</h2>
+        <div class="galeria-grid">
+            
+            <figure class="galeria-item">
+                <img src="https://picsum.photos/seed/1/400/300" 
+                     alt="Foto de Entrantes"
+                     srcset="https://picsum.photos/seed/1/300/225 300w, 
+                             https://picsum.photos/seed/1/600/450 600w,
+                             https://picsum.photos/seed/1/800/600 800w"
+                     sizes="(max-width: 600px) 100vw, 
+                            (min-width: 1024px) 30vw, 
+                            50vw">
+                <figcaption>Entrantes</figcaption>
+            </figure>
+            
+            <figure class="galeria-item">
+                <img src="https://picsum.photos/seed/2/400/300" 
+                     alt="Foto de Platos Principales"
+                     srcset="https://picsum.photos/seed/2/300/225 300w, 
+                             https://picsum.photos/seed/2/600/450 600w,
+                             https://picsum.photos/seed/2/800/600 800w"
+                     sizes="(max-width: 600px) 100vw, 
+                            (min-width: 1024px) 30vw, 
+                            50vw">
+                <figcaption>Principales</figcaption>
+            </figure>
+
+            <figure class="galeria-item">
+                <img src="https://picsum.photos/seed/3/400/300" 
+                     alt="Foto de Postres"
+                     srcset="https://picsum.photos/seed/3/300/225 300w, 
+                             https://picsum.photos/seed/3/600/450 600w,
+                             https://picsum.photos/seed/3/800/600 800w"
+                     sizes="(max-width: 600px) 100vw, 
+                            (min-width: 1024px) 30vw, 
+                            50vw">
+                <figcaption>Postres</figcaption>
+            </figure>
+
+            <figure class="galeria-item">
+                <img src="https://picsum.photos/seed/4/400/300" 
+                     alt="Foto de Bebidas"
+                     srcset="https://picsum.photos/seed/4/300/225 300w, 
+                             https://picsum.photos/seed/4/600/450 600w,
+                             https://picsum.photos/seed/4/800/600 800w"
+                     sizes="(max-width: 600px) 100vw, 
+                            (min-width: 1024px) 30vw, 
+                            50vw">
+                <figcaption>Bebidas</figcaption>
+            </figure>
+            
+        </div>
+    </section>
+
+    <section id="ubicacion" class="seccion-ubicacion">
+        <h2>Encuéntranos</h2>
+        
+        <div class="mapa-responsive">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3177.3005510660686!2d-3.5937295846985057!3d37.18029957987013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fcb68051756d%3A0x633342512f7166e5!2sAlhambra%2C%2018009%20Granada!5e0!3m2!1ses!2ses!4v1620000000000!5m2!1ses!2ses" 
+                title="Ubicación del Restaurante" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <section id="contacto" class="seccion-contacto">
+        <h2>Reserva y Contacto</h2>
+        <div class="formulario-contacto">
+<h3>Envía tu mensaje</h3>
+<form action="#" method="POST">
+<div class="grupo-form">
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre" name="nombre" required>
+</div>
+<div class="grupo-form">
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+</div>
+<div class="grupo-form">
+<label for="mensaje">Mensaje (Reserva):</label>
+<textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+</div>
+<button type="submit" class="btn-enviar">Enviar Mensaje</button>
+</form>
+</div>
+    </section>
+
+
+<footer class="main-footer">
+<div class="footer-contenido">
+<p class="footer-nombre">Javi Casado</p>
+<div class="footer-enlaces">
+<a href="#" class="enlace-social">LinkedIn</a>
+<span class="separador">|</span>
+<a href="#" class="enlace-social">GitHub</a>
+<span class="separador">|</span>
+<a href="#" class="enlace-social">Email</a>
+</div>
+<p class="footer-copyright">
+© 2025 Javi Casado. Todos los derechos reservados.
+</p>
+</div>
+</footer>
+
+
+<script src="./js/menu.js"></script>
+</body>
+</html>

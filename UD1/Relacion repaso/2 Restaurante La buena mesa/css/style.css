@@ -1,0 +1,365 @@
+/* ================================================
+   1. RESET Y VARIABLES
+   ================================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Unidades: rem y porcentaje */
+    --gap: 1rem;
+    --font-base: 16px;
+    --color-primary: #a31010; /* Rojo principal */
+    --color-text: #111;
+    --color-bg: #fff;
+    --color-light: #f3f4f6;
+}
+
+html {
+    /* Base para la unidad rem */
+    font-size: 100%; 
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+/* ================================================
+   2. HEADER & NAVEGACIÓN (Sticky y Hamburguesa)
+   ================================================ */
+
+.site-header {
+    position: sticky; 
+    top: 0;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--gap);
+    padding: 0.75rem var(--gap);
+    border-bottom: 1px solid #e5e7eb;
+    background-color: var(--color-bg);
+    z-index: 1000; /* CLAVE para que el header esté sobre el menú */
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+}
+
+/* Botón Hamburguesa: Área táctil 44x44px */
+.burger {
+    cursor: pointer;
+    display: inline-grid;
+    gap: 5px;
+    background: none;
+    border: 0;
+    padding: 10px; 
+    min-width: 44px; /* Requisito */
+    min-height: 44px; /* Requisito */
+    justify-self: end;
+}
+
+
+.burger span {
+    width: 24px;
+    height: 2px;
+    background: var(--color-text);
+    display: block;
+    transition: transform .25s ease, opacity .2s ease;
+    transform-origin: 12px 1px;
+}
+
+/* Animación a 'X' */
+.burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger.is-open span:nth-child(2) { opacity: 0; }
+.burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* Menú lateral (Móvil) */
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75vw; /* Unidad: vw */
+    max-width: 300px;
+    height: 100dvh; /* Unidad: dvh */
+    background: var(--color-bg);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transform: translateX(100%);
+    transition: transform .3s ease;
+    z-index: 950; 
+}
+
+.menu.is-open {
+    transform: translateX(0);
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--color-text);
+    padding: 0.5rem 0.625rem;
+    border-radius: 8px;
+    min-height: 44px; /* Área táctil */
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+    background: var(--color-light);
+    outline: none;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+    z-index: 900;
+}
+
+.overlay.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ================================================
+   3. SECCIONES Y HERO
+   ================================================ */
+
+section {
+    padding: 3rem var(--gap);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--color-primary);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    overflow: hidden;
+    height: 80vh; /* Unidad: vh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero picture,
+.hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Requisito: Imágenes fluidas sin distorsión */
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    font-weight: 700;
+    min-width: 44px;
+    min-height: 44px;
+    transition: background-color 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #7b0d0d;
+}
+
+
+/* ================================================
+   4. CARTA (Grid con Áreas)
+   ================================================ */
+
+.carta-grid {
+    display: grid;
+    gap: 1.5rem;
+    /* Móvil: Las tres áreas en una sola columna */
+    grid-template-areas: 
+        "entrantes" 
+        "principales" 
+        "postres";
+}
+
+.entrantes { grid-area: entrantes; }
+.principales { grid-area: principales; }
+.postres { grid-area: postres; }
+
+.carta-seccion {
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.carta-seccion h3 {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.carta-seccion ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* ================================================
+   5. GALERÍA (auto-fit, minmax)
+   ================================================ */
+
+.galeria-grid {
+    display: grid;
+    gap: var(--gap);
+    /* Requisito: auto-fit, minmax(220px, 1fr) */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.galeria-item {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    /* Para prevenir distorsión en el contenedor */
+    aspect-ratio: 4/3; 
+}
+
+
+/* ================================================
+   6. UBICACIÓN (Mapa 16:9)
+   ================================================ */
+
+.mapa-responsive {
+    /* Contenedor para la relación de aspecto 16:9 */
+    position: relative;
+    padding-bottom: 56.25%; /* 9/16 = 0.5625 (16:9) */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.mapa-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* ================================================
+   7. FOOTER Y CONTACTO
+   ================================================ */
+
+.seccion-contacto {
+    padding-top: 0;
+}
+
+.main-footer {
+    background-color: var(--color-text);
+    color: var(--color-light);
+    padding: 2rem var(--gap);
+    text-align: center;
+}
+
+.footer-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-enlaces a {
+    color: var(--color-light);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.footer-copyright {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
+/* ================================================
+   8. MEDIA QUERIES (Escritorio: ≥1024px)
+   ================================================ */
+
+@media (min-width: 1024px) {
+    
+    /* HEADER: Menú horizontal sin hamburguesa */
+    .burger,
+    .overlay {
+        display: none !important; /* Ocultar hamburguesa y overlay */
+    }
+
+    .menu {
+        position: static;
+        transform: none; /* Resetear la transformación móvil */
+        height: auto;
+        width: auto;
+        flex-direction: row;
+        gap: 1.5rem;
+        padding: 0;
+        /* CLAVE: Forzar la visualización horizontal, sobrescribiendo el hidden de JS */
+        display: flex !important; 
+    }
+    
+    /* CARTA: Grid de 3 columnas y reordenación */
+    .carta-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        /* Requisito: grid-template-areas */
+        grid-template-areas: "entrantes principales postres";
+    }
+
+    /* GALERÍA: Ajustar minmax para pantallas grandes */
+    .galeria-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    /* Alinear contenido principal del footer a la izquierda */
+    .footer-contenido {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+}
