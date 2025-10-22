@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ejercicio Combinado - Repaso</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+ 
+  <!-- HEADER + NAV (CSS-only hamburger using checkbox) -->
+  <header class="site-header">
+  <div class="brand">Javi - Portfolio / La Buena Mesa</div>
+
+  <!-- Checkbox del menú hamburguesa -->
+  <input id="menu-toggle" class="menu-toggle" type="checkbox" aria-label="Abrir menú">
+  <!-- Botón hamburguesa -->
+  <label for="menu-toggle" class="burger" aria-hidden="false" title="Abrir menú">
+    <span></span><span></span><span></span>
+  </label>
+
+  <!-- Menú -->
+  <nav class="menu" id="menu">
+    <a href="#inicio">Inicio</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#restaurante">La Buena Mesa</a>
+    <a href="#articulo">Blog</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <!-- Overlay -->
+  <label for="menu-toggle" class="overlay" aria-hidden="true"></label>
+</header>
+
+
+  <!-- HERO con <picture> (art direction) -->
+  <section id="inicio" class="hero">
+    <picture>
+      <source media="(min-width:1024px)" srcset="https://picsum.photos/seed/hero-desktop/1600/450">
+      <source media="(min-width:640px)" srcset="https://picsum.photos/seed/hero-tablet/900/600">
+      <img src="https://picsum.photos/seed/hero-mobile/600/900" alt="Imagen hero responsive" width="1200" height="675" loading="eager">
+    </picture>
+    <div class="hero-content">
+      <h1>Portfolio Junior & Práctica UI</h1>
+      <p>Repaso de patrones: responsive images, grid, menú CSS, aside, mapas y media.</p>
+      <a class="cta" href="#portfolio">Ver proyectos</a>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO: grid responsive con srcset/sizes -->
+  <section id="portfolio" class="portfolio">
+    <h2>Proyectos</h2>
+    <div class="projects-grid">
+      <!-- cada tarjeta con imagen responsive -->
+      <article class="project">
+        <img src="https://picsum.photos/seed/p1/400/300"
+             srcset="https://picsum.photos/seed/p1/400/300 400w, https://picsum.photos/seed/p1/800/600 800w, https://picsum.photos/seed/p1/1200/900 1200w"
+             sizes="(max-width: 639px) 100vw, (max-width: 1023px) 48vw, 30vw"
+             alt="Proyecto 1" loading="lazy" width="1200" height="900">
+        <h3>Proyecto 1</h3>
+        <p>Descripción corta del proyecto.</p>
+      </article>
+
+      <article class="project">
+        <img src="https://picsum.photos/seed/p2/400/300"
+             srcset="https://picsum.photos/seed/p2/400/300 400w, https://picsum.photos/seed/p2/800/600 800w, https://picsum.photos/seed/p2/1200/900 1200w"
+             sizes="(max-width: 639px) 100vw, (max-width: 1023px) 48vw, 30vw"
+             alt="Proyecto 2" loading="lazy" width="1200" height="900">
+        <h3>Proyecto 2</h3>
+        <p>Descripción corta del proyecto.</p>
+      </article>
+
+      <article class="project">
+        <img src="https://picsum.photos/seed/p3/400/300"
+             srcset="https://picsum.photos/seed/p3/400/300 400w, https://picsum.photos/seed/p3/800/600 800w, https://picsum.photos/seed/p3/1200/900 1200w"
+             sizes="(max-width: 639px) 100vw, (max-width: 1023px) 48vw, 30vw"
+             alt="Proyecto 3" loading="lazy" width="1200" height="900">
+        <h3>Proyecto 3</h3>
+        <p>Descripción corta del proyecto.</p>
+      </article>
+
+      <article class="project">
+        <img src="https://picsum.photos/seed/p4/400/300"
+             srcset="https://picsum.photos/seed/p4/400/300 400w, https://picsum.photos/seed/p4/800/600 800w, https://picsum.photos/seed/p4/1200/900 1200w"
+             sizes="(max-width: 639px) 100vw, (max-width: 1023px) 48vw, 30vw"
+             alt="Proyecto 4" loading="lazy" width="1200" height="900">
+        <h3>Proyecto 4</h3>
+        <p>Descripción corta del proyecto.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- RESTAURANTE: carta con grid areas + galería -->
+  <section id="restaurante" class="restaurante">
+    <h2>La Buena Mesa - Carta</h2>
+
+    <div class="carta-grid">
+      <div class="entrantes card">
+        <h3>Entrantes</h3>
+        <ul>
+          <li>Patatas bravas - 5€</li>
+          <li>Ensalada - 7€</li>
+        </ul>
+      </div>
+      <div class="principales card">
+        <h3>Principales</h3>
+        <ul>
+          <li>Hamburguesa - 12€</li>
+          <li>Bacalao - 18€</li>
+        </ul>
+      </div>
+      <div class="postres card">
+        <h3>Postres</h3>
+        <ul>
+          <li>Tarta queso - 4€</li>
+          <li>Helado - 3€</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Galería</h3>
+    <div class="galeria-grid">
+      <figure><img src="https://picsum.photos/seed/g1/400/300" alt="foto1" loading="lazy" width="800" height="600"></figure>
+      <figure><img src="https://picsum.photos/seed/g2/400/300" alt="foto2" loading="lazy" width="800" height="600"></figure>
+      <figure><img src="https://picsum.photos/seed/g3/400/300" alt="foto3" loading="lazy" width="800" height="600"></figure>
+      <figure><img src="https://picsum.photos/seed/g4/400/300" alt="foto4" loading="lazy" width="800" height="600"></figure>
+    </div>
+
+    <!-- mapa responsive (16:9) -->
+    <div class="mapa">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3179.823326326295!2d-3.6048968235834913!3d37.15690024751047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fb56dc06b611%3A0x3ecd927717e908da!2sEscuela%20STEM%20Granada!5e0!3m2!1ses!2ses!4v1760697912699!5m2!1ses!2ses"
+        title="Mapa restaurante" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        width="600" height="338"></iframe>
+    </div>
+  </section>
+
+  <!-- ARTÍCULO LARGO con media y aside -->
+  <section id="articulo" class="article-area">
+    <h2>Artículo: Técnicas responsive</h2>
+    <div class="article-layout">
+      <article class="contenido">
+        <h3>Introducción</h3>
+        <p>Texto de ejemplo para practicar tipografía y legibilidad. El ancho de columna en desktop está limitado en ch.</p>
+
+        <h4>Imagen dentro del artículo</h4>
+        <img src="https://picsum.photos/seed/a1/800/450"
+             srcset="https://picsum.photos/seed/a1/400/225 400w, https://picsum.photos/seed/a1/800/450 800w"
+             sizes="(max-width:639px) 100vw, 50vw"
+             alt="Imagen artículo" loading="lazy" width="800" height="450">
+
+        <h4>Vídeo (16:9)</h4>
+        <div class="video-wrap">
+          <video controls width="1280" height="720" preload="metadata">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento <code>video</code>.
+          </video>
+        </div>
+
+        <h4>Tabla ejemplo</h4>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Item</th><th>Detalle</th><th>Precio</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Algo</td><td>5€</td></tr>
+              <tr><td>2</td><td>Otra cosa</td><td>8€</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <aside class="nota">
+        <h4>Aside / Notas</h4>
+        <p>En móvil aparece debajo. En desktop se coloca a la derecha con grid.</p>
+        <ul>
+          <li>Consejo 1</li>
+          <li>Consejo 2</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- CONTACTO / FOOTER -->
+  <section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <form class="contact-form" action="#" method="post">
+      <label>
+        Nombre
+        <input type="text" name="nombre" required>
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        Mensaje
+        <textarea name="mensaje" rows="4" required></textarea>
+      </label>
+      <button class="btn" type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <p>© 2025 Javica</p>
+  </footer>
+</body>
+</html>

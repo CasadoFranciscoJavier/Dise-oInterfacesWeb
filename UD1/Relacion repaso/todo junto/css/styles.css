@@ -1,0 +1,330 @@
+/* ==========================
+   VARIABLES y RESET
+   ========================== */
+:root{
+  --gap: 1rem;
+  --bg: #fff;
+  --text: #111;
+  --primary: #a31010;
+  --card: #f7f7f7;
+  --focus: 3px solid #ffd54f;
+  --max-width: 1200px;
+}
+
+* { box-sizing: border-box; margin:0; padding:0; }
+html { font-size:100%; } /* 16px base */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.45;
+}
+
+/* ==========================
+   HEADER y NAV (mobile-first)
+   - Usamos input checkbox para abrir/cerrar menú sin JS.
+   - El label .burger es el botón; está position:fixed para quedar por encima.
+   - El overlay es otro label que apunta al mismo checkbox para cerrar al tocar fuera.
+   ========================== */
+.site-header{
+  position:sticky;
+  top:0;
+  background:var(--bg);
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--gap);
+  padding:.75rem 1rem;
+  border-bottom:1px solid #e9e9e9;
+}
+
+/* Brand a la izquierda */
+.brand{ font-weight:700; color:var(--primary); font-size:1.0625rem; }
+
+/* Ocultamos el checkbox visualmente pero accesible por teclado */
+.menu-toggle{
+  position: absolute;
+  left:-9999px;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+/* Botón hamburguesa - fijo a la derecha y encima del menú */
+.burger{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:6px;
+  width:44px;
+  height:44px;
+  padding:10px;
+  background:none;
+  border:0;
+  position:fixed;
+  top:0.75rem;
+  right:1rem;
+  z-index:1100; /* encima del menú desplegable */
+  cursor:pointer;
+}
+
+/* barras */
+.burger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:var(--text);
+  transition: transform .28s ease, opacity .2s ease;
+  transform-origin:center;
+}
+
+/* Menú lateral - por defecto oculto (transform translateX) */
+.menu{
+  position:fixed;
+  top:0;
+  right:0;
+  height:100dvh;
+  width:78vw;
+  max-width:320px;
+  background:var(--bg);
+  transform:translateX(100%);
+  transition: transform .28s ease;
+  padding:3.5rem 1.25rem 1.25rem 1.25rem;
+  display:flex;
+  flex-direction:column;
+  gap:.75rem;
+  z-index:1000; /* debajo del burger */
+  box-shadow: -8px 0 24px rgba(0,0,0,.06);
+}
+
+/* overlay para oscurecer el fondo (aparece con :checked) */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  opacity:0;
+  pointer-events:none;
+  transition: opacity .28s ease;
+  z-index:990;
+}
+
+/* Cuando el checkbox está checked: mostramos menú y overlay y animamos burger -> X */
+.menu-toggle:checked ~ .menu {
+  transform:translateX(0);
+}
+.menu-toggle:checked ~ .overlay {
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* Animación a X: el selector + .burger funciona porque el input está antes del label en DOM */
+.menu-toggle:checked + .burger span:nth-child(1){
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle:checked + .burger span:nth-child(2){
+  opacity:0;
+}
+.menu-toggle:checked + .burger span:nth-child(3){
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Links del menú */
+.menu a{
+  display:block;
+  text-decoration:none;
+  color:var(--text);
+  padding:.75rem;
+  border-radius:8px;
+  min-height:44px; /* área táctil mínima */
+}
+.menu a:focus, .menu a:hover { outline:none; }
+
+/* ==========================
+   HERO
+   - picture con imagen responsiva.
+   - el texto del hero va sobre la imagen con overlay semitransparente.
+   ========================== */
+.hero{
+  position:relative;
+  height:66vh;
+  min-height:380px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+/* imagen de hero ocupa todo y usa object-fit para evitar distorsión */
+.hero picture, .hero img {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+}
+
+/* contenido del hero */
+.hero-content{
+  position:relative;
+  z-index:1;
+  background: rgba(0,0,0,0.5);
+  color:#fff;
+  padding:1rem 1.25rem;
+  border-radius:8px;
+  text-align:center;
+}
+.cta{
+  display:inline-block;
+  margin-top:.5rem;
+  background:var(--primary);
+  color:#fff;
+  text-decoration:none;
+  padding:.6rem 1rem;
+  border-radius:6px;
+  min-width:44px;
+  min-height:44px;
+}
+
+/* ==========================
+   PROJECTS GRID
+   - repeat(auto-fit, minmax()) móvil primero.
+   - srcset/sizes en HTML permite servir imágenes distintas según viewport/DPR.
+   ========================== */
+.portfolio{ padding:2rem 1rem; max-width:var(--max-width); margin:0 auto; }
+.projects-grid{
+  display:grid;
+  gap:1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.project{ background:var(--card); padding:.75rem; border-radius:8px; }
+.project img{ width:100%; height:auto; display:block; border-radius:6px; aspect-ratio:4/3; object-fit:cover; }
+
+/* ==========================
+   RESTAURANTE: carta con grid-template-areas
+   - Móvil: áreas apiladas.
+   - Desktop: 3 columnas con áreas.
+   ========================== */
+.restaurante{ padding:2rem 1rem; max-width:var(--max-width); margin:0 auto; }
+.carta-grid{
+  display:grid;
+  gap:1rem;
+  grid-template-areas:
+    "entrantes"
+    "principales"
+    "postres";
+}
+.card{ background:var(--card); padding:1rem; border-radius:8px; }
+
+/* Asignación de áreas */
+.entrantes{ grid-area:entrantes; }
+.principales{ grid-area:principales; }
+.postres{ grid-area:postres; }
+
+/* Galería responsive */
+.galeria-grid{
+  display:grid;
+  gap:.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  margin-top:.75rem;
+}
+.galeria-grid img{ width:100%; height:auto; display:block; aspect-ratio:4/3; object-fit:cover; border-radius:6px; }
+
+/* Mapa responsivo: usamos aspect-ratio en iframe para evitar CLS */
+.mapa{ margin-top:1rem; background:#000; border-radius:8px; overflow:hidden; }
+.mapa iframe{ width:100%; height:100%; border:0; display:block; aspect-ratio:16/9; }
+
+/* ==========================
+   ARTÍCULO + ASIDE
+   - Móvil: aside debajo.
+   - Desktop: grid 2 columnas (contenido + aside)
+   - ancho de lectura en ch para mejorar legibilidad
+   ========================== */
+.article-area{ padding:2rem 1rem; max-width:var(--max-width); margin:0 auto; }
+.article-layout{ display:block; gap:1rem; }
+.contenido{ max-width:60ch; margin:0 auto; }
+.contenido img{ width:100%; height:auto; display:block; margin:1rem 0; border-radius:6px; aspect-ratio:16/9; object-fit:cover; }
+
+/* video wrap evita CLS y mantiene 16:9 */
+.video-wrap{ width:100%; max-width:100%; border-radius:8px; overflow:hidden; background:#000; }
+.video-wrap video{ width:100%; height:auto; display:block; aspect-ratio:16/9; }
+
+/* tablas: permiten scroll horizontal en móvil sin romper layout */
+.table-wrap{ overflow:auto; margin:1rem 0; }
+.table-wrap table{ width:100%; border-collapse:collapse; min-width:600px; }
+.table-wrap th, .table-wrap td{ padding:.5rem; border:1px solid #e5e5e5; text-align:left; }
+
+/* aside */
+.nota{ background:var(--card); padding:1rem; border-radius:8px; margin-top:1rem; }
+
+/* ==========================
+   CONTACTO / FOOTER
+   ========================== */
+.contacto{ padding:2rem 1rem; max-width:600px; margin:0 auto; }
+.contact-form{ display:grid; gap:.5rem; }
+.contact-form label{ display:flex; flex-direction:column; gap:.35rem; }
+.contact-form input, .contact-form textarea{ padding:.5rem; border-radius:6px; border:1px solid #ddd; }
+.btn{ background:var(--primary); color:#fff; padding:.6rem; border-radius:6px; border:0; cursor:pointer; }
+
+/* ==========================
+   MEDIA QUERIES (tablet >=640px, desktop >=1024px)
+   - Cambios de layout y reordenación usando grid-template-areas.
+   ========================== */
+@media (min-width:640px){
+  .hero{ height:56vh; min-height:420px; }
+  .projects-grid{ gap:1rem; grid-template-columns: repeat(2, 1fr); }
+  .carta-grid{ grid-template-columns: 1fr 1fr; grid-template-areas: "entrantes principales" "postres postres"; }
+  .article-layout{ display:grid; grid-template-columns: 1fr; gap:1rem; }
+  .contenido{ margin:0; }
+}
+
+@media (min-width:1024px){
+  /* menú horizontal en desktop: escondemos botón y overlay */
+  .burger, .overlay { display:none; }
+  .menu{
+    position:static;
+    transform:none;
+    display:flex;
+    flex-direction:row;
+    gap:1rem;
+    height:auto;
+    width:auto;
+    padding:0;
+    background:transparent;
+    box-shadow:none;
+  }
+  .menu a{ padding:0; min-height:0; }
+
+  /* portfolio: 3 columnas */
+  .projects-grid{ grid-template-columns: repeat(3, 1fr); }
+
+  /* carta: 3 columnas con áreas */
+  .carta-grid{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "entrantes principales postres";
+  }
+
+  /* article + aside: dos columnas */
+  .article-layout{ display:grid; grid-template-columns: 2fr 320px; gap:1.5rem; align-items:start; }
+  .contenido{ max-width:none; }
+  .nota{ position:sticky; top:1rem; height:max-content; }
+}
+
+/* ==========================
+   ACCESIBILIDAD: foco visible
+   ========================== */
+a:focus, button:focus, input:focus, textarea:focus { outline:var(--focus); outline-offset:3px; }
+
+/* ==========================
+   MODO OSCURO (prefers-color-scheme)
+   ========================== */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b0b0c;
+    --text:#e6e6e6;
+    --card:#121214;
+    --primary:#ff6b6b;
+  }
+  .hero-content{ background: rgba(0,0,0,0.55); }
+}
