@@ -57,7 +57,7 @@ h1 {
 }
 
 .caja-px p {
-  font-size: 16px;   /* Tamaño de fuente fijo de 16 píxeles */
+  font-size: 16px;   /* Tamaño de fuente fijo de 16 píxeles. Si hubieramos puesto 1rem tendría el mismo tamaño de letra tambien*/
 }
 
 
