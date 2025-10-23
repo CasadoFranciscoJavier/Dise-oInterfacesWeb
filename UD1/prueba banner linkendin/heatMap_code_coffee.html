@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Contributions - </> & COFFEE</title>
+    <style>
+        /* Estilos generales para simular el tema oscuro de GitHub */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            /* Fondo de la página */
+            background: #0d1117; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            color: #c9d1d9;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: #0d1117;
+            max-width: 1200px;
+            width: 100%;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .contributions-count {
+            font-size: 14px;
+            font-weight: 400;
+            color: #c9d1d9;
+        }
+        .settings {
+            font-size: 12px;
+            color: #7d8590;
+            cursor: pointer;
+        }
+        /* Contenedor del gráfico y scroll horizontal */
+        /* .graph-container {
+            position: relative;
+            overflow-x: auto;
+            overflow-y: visible;
+            padding: 20px 0;
+        } */
+        .graph {
+            display: inline-block;
+            min-width: 100%;
+        }
+        /* Etiquetas de meses */
+        .months {
+            /* Se necesita un ancho dinámico para que los meses se posicionen correctamente */
+            width: 100%; 
+            height: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            margin-left: 27px; /* Alinear con la cuadrícula de días */
+        }
+        .month {
+            font-size: 10px;
+            color: #7d8590;
+            text-align: left;
+            position: absolute; /* Usar posicionamiento absoluto para simular la distribución de GitHub */
+        }
+        /* Contenedor principal de días (etiquetas y cuadrícula) */
+        .days-wrapper {
+            display: flex;
+            gap: 0;
+        }
+        /* Etiquetas de los días de la semana */
+        .days-labels {
+            display: flex;
+            flex-direction: column;
+            gap: 3px; /* Espacio entre las filas de cuadrados */
+            padding-right: 8px;
+        }
+        .day-label {
+            height: 11px; /* Altura de cada cuadrado de contribución */
+            font-size: 9px;
+            color: #7d8590;
+            display: flex;
+            align-items: center;
+            line-height: 11px;
+        }
+        /* La cuadrícula de commits (Grid Layout) */
+        .grid {
+            display: inline-grid;
+            grid-template-rows: repeat(7, 11px);
+            grid-auto-flow: column; /* Para que fluya por columnas (semanas) */
+            gap: 3px; /* Espacio entre los cuadrados */
+        }
+        .day {
+            width: 11px;
+            height: 11px;
+            border-radius: 2px;
+            cursor: pointer;
+            outline: 1px solid rgba(27, 31, 35, 0.06); 
+            transition: outline 0.1s;
+        }
+        .day:hover {
+            outline: 1px solid rgba(255, 255, 255, 0.5); /* Resaltar al pasar el ratón */
+            outline-offset: 0;
+        }
+        
+        /* Niveles de contribución (Colores del mapa de calor de GitHub) */
+        .level-0 { background-color: #161b22; } /* No commits (Fondo) */
+        .level-1 { background-color: #0e4429; } /* Menos commits */
+        .level-2 { background-color: #006d32; }
+        .level-3 { background-color: #26a641; }
+        .level-4 { background-color: #39d353; } /* Más commits (usado para el arte) */
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+            padding-left: 27px;
+        }
+        .learn-link {
+            font-size: 12px;
+            color: #539bf5;
+            text-decoration: none;
+        }
+        .learn-link:hover {
+            text-decoration: underline;
+        }
+        .legend {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            color: #7d8590;
+        }
+        .legend-item {
+            width: 11px;
+            height: 11px;
+            border-radius: 2px;
+            outline: 1px solid rgba(27, 31, 35, 0.06);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="contributions-count">
+                <!-- Número grande y llamativo para un perfil activo -->
+                368 ontributions in the last year</div>
+            <div class="settings">Contribution settings ▾</div>
+        </div>
+        
+        <div class="graph-container">
+            <div class="graph">
+                <div class="months" id="months"></div>
+                
+                <div class="days-wrapper">
+                    <div class="days-labels">
+                        <!-- Etiquetas de los días: Domingo a Sábado -->
+                        <div class="day-label"></div>
+                        <div class="day-label">Mon</div>
+                        <div class="day-label"></div>
+                        <div class="day-label">Wed</div>
+                        <div class="day-label"></div>
+                        <div class="day-label">Fri</div>
+                        <div class="day-label"></div>
+                    </div>
+                    <div class="grid" id="grid"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <a href="https://github.com/settings/profile" class="learn-link">Learn how we count contributions.</a>
+            <div class="legend">
+                <span>Less</span>
+                <div class="legend-item level-0"></div>
+                <div class="legend-item level-1"></div>
+                <div class="legend-item level-2"></div>
+                <div class="legend-item level-3"></div>
+                <div class="legend-item level-4"></div>
+                <span>More</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Patrones de Letras y Símbolos (7 filas de altura) ---
+        // Se han ajustado todos los patrones a 4 columnas de ancho (excepto '/') para garantizar que la frase quepa y sea más clara.
+        const letterPatterns = {
+            // Símbolo de apertura de tag '<' (7x4) - Angular y más claro
+            '<': [
+                [0,0,4,0], 
+                [0,4,0,0], 
+                [4,0,0,0], 
+                [4,0,0,0], 
+                [4,0,0,0], 
+                [0,4,0,0], 
+                [0,0,4,0]  
+            ],
+            // Símbolo de barra '/' (7x5) - Mantiene 5 de ancho para una diagonal suave
+            '/': [
+                [0,0,0,0,4], 
+                [0,0,0,4,0], 
+                [0,0,4,0,0], 
+                [0,4,0,0,0], 
+                [4,0,0,0,0], 
+                [0,0,0,0,0], 
+                [0,0,0,0,0]
+            ],
+            // Símbolo de cierre de tag '>' (7x4) - Angular y más claro
+            '>': [
+                [0,4,0,0], 
+                [0,0,4,0], 
+                [0,0,0,4], 
+                [0,0,0,4], 
+                [0,0,0,4], 
+                [0,0,4,0], 
+                [0,4,0,0]
+            ],
+            // Símbolo de ampersand '&' (7x4) - Más compacto
+            '&': [
+                [0,4,4,0], 
+                [4,0,0,4], 
+                [0,4,4,0], 
+                [4,0,4,4], 
+                [4,0,4,4], 
+                [0,4,0,4], 
+                [0,0,0,0]
+            ],
+            // Letra C (7x4) - Más compacto y definido
+            'C': [
+                [0,4,4,0], 
+                [4,0,0,4], 
+                [4,0,0,0], 
+                [4,0,0,0], 
+                [4,0,0,0], 
+                [4,0,0,4], 
+                [0,4,4,0]
+            ],
+            // Letra O (7x4) - Más compacto
+            'O': [
+                [0,4,4,0], 
+                [4,0,0,4], 
+                [4,0,0,4], 
+                [4,0,0,4], 
+                [4,0,0,4], 
+                [4,0,0,4], 
+                [0,4,4,0]
+            ],
+            // Letra F (7x4) - Más compacto
+            'F': [
+                [4,4,4,4], 
+                [4,0,0,0], 
+                [4,0,0,0], 
+                [4,4,4,0], 
+                [4,0,0,0], 
+                [4,0,0,0], 
+                [4,0,0,0] 
+            ],
+            // Letra E (7x4) - Más compacto
+            'E': [
+                [4,4,4,4], 
+                [4,0,0,0], 
+                [4,0,0,0], 
+                [4,4,4,0], 
+                [4,0,0,0], 
+                [4,0,0,0], 
+                [4,4,4,4]
+            ],
+            // Espacio de columna simple (para separación)
+            ' ': [
+                [0], [0], [0], [0], [0], [0], [0]
+            ]
+        };
+
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const totalWeeks = 53;
+        
+        // Define la secuencia de los caracteres que se dibujarán
+        const phrase = ['<', '/', '>', '&', 'C', 'O', 'F', 'F', 'E', 'E'];
+        
+        // Inicializa la cuadrícula de commits a 0
+        let grid = Array(7).fill().map(() => Array(totalWeeks).fill(0));
+
+        let startWeek = 2; // Comenzar la escritura desde la columna 2 para centrar mejor
+        const sectionGap = 2; // 2 columnas de espacio entre secciones (</> | & | COFFEE)
+        const letterGap = 1; // 1 columna de espacio entre letras/símbolos
+
+        // Rellena la cuadrícula con el patrón de la frase
+        phrase.forEach((char, index) => {
+            const pattern = letterPatterns[char];
+            if (!pattern) return; // Carácter no definido
+
+            const letterWidth = pattern[0].length;
+            
+            // 1. Dibuja el carácter
+            for (let row = 0; row < 7; row++) {
+                for (let col = 0; col < letterWidth; col++) {
+                    const gridCol = startWeek + col;
+                    if (gridCol < totalWeeks) {
+                        // Asegura que el nivel sea 4 si el patrón lo dicta
+                        grid[row][gridCol] = pattern[row][col] || 0; 
+                    }
+                }
+            }
+            
+            // 2. Mueve el punto de inicio para el siguiente elemento
+            startWeek += letterWidth; 
+
+            // 3. Agrega el espacio (gap)
+            // Espacio de sección después de '>' y '&'
+            if (char === '>' || char === '&') {
+                startWeek += sectionGap;
+            } 
+            // Espacio normal entre otras letras/símbolos, excepto la última 'E'
+            else if (index < phrase.length - 1) { 
+                startWeek += letterGap;
+            }
+        });
+
+        // --- Lógica de Dibujo y Ruido ---
+
+        // Dibuja las etiquetas de los meses
+        const monthsContainer = document.getElementById('months');
+        // Define las semanas aproximadas donde inician los meses para simular la distribución de GitHub
+        const monthStartWeeks = [1, 5, 9, 13, 17, 22, 26, 30, 34, 39, 43, 47]; 
+        
+        for (let i = 0; i < monthNames.length; i++) {
+            const startCol = monthStartWeeks[i];
+            const endCol = monthStartWeeks[i + 1] || totalWeeks;
+            const columnsForMonth = endCol - startCol;
+
+            const month = document.createElement('div');
+            month.className = 'month';
+            month.textContent = monthNames[i];
+            
+            // Posicionar y dimensionar el mes. 14px es el ancho de celda (11px) + gap (3px).
+            month.style.width = `calc(${columnsForMonth} * 14px)`;
+            month.style.left = `calc(${startCol * 14}px + 27px)`; 
+
+            monthsContainer.appendChild(month);
+        }
+
+        // Dibuja la cuadrícula completa de commits (incluyendo el arte y el ruido)
+        const gridContainer = document.getElementById('grid');
+        for (let col = 0; col < totalWeeks; col++) {
+            for (let row = 0; row < 7; row++) {
+                let finalLevel = grid[row][col];
+                
+                // Si la celda es 0 (fondo/espacio en blanco), añadir algo de ruido (contribuciones aleatorias)
+                if (finalLevel === 0) {
+                    const rand = Math.random();
+                    // Distribución de commits de fondo, reduciendo los niveles altos para un mayor contraste
+                    if (rand < 0.88) finalLevel = 0; // 88% Nivel 0 (Fondo)
+                    else if (rand < 0.96) finalLevel = 1; // 8% Nivel 1
+                    else finalLevel = 2; // 4% Nivel 2 (Máximo para ruido de fondo)
+                }
+                
+                const day = document.createElement('div');
+                day.className = `day level-${finalLevel}`;
+                // Añadir un tooltip (simulado) al pasar el ratón
+                day.title = `${finalLevel} commits on day ${row + 1} of week ${col + 1}`;
+                gridContainer.appendChild(day);
+            }
+        }
+        
+    </script>
+</body>
+</html>
