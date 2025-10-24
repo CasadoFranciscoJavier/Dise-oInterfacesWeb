@@ -267,6 +267,7 @@ h1 {
 }
 
 .complejo-6 {
+  grid-column: 2 / 5;
   background-color: #1abc9c;
 }
 
