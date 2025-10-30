@@ -239,7 +239,7 @@ body {
    ARTÍCULO + ASIDE
    - Móvil: aside debajo.
    - Desktop: grid 2 columnas (contenido + aside)
-   - ancho de lectura en ch para mejorar legibilidad
+   - ancho de lectura en ch para mejorar legibilidad 
    ========================== */
 .article-area{ padding:2rem 1rem; max-width:var(--max-width); margin:0 auto; }
 .article-layout{ display:block; gap:1rem; }
