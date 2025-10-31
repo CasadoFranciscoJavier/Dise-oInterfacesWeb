@@ -1,0 +1,26 @@
+/*
+RELACIÓN 2 · EJERCICIO 1 · Rebote vertical
+Aplica una animación que haga que las figuras suban y bajen continuamente 50 px.
+El movimiento debe ser alterno, con una duración de 1 s y repetirse de forma infinita.
+*/
+
+:root { --lado: 100px; }
+
+.cuadrado { width: var(--lado); height: var(--lado); background: #1e90ff; display:block; }
+
+.circulo { width: var(--lado); height: var(--lado); border-radius: 50%; background: #1e90ff; display:block; }
+
+.triangulo {
+  width: 0; height: 0; display:block;
+  border-left: calc(var(--lado) / 2) solid transparent;
+  border-right: calc(var(--lado) / 2) solid transparent;
+  border-bottom: var(--lado) solid #1e90ff;
+}
+
+.rombo {
+  width: var(--lado); height: var(--lado); background:#1e90ff; display:block;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+.rectangulo { width: 160px; height: 90px; background:#1e90ff; display:block; }

@@ -1,0 +1,28 @@
+/*
+RELACIÓN 2 · EJERCICIO 2 · Rotación infinita
+Aplica una animación que haga que las figuras giren de forma continua.
+Deben rotar 360 grados en 3 s, con una velocidad constante y repetición infinita.
+*/
+
+:root { --lado: 100px; }
+
+.cuadrado { width: var(--lado); height: var(--lado); background: #1e90ff; display:block; }
+
+.circulo { width: var(--lado); height: var(--lado); border-radius: 50%; background: #1e90ff; display:block; }
+
+.triangulo {
+  width: 0; height: 0; display:block;
+  border-left: calc(var(--lado) / 2) solid transparent;
+  border-right: calc(var(--lado) / 2) solid transparent;
+  border-bottom: var(--lado) solid #1e90ff;
+}
+
+.rombo {
+  width: var(--lado); height: var(--lado); background:#1e90ff; display:block;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+.rectangulo { width: 160px; height: 90px; background:#1e90ff; display:block; }
+
+:root { --lado: 110px; }

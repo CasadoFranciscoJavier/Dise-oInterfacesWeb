@@ -1,0 +1,52 @@
+/*
+RELACIÓN 1 · EJERCICIO 4 · Transición con varias propiedades
+Al pasar el ratón, las figuras deben cambiar su color de fondo, aumentar su tamaño de 100 px a 200 px y rotar 45 grados.
+Todo debe ocurrir de forma suave en 1 s.
+*/
+
+:root { --lado: 100px; }
+
+.cuadrado { width: var(--lado); height: var(--lado); background: #1e90ff; display:block; }
+
+.circulo { width: var(--lado); height: var(--lado); border-radius: 50%; background: #1e90ff; display:block; }
+
+.triangulo {
+  width: 0; height: 0; display:block;
+  border-left: calc(var(--lado) / 2) solid transparent;
+  border-right: calc(var(--lado) / 2) solid transparent;
+  border-bottom: var(--lado) solid #1e90ff;
+}
+
+.rombo {
+  width: var(--lado); height: var(--lado); background:#1e90ff; display:block;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+
+.lienzo { grid-template-columns: repeat(3, minmax(220px, 1fr)); }
+
+
+
+.cuadrado, .circulo, .rombo {
+    transition: 1s ease;
+}
+
+.cuadrado:hover{
+    width: 200px;
+    height: 200px;
+    background-color: #2ecc71;
+    transform: rotate(45deg);
+}
+
+.rombo:hover {
+    width: 200px;
+    height: 200px;
+    background-color: #210c53;
+    transform: rotate(90deg); 
+}
+
+.circulo:hover {
+    background-color: #cc2e85;
+    transform: scale(2) rotate(45deg);
+}
