@@ -6,23 +6,34 @@ La animación debe durar 4 s y repetirse infinitamente.
 
 :root { --lado: 100px; }
 
-.cuadrado { width: var(--lado); height: var(--lado); background: #1e90ff; display:block; }
-
-.circulo { width: var(--lado); height: var(--lado); border-radius: 50%; background: #1e90ff; display:block; }
-
-.triangulo {
-  width: 0; height: 0; display:block;
-  border-left: calc(var(--lado) / 2) solid transparent;
-  border-right: calc(var(--lado) / 2) solid transparent;
-  border-bottom: var(--lado) solid #1e90ff;
+@keyframes secuencia-color {
+  0% {
+    background-color: #1e90ff; 
+  }
+  25% {
+    background-color: #3cb371; 
+  }
+  50% {
+    background-color: #ffd700; 
+  }
+  75% {
+    background-color: #ff4500; 
+  }
+  100% {
+    background-color: #1e90ff; 
+  }
 }
 
-.rombo {
-  width: var(--lado); height: var(--lado); background:#1e90ff; display:block;
-  transform: rotate(45deg);
-  transform-origin: center;
+
+
+.cuadrado { 
+  width: var(--lado); 
+  height: var(--lado); 
+  background: #1e90ff; /* Color base */
+  display: block; 
+  /* Aplicar animación */
+  animation: secuencia-color 4s linear infinite;
 }
 
-.rectangulo { width: 160px; height: 90px; background:#1e90ff; display:block; }
 
 :root { --lado: 140px; } .lienzo { grid-auto-flow: row; }

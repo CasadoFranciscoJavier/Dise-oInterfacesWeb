@@ -4,23 +4,27 @@ Aplica una animación en la que las figuras se desplacen 200 px hacia la derecha
 La animación debe durar 3 s y repetirse de forma infinita.
 */
 
-:root { --lado: 100px; }
+:root {
+  --lado: 100px;
+}
 
-.cuadrado { width: var(--lado); height: var(--lado); background: #1e90ff; display:block; }
-
-.circulo { width: var(--lado); height: var(--lado); border-radius: 50%; background: #1e90ff; display:block; }
-
-.triangulo {
-  width: 0; height: 0; display:block;
-  border-left: calc(var(--lado) / 2) solid transparent;
-  border-right: calc(var(--lado) / 2) solid transparent;
-  border-bottom: var(--lado) solid #1e90ff;
+@keyframes movimiento-color-combinado {
+  0%, 100% {
+    transform: translateX(0) rotate(45deg); 
+    background-color: #1e90ff; 
+  }
+  50% {
+    transform: translateX(200px) rotate(45deg); 
+    background-color: #ff4500; 
+  }
 }
 
 .rombo {
-  width: var(--lado); height: var(--lado); background:#1e90ff; display:block;
+  width: var(--lado);
+  height: var(--lado);
+  background: #1e90ff;
+  display: block;
   transform: rotate(45deg);
   transform-origin: center;
+  animation: movimiento-color-combinado 3s ease-in-out infinite;
 }
-
-.rectangulo { width: 160px; height: 90px; background:#1e90ff; display:block; }

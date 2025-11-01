@@ -6,21 +6,28 @@ El movimiento debe ser alterno, con una duración de 1 s y repetirse de forma in
 
 :root { --lado: 100px; }
 
-.cuadrado { width: var(--lado); height: var(--lado); background: #1e90ff; display:block; }
-
-.circulo { width: var(--lado); height: var(--lado); border-radius: 50%; background: #1e90ff; display:block; }
-
-.triangulo {
-  width: 0; height: 0; display:block;
-  border-left: calc(var(--lado) / 2) solid transparent;
-  border-right: calc(var(--lado) / 2) solid transparent;
-  border-bottom: var(--lado) solid #1e90ff;
+.cuadrado { 
+  width: var(--lado); 
+  height: var(--lado); 
+  background: #1e90ff; 
+  display: block; 
+  animation: rebote 1s alternate infinite;
 }
 
-.rombo {
-  width: var(--lado); height: var(--lado); background:#1e90ff; display:block;
-  transform: rotate(45deg);
-  transform-origin: center;
+.circulo { 
+  width: var(--lado); 
+  height: var(--lado); 
+  border-radius: 50%; 
+  background: #1e90ff; 
+  display: block; 
+  animation: rebote 1s alternate infinite;
 }
 
-.rectangulo { width: 160px; height: 90px; background:#1e90ff; display:block; }
+@keyframes rebote {
+  0% {
+    transform: translateY(0); 
+  }
+  100% {
+    transform: translateY(-50px); 
+  }
+}
