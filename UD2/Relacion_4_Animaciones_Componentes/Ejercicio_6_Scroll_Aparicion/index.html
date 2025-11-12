@@ -22,6 +22,29 @@
 </section>
     </div>
   </main>
+
+   <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.scroll-item');
+            
+            // Opciones del observador: El 30% del elemento debe ser visible para activarse.
+            const options = { threshold: 0.3 };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // Si el elemento está visible en el viewport
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Detener la observación una vez que la animación se ha activado
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, options);
+            
+            // Observar cada bloque de contenido
+            items.forEach(item => observer.observe(item));
+        });
+    </script>
   
 </body>
 </html>

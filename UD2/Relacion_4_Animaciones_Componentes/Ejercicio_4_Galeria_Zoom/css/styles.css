@@ -6,6 +6,36 @@ Opcional: añadir sombra o borde durante el hover.
 Comprueba que la imagen no se deforma y sigue dentro de su contenedor.
 */
 
-.galeria { display: flex; gap: 1rem; }
-.item-galeria { overflow: hidden; border-radius: 6px; background: #fff; }
-.item-galeria img { display: block; width: 200px; height: 130px; object-fit: cover; }
+.galeria { 
+    display: flex; 
+    gap: 1rem; 
+}
+
+.item-galeria { 
+    /* Contenedor que añade el borde opcional y la sombra */
+    overflow: hidden; 
+    border-radius: 6px; 
+    background: #fff;
+    /* Transición para animar la sombra al hacer hover (Opcional) */
+    transition: box-shadow 0.4s ease;
+}
+
+.item-galeria:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.item-galeria img { 
+    display: block; 
+    width: 200px; 
+    height: 130px; 
+    object-fit: cover; 
+    
+    /* 1. Transición: Se aplica a la imagen (no al contenedor) para que el zoom sea suave en 0.4s */
+    transition: transform 0.4s ease-out;
+}
+
+/* 2. Hover: Cuando se pasa el ratón sobre el contenedor, se aplica la transformación a la imagen hija. */
+.item-galeria:hover img {
+    /* Aumenta el tamaño de la imagen un 10% (Zoom in) */
+    transform: scale(1.5); 
+}
