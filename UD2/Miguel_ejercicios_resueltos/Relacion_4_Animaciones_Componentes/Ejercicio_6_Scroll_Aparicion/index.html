@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relación 4 · Ejercicio 6 · Scroll Aparición</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main>
+    <h1>Animación de aparición por scroll</h1>
+    <section class="contenedor-scroll">
+      <article class="scroll-item">Bloque 1</article>
+      <article class="scroll-item">Bloque 2</article>
+      <article class="scroll-item">Bloque 3</article>
+      <article class="scroll-item">Bloque 4</article>
+    </section>
+  </main>
+
+  <script>
+    const items = document.querySelectorAll('.scroll-item');
+    const options = {threshold: 0.3 };
+
+    const observer = new IntersectionObserver((entries) => {{
+      entries.forEach(entry => {{
+        if (entry.isIntersecting) {{
+          entry.target.classList.add('visible');
+        }}
+      }});
+    }}, options);
+
+    items.forEach(item => observer.observe(item));
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+/*
+RELACIÓN 1 · EJERCICIO 3 · Retraso en la transición
+Haz que las figuras cambien de color y roten al pasar el ratón.
+El cambio de color debe producirse inmediatamente, pero la rotación de 60 grados debe comenzar con un retraso de 0.5 s.
+*/
+
+:root { --lado: 120px; }
+:root { --lado: 100px; }
+
+.cuadrado {
+  width: var(--lado);
+  height: var(--lado);
+  background: #1e90ff;
+  display: block;
+}
+
+.circulo {
+  width: var(--lado);
+  height: var(--lado);
+  border-radius: 50%;
+  background: #1e90ff;
+  display: block;
+}
+
+.triangulo {
+  width: 0;
+  height: 0;
+  display: block;
+  border-left: calc(var(--lado) / 2) solid transparent;
+  border-right: calc(var(--lado) / 2) solid transparent;
+  border-bottom: var(--lado) solid #1e90ff;
+  background: transparent;
+}
+
+.rombo {
+  width: var(--lado);
+  height: var(--lado);
+  background: #1e90ff;
+  transform: rotate(45deg);
+  transform-origin: center;
+  display: block;
+}
+
+.rectangulo {
+  width: 160px;
+  height: 90px;
+  background: #1e90ff;
+  display: block;
+}
+/* PARTE QUE NOS IMPORTA: */
+
+.lienzo { grid-template-columns: repeat(3, minmax(140px, 1fr)); }
+
+.cuadrado, .circulo, .rombo {
+  transition: background-color 0.3s ease 0s, transform 0.3s ease 0.5s;
+}
+.cuadrado:hover, .circulo:hover, .rombo:hover {
+  background: #ffb347;
+  transform: rotate(60deg);
+}

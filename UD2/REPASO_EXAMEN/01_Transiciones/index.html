@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repaso Transiciones CSS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Ejercicios de Transiciones CSS</h1>
+
+  <!-- Ejercicio 1: Transición simple de color -->
+  <section class="ejercicio">
+    <h2>1. Transición simple: cambio de color de fondo</h2>
+    <div class="contenedor">
+      <div class="caja caja-color">Pasa el ratón</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 2: Transición de múltiples propiedades -->
+  <section class="ejercicio">
+    <h2>2. Múltiples propiedades: color + tamaño</h2>
+    <div class="contenedor">
+      <div class="caja caja-multiple">Color y Tamaño</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 3: Duración de transición -->
+  <section class="ejercicio">
+    <h2>3. Diferentes duraciones</h2>
+    <div class="contenedor flex-horizontal">
+      <div class="caja caja-rapida">0.2s</div>
+      <div class="caja caja-media">0.5s</div>
+      <div class="caja caja-lenta">1s</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 4: Timing functions -->
+  <section class="ejercicio">
+    <h2>4. Funciones de temporización (ease, linear, ease-in, ease-out)</h2>
+    <div class="contenedor">
+      <div class="timing-demo">
+        <p> Lento-rápido-lento (por defecto)</p>
+        <div class="caja timing-ease">ease</div>
+        <p>  Velocidad constante</p>
+        <div class="caja timing-linear">linear</div>
+         Empieza lento, termina rápido
+        <div class="caja timing-ease-in">ease-in</div>
+         Empieza rápido, termina lento
+        <div class="caja timing-ease-out">ease-out</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 5: Transition delay -->
+  <section class="ejercicio">
+    <h2>5. Retraso en transición (transition-delay)</h2>
+    <div class="contenedor flex-horizontal">
+      <div class="caja delay-0">Sin delay</div>
+      <div class="caja delay-1">0.2s delay</div>
+      <div class="caja delay-2">0.4s delay</div>
+      <div class="caja delay-3">0.6s delay</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 6: Transform: scale -->
+  <section class="ejercicio">
+    <h2>6. Transform: scale (agrandar)</h2>
+    <div class="contenedor flex-horizontal">
+      <div class="circulo scale-small">1.1</div>
+      <div class="circulo scale-medium">1.3</div>
+      <div class="circulo scale-large">1.5</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 7: Transform: rotate -->
+  <section class="ejercicio">
+    <h2>7. Transform: rotate (girar)</h2>
+    <div class="contenedor flex-horizontal">
+      <div class="cuadrado rotate-45">45°</div>
+      <div class="cuadrado rotate-90">90°</div>
+      <div class="cuadrado rotate-180">180°</div>
+      <div class="cuadrado rotate-360">360°</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 8: Transform: translate -->
+  <section class="ejercicio">
+    <h2>8. Transform: translate (mover)</h2>
+    <div class="contenedor flex-horizontal">
+      <div class="caja translate-x">Mover X</div>
+      <div class="caja translate-y">Mover Y</div>
+      <div class="caja translate-both">Ambos</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 9: Opacidad -->
+  <section class="ejercicio">
+    <h2>9. Transición de opacidad</h2>
+    <div class="contenedor flex-horizontal">
+      <div class="caja opacity-fade">Desvanecer</div>
+      <div class="caja opacity-appear">Aparecer</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 10: Border-radius -->
+  <section class="ejercicio">
+    <h2>10. Transición de border-radius</h2>
+    <div class="contenedor flex-horizontal">
+      <div class="caja border-round">A círculo</div>
+      <div class="circulo border-square">A cuadrado</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 11: Combinación transform -->
+  <section class="ejercicio">
+    <h2>11. Combinar múltiples transforms (rotate + scale)</h2>
+    <div class="contenedor">
+      <div class="cuadrado combo-1">Rotar + Escalar</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 12: Box-shadow -->
+  <section class="ejercicio">
+    <h2>12. Transición de box-shadow (elevación)</h2>
+    <div class="contenedor flex-horizontal">
+      <div class="card shadow-1">Card 1</div>
+      <div class="card shadow-2">Card 2</div>
+      <div class="card shadow-3">Card 3</div>
+    </div>
+  </section>
+
+  <!-- Ejercicio 13: Botón con hover -->
+  <section class="ejercicio">
+    <h2>13. Botón con efectos hover</h2>
+    <div class="contenedor flex-horizontal">
+      <button class="btn btn-primary">Botón 1</button>
+      <button class="btn btn-secondary">Botón 2</button>
+      <button class="btn btn-outline">Botón 3</button>
+    </div>
+  </section>
+
+  <!-- Ejercicio 14: Transición all vs específica -->
+  <section class="ejercicio">
+    <h2>14. transition: all (todas las propiedades)</h2>
+    <div class="contenedor flex-horizontal">
+      <div class="caja transition-all">All</div>
+      <div class="caja transition-specific">Específica</div>
+    </div>
+  </section>
+
+</body>
+</html>
