@@ -1,0 +1,550 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Estilos para cada ejercicio */
+.ejercicio {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ejercicio h2 {
+  margin-bottom: 15px;
+  color: #004466;
+  font-size: 18px;
+}
+
+/* Contenedor base */
+.contenedor {
+  border: 2px solid #ddd;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  min-height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-horizontal {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Estilos base para cajas */
+.caja {
+  background-color: #3498db;
+  color: white;
+  padding: 20px 30px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cuadrado {
+  width: 80px;
+  height: 80px;
+  background-color: #6c5ce7;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.circulo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #e17055;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ========================================
+   EJERCICIO 1: Transición simple de color
+   - transition-property: background-color → solo anima el color de fondo
+   - transition-duration: 0.3s → tarda 0.3 segundos
+   - transition-timing-function: ease → suavizado por defecto
+   ======================================== */
+.caja-color {
+  transition: background-color 0.3s ease;
+}
+.caja-color:hover {
+  background-color: #e74c3c;
+}
+
+
+/* ========================================
+   EJERCICIO 2: Múltiples propiedades
+   - Se pueden animar varias propiedades separándolas por comas
+   - Cada propiedad puede tener su propia duración y timing
+   ======================================== */
+.caja-multiple {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.caja-multiple:hover {
+  background-color: #2ecc71;
+  transform: scale(1.1);
+}
+
+
+/* ========================================
+   EJERCICIO 3: Diferentes duraciones
+   - Permite comparar visualmente diferentes velocidades
+   - 0.2s = muy rápida
+   - 0.5s = velocidad media (común)
+   - 1s = lenta
+   ======================================== */
+.caja-rapida {
+  background-color: #e84393;
+  transition: transform 0.2s ease;
+}
+.caja-rapida:hover {
+  transform: scale(1.2);
+}
+
+.caja-media {
+  background-color: #6c5ce7;
+  transition: transform 0.5s ease;
+}
+.caja-media:hover {
+  transform: scale(1.2);
+}
+
+.caja-lenta {
+  background-color: #00b894;
+  transition: transform 1s ease;
+}
+.caja-lenta:hover {
+  transform: scale(1.2);
+}
+
+
+/* ========================================
+   EJERCICIO 4: Timing functions (funciones de temporización)
+   - ease: lento-rápido-lento (por defecto)
+   - linear: velocidad constante
+   - ease-in: empieza lento, termina rápido
+   - ease-out: empieza rápido, termina lento
+   - ease-in-out: similar a ease pero más pronunciado
+   ======================================== */
+.timing-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.timing-ease {
+  transition: transform 1s ease;
+  background-color: #3498db;
+}
+.timing-ease:hover {
+  transform: translateX(200px);
+}
+
+.timing-linear {
+  transition: transform 1s linear;
+  background-color: #9b59b6;
+}
+.timing-linear:hover {
+  transform: translateX(200px);
+}
+
+.timing-ease-in {
+  transition: transform 1s ease-in;
+  background-color: #e67e22;
+}
+.timing-ease-in:hover {
+  transform: translateX(200px);
+}
+
+.timing-ease-out {
+  transition: transform 1s ease-out;
+  background-color: #1abc9c;
+}
+.timing-ease-out:hover {
+  transform: translateX(200px);
+}
+
+
+/* ========================================
+   EJERCICIO 5: Transition delay
+   - transition-delay: retrasa el inicio de la transición
+   - Útil para crear efectos secuenciales
+   ======================================== */
+.delay-0 {
+  background-color: #0984e3;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+}
+.delay-0:hover {
+  transform: translateY(-10px);
+  background-color: #fd79a8;
+}
+
+.delay-1 {
+  background-color: #0984e3;
+  transition: transform 0.5s ease 0.2s, background-color 0.5s ease 0.2s;
+}
+.delay-1:hover {
+  transform: translateY(-10px);
+  background-color: #fd79a8;
+}
+
+.delay-2 {
+  background-color: #0984e3;
+  transition: transform 0.5s ease 0.4s, background-color 0.5s ease 0.4s;
+}
+.delay-2:hover {
+  transform: translateY(-10px);
+  background-color: #fd79a8;
+}
+
+.delay-3 {
+  background-color: #0984e3;
+  transition: transform 0.5s ease 0.6s, background-color 0.5s ease 0.6s;
+}
+.delay-3:hover {
+  transform: translateY(-10px);
+  background-color: #fd79a8;
+}
+
+
+/* ========================================
+   EJERCICIO 6: Transform scale
+   - scale(1.1) = aumenta 10%
+   - scale(1.3) = aumenta 30%
+   - scale(1.5) = aumenta 50%
+   ======================================== */
+.scale-small {
+  transition: transform 0.3s ease;
+}
+.scale-small:hover {
+  transform: scale(1.1);
+}
+
+.scale-medium {
+  transition: transform 0.3s ease;
+}
+.scale-medium:hover {
+  transform: scale(1.3);
+}
+
+.scale-large {
+  transition: transform 0.3s ease;
+}
+.scale-large:hover {
+  transform: scale(1.5);
+}
+
+
+/* ========================================
+   EJERCICIO 7: Transform rotate
+   - rotate(45deg) = gira 45 grados
+   - rotate(360deg) = gira una vuelta completa
+   - Se puede usar deg, turn, rad
+   ======================================== */
+.rotate-45 {
+  transition: transform 1s ease;
+}
+.rotate-45:hover {
+  transform: rotate(45deg);
+}
+
+.rotate-90 {
+  transition: transform 1s ease;
+}
+.rotate-90:hover {
+  transform: rotate(90deg);
+}
+
+.rotate-180 {
+  transition: transform 1s ease;
+}
+.rotate-180:hover {
+  transform: rotate(180deg);
+}
+
+.rotate-360 {
+  transition: transform 2.4s ease; 
+
+}
+.rotate-360:hover {
+  transform: rotate(360deg);
+}
+
+
+/* ========================================
+   EJERCICIO 8: Transform translate
+   - translateX(50px) = mueve 50px a la derecha
+   - translateY(50px) = mueve 50px hacia abajo
+   - translate(50px, 50px) = ambas direcciones
+   ======================================== */
+.translate-x {
+  background-color: #fd79a8;
+  transition: transform 0.4s ease;
+}
+.translate-x:hover {
+  transform: translateX(80px);
+}
+
+.translate-y {
+  background-color: #fdcb6e;
+  transition: transform 0.4s ease;
+}
+.translate-y:hover {
+  transform: translateY(-30px);
+}
+
+.translate-both {
+  background-color: #55efc4;
+  transition: transform 0.4s ease;
+}
+.translate-both:hover {
+  transform: translate(50px, -20px);
+}
+
+
+/* ========================================
+   EJERCICIO 9: Opacidad
+   - opacity: 0 = invisible
+   - opacity: 1 = visible
+   - Valores entre 0 y 1
+   ======================================== */
+.opacity-fade {
+  background-color: #a29bfe;
+  transition: opacity 0.5s ease;
+}
+.opacity-fade:hover {
+  opacity: 0.3;
+}
+
+.opacity-appear {
+  background-color: #74b9ff;
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
+}
+.opacity-appear:hover {
+  opacity: 1;
+}
+
+
+/* ========================================
+   EJERCICIO 10: Border-radius
+   - border-radius: 0 = esquinas rectas
+   - border-radius: 50% = círculo (si width = height)
+   ======================================== */
+.border-round {
+  background-color: #00b894;
+  border-radius: 4px;
+  transition: border-radius 0.5s ease;
+}
+.border-round:hover {
+  border-radius: 50%;
+}
+
+.border-square {
+  background-color: #ff7675;
+  border-radius: 50%;
+  transition: border-radius 0.5s ease;
+}
+.border-square:hover {
+  border-radius: 0;
+}
+
+
+/* ========================================
+   EJERCICIO 11: Combinar múltiples transforms
+   - Se pueden combinar varios transforms en una línea
+   - Importante: escribirlos todos juntos en transform
+   ======================================== */
+.combo-1 {
+  transition: transform 0.5s ease, background-color 0.5s ease;
+}
+.combo-1:hover {
+  transform: rotate(45deg) scale(1.2);
+  background-color: #e17055;
+}
+
+
+/* ========================================
+   EJERCICIO 12: Box-shadow (sombra)
+   - Crea efecto de elevación
+   - Formato: x y blur spread color
+   - Común en Material Design
+   ======================================== */
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 150px;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+
+.shadow-1 {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.shadow-1:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transform: translateY(-4px);
+}
+
+.shadow-2 {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.shadow-2:hover {
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+  transform: translateY(-6px);
+}
+
+.shadow-3 {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.shadow-3:hover {
+  box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+  transform: translateY(-8px);
+}
+
+
+/* ========================================
+   EJERCICIO 13: Botones con hover
+   - Efectos comunes en botones web
+   ======================================== */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: #2ecc71;
+  color: white;
+}
+.btn-secondary:hover {
+  background-color: #27ae60;
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #e74c3c;
+  border: 2px solid #e74c3c;
+}
+.btn-outline:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+
+/* ========================================
+   EJERCICIO 14: transition all vs específica
+   - transition: all → anima TODAS las propiedades que cambien
+   - Puede afectar rendimiento con muchas propiedades
+   - Mejor especificar solo las que necesites
+   ======================================== */
+.transition-all {
+  background-color: #9b59b6;
+  transition: all 0.4s ease;
+}
+.transition-all:hover {
+  background-color: #8807c0;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.transition-specific {
+  background-color: #1abc9c;
+  transition: background-color 0.4s ease, transform 0.4s ease;
+}
+.transition-specific:hover {
+  background-color: #16a085;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+
+/* ========================================
+   RESUMEN DE PROPIEDADES DE TRANSICIÓN
+
+   SINTAXIS BÁSICA:
+   transition: property duration timing-function delay;
+
+   PROPIEDADES:
+   - transition-property: all | background-color | transform | opacity...
+   - transition-duration: 0.3s | 1s | 500ms
+   - transition-timing-function: ease | linear | ease-in | ease-out | ease-in-out
+   - transition-delay: 0s | 0.2s | 500ms
+
+   SHORTHAND:
+   transition: background-color 0.3s ease 0.1s;
+
+   MÚLTIPLES PROPIEDADES:
+   transition: background 0.3s ease, transform 0.5s ease-out;
+
+   TRANSFORMS COMUNES:
+   - translate(x, y) → mover
+   - scale(valor) → escalar/agrandar
+   - rotate(grados) → girar
+   - Se pueden combinar: transform: rotate(45deg) scale(1.2);
+
+   PROPIEDADES ANIMABLES MÁS COMUNES:
+   - color, background-color
+   - opacity
+   - transform (translate, rotate, scale, skew)
+   - width, height
+   - margin, padding
+   - border-radius
+   - box-shadow
+
+   BUENAS PRÁCTICAS:
+   - Usa transform en lugar de left/top (mejor rendimiento)
+   - Especifica propiedades en lugar de "all" cuando sea posible
+   - Duraciones típicas: 0.2s-0.5s para UX fluida
+   ======================================== */

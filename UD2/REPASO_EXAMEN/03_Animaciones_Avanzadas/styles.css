@@ -1,0 +1,342 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.ejercicio {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ejercicio h2 {
+  margin-bottom: 15px;
+  color: #004466;
+  font-size: 18px;
+}
+
+.contenedor {
+  border: 2px solid #ddd;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  min-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-horizontal {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.caja {
+  background-color: #3498db;
+  color: white;
+  padding: 20px 30px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.cuadrado {
+  width: 100px;
+  height: 100px;
+  background-color: #0984e3;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.circulo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #e17055;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+/* ========================================
+   EJERCICIOS 1-4: animation-fill-mode
+
+   Controla qué estilos se aplican ANTES y DESPUÉS de la animación
+
+   - none: No aplica estilos fuera de la animación (comportamiento por defecto)
+   - forwards: Mantiene el estado FINAL (último keyframe) cuando termina
+   - backwards: Aplica el estado INICIAL (primer keyframe) durante el delay
+   - both: Combina forwards + backwards
+   ======================================== */
+
+/* Animación común para fill-mode */
+@keyframes moveAndChange {
+  0% {
+    transform: translateX(0);
+    opacity: 0.5;
+    background-color: #8eff74;
+  }
+  100% {
+    transform: translateX(200px);
+    opacity: 1;
+    background-color: #fd79a8;
+  }
+}
+
+/* NONE: Vuelve al estado original después de 2s */
+.fill-none {
+  animation: moveAndChange 2s ease-in-out 0.5s 1 normal none;
+}
+
+/* FORWARDS: Mantiene translateX(200px) y color rosa al terminar */
+.fill-forwards {
+  animation: moveAndChange 2s ease-in-out 0.5s 1 normal forwards;
+}
+
+/* BACKWARDS: Durante los 0.5s de delay ya tiene opacity 0.5 y color azul */
+.fill-backwards {
+  animation: moveAndChange 2s ease-in-out 0.5s 1 normal backwards;
+}
+
+/* BOTH: Aplica inicio durante delay Y mantiene final al terminar */
+.fill-both {
+  animation: moveAndChange 2s ease-in-out 0.5s 1 normal both;
+}
+
+
+/* ========================================
+   EJERCICIOS 5-8: animation-direction
+
+   Controla la dirección en que se ejecuta la animación
+
+   - normal: 0% → 100% (por defecto)
+   - reverse: 100% → 0% (al revés)
+   - alternate: 0% → 100%, luego 100% → 0% (ida y vuelta)
+   - alternate-reverse: 100% → 0%, luego 0% → 100%
+   ======================================== */
+
+@keyframes slideColor {
+  0% {
+    transform: translateX(0);
+    background-color: #e17055;
+  }
+  100% {
+    transform: translateX(150px);
+    background-color: #00b894;
+  }
+}
+
+/* NORMAL: Va de naranja a verde, de izquierda a derecha */
+.dir-normal {
+  animation: slideColor 2s ease-in-out infinite normal;
+}
+
+/* REVERSE: Va de verde a naranja, de derecha a izquierda */
+.dir-reverse {
+  animation: slideColor 2s ease-in-out infinite reverse;
+}
+
+/* ALTERNATE: Va y vuelve (muy común para animaciones continuas) */
+.dir-alternate {
+  animation: slideColor 2s ease-in-out infinite alternate;
+}
+
+/* ALTERNATE-REVERSE: Como alternate pero empieza al revés */
+.dir-alternate-reverse {
+  animation: slideColor 2s ease-in-out infinite alternate-reverse;
+}
+
+
+/* ========================================
+   EJERCICIO 9: Animación compleja con múltiples etapas
+
+   Se pueden definir tantos keyframes como se quiera (no solo 0% y 100%)
+   Útil para movimientos complejos
+   ======================================== */
+@keyframes complexPath {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    background-color: #e74c3c;
+    border-radius: 50%;
+  }
+  25% {
+    transform: translate(100px, 0) scale(1.2) rotate(90deg);
+    background-color: #f39c12;
+    border-radius: 0%;
+  }
+  50% {
+    transform: translate(100px, -60px) scale(0.8) rotate(180deg);
+    background-color: #2ecc71;
+    border-radius: 50%;
+  }
+  75% {
+    transform: translate(0, -60px) scale(1.2) rotate(270deg);
+    background-color: #3498db;
+    border-radius: 0%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(360deg);
+    background-color: #e74c3c;
+    border-radius: 50%;
+  }
+}
+
+.complex-anim {
+  animation: complexPath 4s ease-in-out infinite;
+}
+
+
+/* ========================================
+   EJERCICIO 10: cubic-bezier personalizado
+
+   cubic-bezier(x1, y1, x2, y2) permite crear curvas de timing personalizadas
+   Herramienta: cubic-bezier.com
+
+   Ejemplos comunes:
+   - cubic-bezier(0.68, -0.55, 0.265, 1.55) → bounce
+   - cubic-bezier(0.25, 0.46, 0.45, 0.94) → suave
+   ======================================== */
+@keyframes bounceMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(150px);
+  }
+}
+
+/* Efecto bounce (rebote al final) */
+.cubic-1 {
+  background-color: #e84393;
+  animation: bounceMove 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite alternate;
+}
+
+/* Muy suave */
+.cubic-2 {
+  background-color: #00b894;
+  animation: bounceMove 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
+}
+
+
+/* ========================================
+   EJERCICIO 11: Cadena de animaciones
+
+   Usando forwards + delay se pueden encadenar animaciones
+   ======================================== */
+@keyframes phase1 {
+  from {
+    transform: scale(1);
+    background-color: #6c5ce7;
+  }
+  to {
+    transform: scale(1.5);
+    background-color: #adaad4;
+  }
+}
+
+@keyframes phase2 {
+  from {
+    transform: scale(1.5) rotate(0deg);
+  }
+  to {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.chain-anim {
+  /* Primera animación */
+  animation: phase1 1s ease forwards,
+             phase2 1s ease 1s forwards; /* Empieza 1s después */
+}
+
+
+/* ========================================
+   EJERCICIO 12: Loader / Spinner
+
+   Ejemplo práctico muy común en aplicaciones web
+   ======================================== */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+
+/* ========================================
+   RESUMEN DE PROPIEDADES AVANZADAS
+
+   ANIMATION-FILL-MODE:
+   - none: Estado por defecto, vuelve al CSS original
+   - forwards: Mantiene último keyframe (100%)
+   - backwards: Aplica primer keyframe (0%) durante delay
+   - both: forwards + backwards
+
+   ANIMATION-DIRECTION:
+   - normal: 0% → 100%
+   - reverse: 100% → 0%
+   - alternate: ida y vuelta (común para loops)
+   - alternate-reverse: vuelta e ida
+
+   ANIMATION-PLAY-STATE:
+   - running: animación en marcha (por defecto)
+   - paused: animación pausada
+   - Se puede cambiar con :hover para pausar/reanudar
+
+   CUBIC-BEZIER:
+   - Permite curvas de timing personalizadas
+   - Formato: cubic-bezier(x1, y1, x2, y2)
+   - Usar herramientas online para crear curvas
+
+   KEYFRAMES MÚLTIPLES:
+   - Se pueden definir tantos puntos como se quiera
+   - No solo 0% y 100%
+   - Ejemplo: 0%, 25%, 50%, 75%, 100%
+
+   COMBINACIONES ÚTILES:
+   - animation-delay + forwards = cadenas de animaciones
+   - alternate + infinite = animación continua ida/vuelta
+   - backwards + delay = estado inicial visible antes de animar
+
+   SHORTHAND COMPLETO:
+   animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+
+   Ejemplo completo:
+   animation: bounce 2s ease-in-out 0.5s infinite alternate both running;
+   ======================================== */

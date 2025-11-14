@@ -1,0 +1,630 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.ejercicio {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ejercicio h2 {
+  margin-bottom: 15px;
+  color: #004466;
+  font-size: 18px;
+}
+
+.contenedor {
+  border: 2px solid #ddd;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  min-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+
+/* ========================================
+   EJERCICIO 1: Botones con efectos hover
+
+   Diferentes estilos comunes de botones en aplicaciones web
+   ======================================== */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Botón primary con escala y cambio de color */
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #195985;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+/* Botón secondary con elevación */
+.btn-secondary {
+  background-color: #2ecc71;
+  color: white;
+}
+.btn-secondary:hover {
+  background-color: #188043;
+  transform: scale(1.05);
+}
+
+/* Botón outline con relleno al hover */
+.btn-outline {
+  background-color: transparent;
+  color: #e74c3c;
+  border: 2px solid #e74c3c;
+}
+.btn-outline:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Botón con gradiente animado */
+.btn-gradient {
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  background-size: 200% 200%;
+  transition: background-position 0.5s ease, transform 0.3s ease;
+}
+.btn-gradient:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+}
+
+
+/* ========================================
+   EJERCICIO 2: Cards con elevación
+
+   Material Design style cards
+   ======================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.card-img {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img img {
+  transform: scale(1.1);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-body p {
+  color: #666;
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   EJERCICIO 3: Menú desplegable
+
+   Dropdown menu con animación de altura y opacidad
+   ======================================== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  padding: 12px 24px;
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+  background-color: #cb2d67;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  min-width: 200px;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f8f9fa;
+  text-decoration: underline;
+}
+
+
+/* ========================================
+   EJERCICIO 4: Progress bar animado
+
+   Barra de progreso con animación de llenado
+   ======================================== */
+.progress-container {
+  width: 100%;
+  max-width: 400px;
+  height: 30px;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  border-radius: 15px;
+  animation: fillProgress 2s ease-out forwards;
+}
+
+@keyframes fillProgress {
+  from {
+    width: 0%;
+  }
+}
+
+.progress-75 {
+  animation-name: fillProgress75;
+}
+@keyframes fillProgress75 {
+  from { width: 0%; }
+  to { width: 75%; }
+}
+
+.progress-50 {
+  animation-name: fillProgress50;
+  animation-delay: 0.2s;
+  width: 0;
+}
+@keyframes fillProgress50 {
+  from { width: 0%; }
+  to { width: 50%; }
+}
+
+.progress-100 {
+  animation-name: fillProgress100;
+  animation-delay: 0.4s;
+  width: 0;
+}
+@keyframes fillProgress100 {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+
+/* ========================================
+   EJERCICIO 5: Tooltip
+
+   Tooltip que aparece al hacer hover
+   ======================================== */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.text-with-tooltip {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background-color: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #333;
+}
+
+.tooltip-container:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+
+/* ========================================
+   EJERCICIO 6: Skeleton loader
+
+   Efecto de carga con animación shimmer
+   ======================================== */
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.skeleton-card {
+  width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.skeleton-img,
+.skeleton-line {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 0%,
+    #e0e0e0 50%,
+    #f0f0f0 100%
+  );
+  background-size: 468px 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 4px;
+}
+
+.skeleton-img {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 15px;
+}
+
+.skeleton-line {
+  height: 16px;
+  margin-bottom: 10px;
+}
+
+.skeleton-line.short {
+  width: 60%;
+}
+
+
+/* ========================================
+   EJERCICIO 7: Modal
+
+   Modal con backdrop y animación fade-in
+   ======================================== */
+.modal-demo {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  animation: slideUp 0.4s ease;
+}
+
+.modal-content h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.modal-content p {
+  color: #666;
+}
+
+
+/* ========================================
+   EJERCICIO 8: Navbar
+
+   Barra de navegación con efectos en links
+   ======================================== */
+.navbar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.nav-brand {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+
+/* ========================================
+   EJERCICIO 9: Tabs
+
+   Navegación por pestañas con indicador
+   ======================================== */
+.tabs {
+  display: flex;
+  gap: 5px;
+  background-color: #f0f0f0;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.tab {
+  padding: 12px 24px;
+  background-color: transparent;
+  color: #666;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  background-color: rgba(108, 92, 231, 0.1);
+  color: #6c5ce7;
+}
+
+.tab.active {
+  background-color: #6c5ce7;
+  color: white;
+  box-shadow: 0 2px 8px rgba(108, 92, 231, 0.3);
+}
+
+
+/* ========================================
+   EJERCICIO 10: Galería con zoom
+
+   Grid de imágenes con efecto zoom al hover
+   ======================================== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.gallery-item {
+  height: 200px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.15);
+}
+
+.gallery-item:hover::before {
+  opacity: 1;
+}
+
+
+/* ========================================
+   RESUMEN DE COMPONENTES WEB
+
+   BOTONES:
+   - Efectos comunes: scale, translateY, box-shadow
+   - Transiciones suaves (0.3s)
+   - Cambios de color al hover
+
+   CARDS:
+   - Elevación con box-shadow + translateY
+   - Zoom en imágenes con overflow: hidden
+   - Material Design inspiration
+
+   MENÚS DESPLEGABLES:
+   - opacity + transform para aparecer
+   - position: absolute para ubicar el menú
+   - pointer-events: none cuando está oculto
+
+   PROGRESS BARS:
+   - Animación de width de 0% a valor final
+   - animation-delay para secuencias
+   - overflow: hidden en contenedor
+
+   TOOLTIPS:
+   - position: absolute
+   - opacity + transform para aparecer
+   - Flecha con ::after y borders
+
+   SKELETON LOADERS:
+   - Animación shimmer con linear-gradient
+   - background-position animado
+   - Simula contenido cargando
+
+   MODALS:
+   - Backdrop con rgba(0,0,0,0.5)
+   - Contenido centrado con position + transform
+   - Animaciones fadeIn + slideUp
+
+   NAVBAR:
+   - Sticky position (no incluido aquí)
+   - Links con hover effects
+   - Gradientes para diseño moderno
+
+   TABS:
+   - Estado active con clase
+   - Transiciones suaves entre estados
+   - Indicador visual (color/shadow)
+
+   GALERÍAS:
+   - CSS Grid para layout responsive
+   - Zoom con scale
+   - Overlay con ::before
+
+   BUENAS PRÁCTICAS:
+   - Usa transitions para interacciones (hover, focus)
+   - Usa animations para efectos automáticos (loaders)
+   - Mantén duraciones cortas (0.2s-0.5s) para UX
+   - Combina transform + opacity (mejor rendimiento)
+   - Usa will-change solo si es necesario
+   ======================================== */

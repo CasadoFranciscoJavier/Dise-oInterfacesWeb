@@ -1,0 +1,59 @@
+/*
+RELACIÓN 1 · EJERCICIO 2 · Funciones de temporización
+Configura una figura diferente para cada función de temporización: ease, linear, ease-in y ease-out.
+Al pasar el ratón por encima, las figuras deben aumentar su tamaño de 100 px a 150 px en 0.5 s.
+*/
+
+:root { --lado: 100px; }
+
+.cuadrado {
+  width: var(--lado);
+  height: var(--lado);
+  background: #1e90ff;
+  display: block;
+}
+
+.circulo {
+  width: var(--lado);
+  height: var(--lado);
+  border-radius: 50%;
+  background: #1e90ff;
+  display: block;
+}
+
+.triangulo {
+  width: 0;
+  height: 0;
+  display: block;
+  border-left: calc(var(--lado) / 2) solid transparent;
+  border-right: calc(var(--lado) / 2) solid transparent;
+  border-bottom: var(--lado) solid #1e90ff;
+  background: transparent;
+}
+
+.rombo {
+  width: var(--lado);
+  height: var(--lado);
+  background: #1e90ff;
+  transform: rotate(45deg);
+  transform-origin: center;
+  display: block;
+}
+
+.rectangulo {
+  width: 160px;
+  height: 90px;
+  background: #1e90ff;
+  display: block;
+}
+/* PARTE QUE NOS IMPORTA: */
+
+.lienzo { grid-template-columns: repeat(4, minmax(120px, 1fr)); }
+.wrap .circulo { transition: transform 0.5s; }
+
+.circulo.ease { transition-timing-function: ease; }
+.circulo.linear { transition-timing-function: linear; }
+.circulo.ease-in { transition-timing-function: ease-in; }
+.circulo.ease-out { transition-timing-function: ease-out; }
+
+.wrap .circulo:hover { transform: scale(1.5); }

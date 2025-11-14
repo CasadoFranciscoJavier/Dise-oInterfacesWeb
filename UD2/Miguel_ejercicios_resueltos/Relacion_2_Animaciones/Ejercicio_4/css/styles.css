@@ -1,0 +1,58 @@
+/*
+RELACIÓN 2 · EJERCICIO 4 · Expansión y contracción
+Aplica una animación que haga que las figuras se expandan horizontalmente hasta el doble de su tamaño y luego vuelvan a su tamaño original.
+La duración debe ser de 2 s, con aceleración y desaceleración suave, y repetición infinita.
+*/
+
+:root { --lado: 100px; }
+
+.cuadrado {
+  width: var(--lado);
+  height: var(--lado);
+  background: #1e90ff;
+  display: block;
+}
+
+.circulo {
+  width: var(--lado);
+  height: var(--lado);
+  border-radius: 50%;
+  background: #1e90ff;
+  display: block;
+}
+
+.triangulo {
+  width: 0;
+  height: 0;
+  display: block;
+  border-left: calc(var(--lado) / 2) solid transparent;
+  border-right: calc(var(--lado) / 2) solid transparent;
+  border-bottom: var(--lado) solid #1e90ff;
+  background: transparent;
+}
+
+.rombo {
+  width: var(--lado);
+  height: var(--lado);
+  background: #1e90ff;
+  transform: rotate(45deg);
+  transform-origin: center;
+  display: block;
+}
+
+.rectangulo {
+  width: 160px;
+  height: 90px;
+  background: #1e90ff;
+  display: block;
+}
+/* PARTE QUE NOS IMPORTA: */
+
+@keyframes expandir {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(2); }
+}
+.rectangulo {
+  transform-origin: center;
+  animation: expandir 2s ease-in-out infinite alternate;
+}
