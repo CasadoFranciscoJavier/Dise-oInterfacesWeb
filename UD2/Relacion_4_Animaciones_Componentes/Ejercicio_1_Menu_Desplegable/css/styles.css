@@ -26,7 +26,7 @@ body {
     cursor: pointer;
 }
 
-@keyframes slideDown {
+/* @keyframes slideDown {
   0% { 
     height: 0; 
     opacity: 0; 
@@ -35,13 +35,13 @@ body {
     height: 200px; 
     opacity: 1; 
   }
-}
+} */
 
 .menu {
     background: #2980b9;
     height: 0;
     overflow: hidden;
-    animation: slideDown 0.5s forwards;
+    transition: height 0.3s ease, opacity 0.5s ease;
 }
 
 .menu a {
@@ -51,6 +51,7 @@ body {
     text-decoration: none;
 }
 
-.menu:hover {
-  animation-play-state: running;
+.contenedor-menu:hover .menu {
+  height: 200px; 
+    opacity: 1; 
 }
