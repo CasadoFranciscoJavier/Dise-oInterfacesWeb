@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Chuleta Completa - Animaciones CSS/JS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- HEADER CON NAVEGACIÓN -->
+  <header class="header">
+    <div class="header__logo">
+      <span class="logo__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+          <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v18H6.5A2.5 2.5 0 0 1 4 17.5V4.5z" />
+        </svg>
+      </span>
+      <span class="logo__text">Chuleta Animaciones CSS & JS</span>
+    </div>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li><a href="#nivel1" class="nav__link">Nivel 1</a></li>
+        <li><a href="#nivel2" class="nav__link">Nivel 2</a></li>
+        <li><a href="#nivel3" class="nav__link">Nivel 3</a></li>
+        <li><a href="#nivel4" class="nav__link">Nivel 4</a></li>
+        <li><a href="#nivel5" class="nav__link">Nivel 5</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1 class="hero__title">Chuleta Completa de Animaciones</h1>
+    <p class="hero__subtitle">Transiciones, Transformaciones, Keyframes y JavaScript - TODO lo de la Unidad</p>
+  </section>
+
+  <main>
+    <!-- =====================================
+         NIVEL 1: TRANSICIONES BÁSICAS
+         ===================================== -->
+    <section id="nivel1" class="section section--dark">
+      <div class="section__header">
+        <h2 class="section__title">🟢 Nivel 1: Transiciones Básicas</h2>
+        <p class="section__subtitle">Cambios suaves entre estados con transition</p>
+      </div>
+
+      <div class="demos-grid">
+        <!-- 1.1 Cambio de color -->
+        <div class="demo">
+          <h3>1.1. Cambio de Color</h3>
+          <div class="demo__visual">
+            <div class="box box-cambio-color">Hover</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box box-color"</span><span class="tag">&gt;</span>Hover<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.box-color</span> {
+  <span class="property">transition:</span> background-color <span class="value">0.3s</span> ease;
+}
+
+<span class="selector">.box-color:hover</span> {
+  <span class="property">background-color:</span> <span class="value">#ef4444</span>;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 1.2 Scale -->
+        <div class="demo">
+          <h3>1.2. Scale (Escalar)</h3>
+          <div class="demo__visual">
+            <div class="box box-scale">Hover</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box box-scale"</span><span class="tag">&gt;</span>Hover<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.box-scale</span> {
+  <span class="property">transition:</span> transform <span class="value">0.3s</span> ease;
+}
+
+<span class="selector">.box-scale:hover</span> {
+  <span class="property">transform:</span> <span class="function">scale</span>(<span class="value">1.2</span>);
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 1.3 Translate -->
+        <div class="demo">
+          <h3>1.3. Translate (Mover)</h3>
+          <div class="demo__visual">
+            <div class="box box-translate">Hover</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box box-translate"</span><span class="tag">&gt;</span>Hover<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.box-translate</span> {
+  <span class="property">transition:</span> transform <span class="value">0.3s</span> ease;
+}
+
+<span class="selector">.box-translate:hover</span> {
+  <span class="property">transform:</span> <span class="function">translateY</span>(<span class="value">-10px</span>);
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 1.4 Rotate -->
+        <div class="demo">
+          <h3>1.4. Rotate (Rotar)</h3>
+          <div class="demo__visual">
+            <div class="box box-rotate">Hover</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box box-rotate"</span><span class="tag">&gt;</span>Hover<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.box-rotate</span> {
+  <span class="property">transition:</span> transform <span class="value">0.3s</span> ease;
+}
+
+<span class="selector">.box-rotate:hover</span> {
+  <span class="property">transform:</span> <span class="function">rotate</span>(<span class="value">45deg</span>);
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 1.5 Border Radius -->
+        <div class="demo">
+          <h3>1.5. Border Radius</h3>
+          <div class="demo__visual">
+            <div class="box box-radius">Hover</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box box-radius"</span><span class="tag">&gt;</span>Hover<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.box-radius</span> {
+  <span class="property">transition:</span> border-radius <span class="value">0.3s</span> ease;
+}
+
+<span class="selector">.box-radius:hover</span> {
+  <span class="property">border-radius:</span> <span class="value">50%</span>;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 1.6 Opacity -->
+        <div class="demo">
+          <h3>1.6. Opacity (Opacidad)</h3>
+          <div class="demo__visual">
+            <div class="box box-opacity">Hover</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box box-opacity"</span><span class="tag">&gt;</span>Hover<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.box-opacity</span> {
+  <span class="property">transition:</span> opacity <span class="value">0.3s</span> ease;
+}
+
+<span class="selector">.box-opacity:hover</span> {
+  <span class="property">opacity:</span> <span class="value">0.5</span>;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 1.7 Box Shadow (Elevación) -->
+        <div class="demo">
+          <h3>1.7. Box Shadow (Elevación)</h3>
+          <div class="demo__visual">
+            <div class="box box-shadow">Hover</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box box-shadow"</span><span class="tag">&gt;</span>Hover<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.box-shadow</span> {
+  <span class="property">box-shadow:</span> <span class="value">0 2px 4px</span> <span class="function">rgba</span>(<span class="value">0,0,0,0.1</span>);
+  <span class="property">transition:</span> box-shadow <span class="value">0.3s</span> ease, transform <span class="value">0.3s</span> ease;
+}
+
+<span class="selector">.box-shadow:hover</span> {
+  <span class="property">box-shadow:</span> <span class="value">0 12px 24px</span> <span class="function">rgba</span>(<span class="value">0,0,0,0.2</span>);
+  <span class="property">transform:</span> <span class="function">translateY</span>(<span class="value">-4px</span>);
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 1.8 Timing Functions -->
+        <div class="demo demo--full">
+          <h3>1.8. Timing Functions (Funciones de Temporización)</h3>
+          <div class="demo__visual timing-demo">
+            <div class="box box-timing-ease">ease</div>
+            <div class="box box-timing-linear">linear</div>
+            <div class="box box-timing-easein">ease-in</div>
+            <div class="box box-timing-easeout">ease-out</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.box-timing-ease</span> {
+  <span class="property">transition:</span> transform <span class="value">1s</span> ease;  <span class="comment">/* lento-rápido-lento (por defecto) */</span>
+}
+
+<span class="selector">.box-timing-linear</span> {
+  <span class="property">transition:</span> transform <span class="value">1s</span> linear;  <span class="comment">/* velocidad constante */</span>
+}
+
+<span class="selector">.box-timing-easein</span> {
+  <span class="property">transition:</span> transform <span class="value">1s</span> ease-in;  <span class="comment">/* empieza lento */</span>
+}
+
+<span class="selector">.box-timing-easeout</span> {
+  <span class="property">transition:</span> transform <span class="value">1s</span> ease-out;  <span class="comment">/* termina lento */</span>
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 1.9 Transition Delay -->
+        <div class="demo demo--full">
+          <h3>1.9. Transition Delay (Retraso)</h3>
+          <div class="demo__visual delay-demo">
+            <div class="box box-delay-0">Sin delay</div>
+            <div class="box box-delay-1">0.2s delay</div>
+            <div class="box box-delay-2">0.4s delay</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.box-delay-0</span> {
+  <span class="property">transition:</span> transform <span class="value">0.5s</span> ease;  <span class="comment">/* sin delay */</span>
+}
+
+<span class="selector">.box-delay-1</span> {
+  <span class="property">transition:</span> transform <span class="value">0.5s</span> ease <span class="value">0.2s</span>;  <span class="comment">/* 0.2s delay */</span>
+}
+
+<span class="selector">.box-delay-2</span> {
+  <span class="property">transition:</span> transform <span class="value">0.5s</span> ease <span class="value">0.4s</span>;  <span class="comment">/* 0.4s delay */</span>
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================
+         NIVEL 2: COMBINACIONES Y PSEUDO-ELEMENTOS
+         ===================================== -->
+    <section id="nivel2" class="section section--light">
+      <div class="section__header">
+        <h2 class="section__title">🟡 Nivel 2: Combinaciones y Pseudo-elementos</h2>
+        <p class="section__subtitle">Múltiples transforms, ::before, ::after, efectos en texto</p>
+      </div>
+
+      <div class="demos-grid">
+        <!-- 2.1 Múltiples Transforms -->
+        <div class="demo">
+          <h3>2.1. Múltiples Transforms</h3>
+          <div class="demo__visual">
+            <div class="box box-multi">Hover</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box box-multi"</span><span class="tag">&gt;</span>Hover<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.box-multi</span> {
+  <span class="property">transition:</span> transform <span class="value">0.4s</span> ease;
+}
+
+<span class="selector">.box-multi:hover</span> {
+  <span class="property">transform:</span> <span class="function">translateY</span>(<span class="value">-10px</span>) <span class="function">rotate</span>(<span class="value">5deg</span>) <span class="function">scale</span>(<span class="value">1.1</span>);
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 2.2 Subrayado Animado -->
+        <div class="demo">
+          <h3>2.2. Subrayado Animado (::after)</h3>
+          <div class="demo__visual">
+            <a href="#" class="link-underline">Pasa el ratón</a>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;a</span> <span class="attr">href=</span><span class="string">"#"</span> <span class="attr">class=</span><span class="string">"link-underline"</span><span class="tag">&gt;</span>Pasa el ratón<span class="tag">&lt;/a&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.link-underline</span> {
+  <span class="property">position:</span> relative;
+  <span class="property">text-decoration:</span> none;
+}
+
+<span class="selector">.link-underline::after</span> {
+  <span class="property">content:</span> <span class="string">''</span>;
+  <span class="property">position:</span> absolute;
+  <span class="property">bottom:</span> <span class="value">0</span>;
+  <span class="property">left:</span> <span class="value">0</span>;
+  <span class="property">width:</span> <span class="value">0</span>;
+  <span class="property">height:</span> <span class="value">2px</span>;
+  <span class="property">background:</span> <span class="value">#3b82f6</span>;
+  <span class="property">transition:</span> width <span class="value">0.3s</span> ease;
+}
+
+<span class="selector">.link-underline:hover::after</span> {
+  <span class="property">width:</span> <span class="value">100%</span>;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 2.3 Card con Elevación + Imagen Zoom -->
+        <div class="demo">
+          <h3>2.3. Card con Elevación + Zoom Imagen</h3>
+          <div class="demo__visual">
+            <div class="card-demo">
+              <div class="card-demo__img">
+                <img src="https://placekeanu.com/300/200?1" alt="Demo">
+              </div>
+              <div class="card-demo__body">
+                <h4>Card Title</h4>
+                <p>Hover para ver efecto</p>
+              </div>
+            </div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"card-demo"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"card-demo__img"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;img</span> <span class="attr">src=</span><span class="string">"imagen.jpg"</span> <span class="attr">alt=</span><span class="string">"Demo"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"card-demo__body"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h4&gt;</span>Card Title<span class="tag">&lt;/h4&gt;</span>
+    <span class="tag">&lt;p&gt;</span>Hover para ver efecto<span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.card-demo</span> {
+  <span class="property">transition:</span> transform <span class="value">0.3s</span> ease, box-shadow <span class="value">0.3s</span> ease;
+}
+
+<span class="selector">.card-demo:hover</span> {
+  <span class="property">transform:</span> <span class="function">translateY</span>(<span class="value">-8px</span>);
+  <span class="property">box-shadow:</span> <span class="value">0 12px 24px</span> <span class="function">rgba</span>(<span class="value">0,0,0,0.2</span>);
+}
+
+<span class="selector">.card-demo__img</span> {
+  <span class="property">overflow:</span> hidden;
+}
+
+<span class="selector">.card-demo__img img</span> {
+  <span class="property">transition:</span> transform <span class="value">0.3s</span> ease;
+}
+
+<span class="selector">.card-demo:hover .card-demo__img img</span> {
+  <span class="property">transform:</span> <span class="function">scale</span>(<span class="value">1.1</span>);
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 2.4 Galería con Overlay -->
+        <div class="demo">
+          <h3>2.4. Galería con Overlay (::before)</h3>
+          <div class="demo__visual">
+            <div class="gallery-demo">
+              <img src="https://placekeanu.com/250/250?2" alt="Gallery">
+            </div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"gallery-demo"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;img</span> <span class="attr">src=</span><span class="string">"imagen.jpg"</span> <span class="attr">alt=</span><span class="string">"Gallery"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.gallery-demo</span> {
+  <span class="property">position:</span> relative;
+  <span class="property">overflow:</span> hidden;
+}
+
+<span class="selector">.gallery-demo::before</span> {
+  <span class="property">content:</span> <span class="string">''</span>;
+  <span class="property">position:</span> absolute;
+  <span class="property">top:</span> <span class="value">0</span>;
+  <span class="property">left:</span> <span class="value">0</span>;
+  <span class="property">width:</span> <span class="value">100%</span>;
+  <span class="property">height:</span> <span class="value">100%</span>;
+  <span class="property">background:</span> <span class="function">rgba</span>(<span class="value">0,0,0,0</span>);
+  <span class="property">transition:</span> background <span class="value">0.3s</span> ease;
+}
+
+<span class="selector">.gallery-demo:hover::before</span> {
+  <span class="property">background:</span> <span class="function">rgba</span>(<span class="value">0,0,0,0.4</span>);
+}
+
+<span class="selector">.gallery-demo img</span> {
+  <span class="property">transition:</span> transform <span class="value">0.3s</span> ease;
+}
+
+<span class="selector">.gallery-demo:hover img</span> {
+  <span class="property">transform:</span> <span class="function">scale</span>(<span class="value">1.05</span>);
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 2.5 Botón con efectos -->
+        <div class="demo">
+          <h3>2.5. Botón con Efectos</h3>
+          <div class="demo__visual">
+            <button class="btn-demo btn-primary">Botón Primary</button>
+            <button class="btn-demo btn-outline">Botón Outline</button>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;button</span> <span class="attr">class=</span><span class="string">"btn-demo btn-primary"</span><span class="tag">&gt;</span>Botón<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;button</span> <span class="attr">class=</span><span class="string">"btn-demo btn-outline"</span><span class="tag">&gt;</span>Outline<span class="tag">&lt;/button&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.btn-demo</span> {
+  <span class="property">transition:</span> transform <span class="value">0.2s</span> ease, background-color <span class="value">0.2s</span> ease;
+}
+
+<span class="selector">.btn-primary:hover</span> {
+  <span class="property">transform:</span> <span class="function">scale</span>(<span class="value">1.05</span>);
+  <span class="property">background-color:</span> <span class="value">#2563eb</span>;
+}
+
+<span class="selector">.btn-outline</span> {
+  <span class="property">background-color:</span> transparent;
+  <span class="property">border:</span> <span class="value">2px</span> solid <span class="value">#3b82f6</span>;
+}
+
+<span class="selector">.btn-outline:hover</span> {
+  <span class="property">background-color:</span> <span class="value">#3b82f6</span>;
+  <span class="property">color:</span> white;
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================
+         NIVEL 3: ANIMACIONES CON @KEYFRAMES
+         ===================================== -->
+    <section id="nivel3" class="section section--dark">
+      <div class="section__header">
+        <h2 class="section__title">🟠 Nivel 3: Animaciones con @keyframes</h2>
+        <p class="section__subtitle">Animaciones automáticas, infinitas y complejas</p>
+      </div>
+
+      <div class="demos-grid">
+        <!-- 3.1 Fade In -->
+        <div class="demo">
+          <h3>3.1. Fade In (Aparecer)</h3>
+          <div class="demo__visual">
+            <div class="box anim-fadein">Aparezco</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box anim-fadein"</span><span class="tag">&gt;</span>Aparezco<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">@keyframes</span> <span class="anim-name">fadeIn</span> {
+  <span class="keyframe">from</span> {
+    <span class="property">opacity:</span> <span class="value">0</span>;
+  }
+  <span class="keyframe">to</span> {
+    <span class="property">opacity:</span> <span class="value">1</span>;
+  }
+}
+
+<span class="selector">.anim-fadein</span> {
+  <span class="property">animation:</span> fadeIn <span class="value">2s</span> ease-in;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 3.2 Pulse (Pulso) -->
+        <div class="demo">
+          <h3>3.2. Pulse (Pulso con box-shadow)</h3>
+          <div class="demo__visual">
+            <div class="box anim-pulse">Pulso</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box anim-pulse"</span><span class="tag">&gt;</span>Pulso<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">@keyframes</span> <span class="anim-name">pulse</span> {
+  <span class="keyframe">0%, 100%</span> {
+    <span class="property">transform:</span> <span class="function">scale</span>(<span class="value">1</span>);
+    <span class="property">box-shadow:</span> <span class="value">0 0 0</span> <span class="function">rgba</span>(<span class="value">59,130,246,0.4</span>);
+  }
+  <span class="keyframe">50%</span> {
+    <span class="property">transform:</span> <span class="function">scale</span>(<span class="value">1.15</span>);
+    <span class="property">box-shadow:</span> <span class="value">0 0 30px</span> <span class="function">rgba</span>(<span class="value">59,130,246,0.8</span>);
+  }
+}
+
+<span class="selector">.anim-pulse</span> {
+  <span class="property">animation:</span> pulse <span class="value">2s</span> ease-in-out infinite;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 3.3 Spin (Girar) -->
+        <div class="demo">
+          <h3>3.3. Spin (Rotación Continua)</h3>
+          <div class="demo__visual">
+            <div class="box anim-spin">⚙️</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box anim-spin"</span><span class="tag">&gt;</span>⚙️<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">@keyframes</span> <span class="anim-name">spin</span> {
+  <span class="keyframe">from</span> {
+    <span class="property">transform:</span> <span class="function">rotate</span>(<span class="value">0deg</span>);
+  }
+  <span class="keyframe">to</span> {
+    <span class="property">transform:</span> <span class="function">rotate</span>(<span class="value">360deg</span>);
+  }
+}
+
+<span class="selector">.anim-spin</span> {
+  <span class="property">animation:</span> spin <span class="value">2s</span> linear infinite;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 3.4 Bounce (Rebote) -->
+        <div class="demo">
+          <h3>3.4. Bounce (Rebote)</h3>
+          <div class="demo__visual">
+            <div class="box anim-bounce">Rebote</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box anim-bounce"</span><span class="tag">&gt;</span>Rebote<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">@keyframes</span> <span class="anim-name">bounce</span> {
+  <span class="keyframe">0%, 100%</span> {
+    <span class="property">transform:</span> <span class="function">translateY</span>(<span class="value">0</span>);
+  }
+  <span class="keyframe">50%</span> {
+    <span class="property">transform:</span> <span class="function">translateY</span>(<span class="value">-50px</span>);
+  }
+}
+
+<span class="selector">.anim-bounce</span> {
+  <span class="property">animation:</span> bounce <span class="value">1s</span> ease-in-out infinite alternate;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 3.5 Shake (Temblar) -->
+        <div class="demo">
+          <h3>3.5. Shake (Temblar / Error)</h3>
+          <div class="demo__visual">
+            <div class="box anim-shake">Error</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box anim-shake"</span><span class="tag">&gt;</span>Error<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">@keyframes</span> <span class="anim-name">shake</span> {
+  <span class="keyframe">0%, 100%</span> {
+    <span class="property">transform:</span> <span class="function">translateX</span>(<span class="value">0</span>);
+  }
+  <span class="keyframe">10%, 30%, 50%, 70%, 90%</span> {
+    <span class="property">transform:</span> <span class="function">translateX</span>(<span class="value">-10px</span>);
+  }
+  <span class="keyframe">20%, 40%, 60%, 80%</span> {
+    <span class="property">transform:</span> <span class="function">translateX</span>(<span class="value">10px</span>);
+  }
+}
+
+<span class="selector">.anim-shake</span> {
+  <span class="property">animation:</span> shake <span class="value">0.5s</span> ease-in-out infinite;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 3.6 Swing (Balanceo) -->
+        <div class="demo">
+          <h3>3.6. Swing (Balanceo)</h3>
+          <div class="demo__visual">
+            <div class="box anim-swing">Balanceo</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box anim-swing"</span><span class="tag">&gt;</span>Balanceo<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">@keyframes</span> <span class="anim-name">swing</span> {
+  <span class="keyframe">0%, 100%</span> {
+    <span class="property">transform:</span> <span class="function">rotate</span>(<span class="value">0deg</span>);
+  }
+  <span class="keyframe">25%</span> {
+    <span class="property">transform:</span> <span class="function">rotate</span>(<span class="value">15deg</span>);
+  }
+  <span class="keyframe">75%</span> {
+    <span class="property">transform:</span> <span class="function">rotate</span>(<span class="value">-15deg</span>);
+  }
+}
+
+<span class="selector">.anim-swing</span> {
+  <span class="property">animation:</span> swing <span class="value">2s</span> ease-in-out infinite;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 3.7 Color Change -->
+        <div class="demo">
+          <h3>3.7. Color Change (Cambio de Colores)</h3>
+          <div class="demo__visual">
+            <div class="box anim-colorchange">Colores</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box anim-colorchange"</span><span class="tag">&gt;</span>Colores<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">@keyframes</span> <span class="anim-name">colorChange</span> {
+  <span class="keyframe">0%</span> {
+    <span class="property">background-color:</span> <span class="value">#e74c3c</span>;
+  }
+  <span class="keyframe">33%</span> {
+    <span class="property">background-color:</span> <span class="value">#f39c12</span>;
+  }
+  <span class="keyframe">66%</span> {
+    <span class="property">background-color:</span> <span class="value">#2ecc71</span>;
+  }
+  <span class="keyframe">100%</span> {
+    <span class="property">background-color:</span> <span class="value">#3498db</span>;
+  }
+}
+
+<span class="selector">.anim-colorchange</span> {
+  <span class="property">animation:</span> colorChange <span class="value">4s</span> linear infinite;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 3.8 Fade In Up -->
+        <div class="demo">
+          <h3>3.8. Fade In Up (Aparecer desde Abajo)</h3>
+          <div class="demo__visual">
+            <div class="box anim-fadeinup">Desde abajo</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box anim-fadeinup"</span><span class="tag">&gt;</span>Desde abajo<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">@keyframes</span> <span class="anim-name">fadeInUp</span> {
+  <span class="keyframe">from</span> {
+    <span class="property">opacity:</span> <span class="value">0</span>;
+    <span class="property">transform:</span> <span class="function">translateY</span>(<span class="value">30px</span>);
+  }
+  <span class="keyframe">to</span> {
+    <span class="property">opacity:</span> <span class="value">1</span>;
+    <span class="property">transform:</span> <span class="function">translateY</span>(<span class="value">0</span>);
+  }
+}
+
+<span class="selector">.anim-fadeinup</span> {
+  <span class="property">animation:</span> fadeInUp <span class="value">1s</span> ease-out;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 3.9 Loader (Spinner) -->
+        <div class="demo">
+          <h3>3.9. Loader / Spinner</h3>
+          <div class="demo__visual">
+            <div class="loader"></div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"loader"</span><span class="tag">&gt;&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">@keyframes</span> <span class="anim-name">spin</span> {
+  <span class="keyframe">from</span> {
+    <span class="property">transform:</span> <span class="function">rotate</span>(<span class="value">0deg</span>);
+  }
+  <span class="keyframe">to</span> {
+    <span class="property">transform:</span> <span class="function">rotate</span>(<span class="value">360deg</span>);
+  }
+}
+
+<span class="selector">.loader</span> {
+  <span class="property">width:</span> <span class="value">50px</span>;
+  <span class="property">height:</span> <span class="value">50px</span>;
+  <span class="property">border:</span> <span class="value">5px</span> solid <span class="value">#f3f3f3</span>;
+  <span class="property">border-top:</span> <span class="value">5px</span> solid <span class="value">#3498db</span>;
+  <span class="property">border-radius:</span> <span class="value">50%</span>;
+  <span class="property">animation:</span> spin <span class="value">1s</span> linear infinite;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 3.10 Progress Bar -->
+        <div class="demo demo--full">
+          <h3>3.10. Progress Bar (Barra de Progreso)</h3>
+          <div class="demo__visual">
+            <div class="progress-demo">
+              <div class="progress-demo__bar">75%</div>
+            </div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"progress-demo"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"progress-demo__bar"</span><span class="tag">&gt;</span>75%<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">@keyframes</span> <span class="anim-name">fillProgress</span> {
+  <span class="keyframe">from</span> {
+    <span class="property">width:</span> <span class="value">0</span>;
+  }
+  <span class="keyframe">to</span> {
+    <span class="property">width:</span> <span class="value">75%</span>;
+  }
+}
+
+<span class="selector">.progress-demo__bar</span> {
+  <span class="property">animation:</span> fillProgress <span class="value">2s</span> ease-out forwards;
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================
+         NIVEL 4: PROPIEDADES AVANZADAS
+         ===================================== -->
+    <section id="nivel4" class="section section--light">
+      <div class="section__header">
+        <h2 class="section__title">🔴 Nivel 4: Propiedades Avanzadas</h2>
+        <p class="section__subtitle">fill-mode, direction, cubic-bezier, animaciones complejas</p>
+      </div>
+
+      <div class="demos-grid">
+        <!-- 4.1 animation-fill-mode: forwards -->
+        <div class="demo">
+          <h3>4.1. animation-fill-mode: forwards</h3>
+          <div class="demo__visual">
+            <div class="box anim-fillmode-forwards">Mantiene final</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box anim-fillmode-forwards"</span><span class="tag">&gt;</span>Mantiene final<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">@keyframes</span> <span class="anim-name">moveForwards</span> {
+  <span class="keyframe">from</span> {
+    <span class="property">transform:</span> <span class="function">translateX</span>(<span class="value">0</span>);
+    <span class="property">opacity:</span> <span class="value">0.5</span>;
+  }
+  <span class="keyframe">to</span> {
+    <span class="property">transform:</span> <span class="function">translateX</span>(<span class="value">100px</span>);
+    <span class="property">opacity:</span> <span class="value">1</span>;
+  }
+}
+
+<span class="selector">.anim-fillmode-forwards</span> {
+  <span class="property">animation:</span> moveForwards <span class="value">2s</span> ease forwards;  <span class="comment">/* Mantiene estado final */</span>
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 4.2 animation-fill-mode: backwards -->
+        <div class="demo">
+          <h3>4.2. animation-fill-mode: backwards</h3>
+          <div class="demo__visual">
+            <div class="box anim-fillmode-backwards">Aplica inicial en delay</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box anim-fillmode-backwards"</span><span class="tag">&gt;</span>Aplica inicial<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">@keyframes</span> <span class="anim-name">moveBackwards</span> {
+  <span class="keyframe">from</span> {
+    <span class="property">opacity:</span> <span class="value">0.3</span>;
+    <span class="property">background-color:</span> <span class="value">#8eff74</span>;
+  }
+  <span class="keyframe">to</span> {
+    <span class="property">opacity:</span> <span class="value">1</span>;
+    <span class="property">background-color:</span> <span class="value">#fd79a8</span>;
+  }
+}
+
+<span class="selector">.anim-fillmode-backwards</span> {
+  <span class="property">animation:</span> moveBackwards <span class="value">2s</span> ease <span class="value">0.5s</span> backwards;
+  <span class="comment">/* Durante el delay (0.5s) ya tiene opacity 0.3 */</span>
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 4.3 animation-fill-mode: both -->
+        <div class="demo">
+          <h3>4.3. animation-fill-mode: both</h3>
+          <div class="demo__visual">
+            <div class="box anim-fillmode-both">Combina ambos</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.anim-fillmode-both</span> {
+  <span class="property">animation:</span> moveBackwards <span class="value">2s</span> ease <span class="value">0.5s</span> both;
+  <span class="comment">/* Combina forwards + backwards */</span>
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 4.4 animation-fill-mode: none -->
+        <div class="demo">
+          <h3>4.4. animation-fill-mode: none</h3>
+          <div class="demo__visual">
+            <div class="box anim-fillmode-none">Vuelve al inicio</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.anim-fillmode-none</span> {
+  <span class="property">animation:</span> moveForwards <span class="value">2s</span> ease <span class="value">0.5s</span> none;
+  <span class="comment">/* Vuelve al estado CSS original (por defecto) */</span>
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 4.5 animation-direction: alternate -->
+        <div class="demo">
+          <h3>4.5. animation-direction: alternate</h3>
+          <div class="demo__visual">
+            <div class="box anim-direction-alternate">Ida y vuelta</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box anim-direction-alternate"</span><span class="tag">&gt;</span>Ida y vuelta<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">@keyframes</span> <span class="anim-name">slideColor</span> {
+  <span class="keyframe">from</span> {
+    <span class="property">transform:</span> <span class="function">translateX</span>(<span class="value">0</span>);
+  }
+  <span class="keyframe">to</span> {
+    <span class="property">transform:</span> <span class="function">translateX</span>(<span class="value">100px</span>);
+  }
+}
+
+<span class="selector">.anim-direction-alternate</span> {
+  <span class="property">animation:</span> slideColor <span class="value">2s</span> ease infinite alternate;
+  <span class="comment">/* Va de 0% a 100%, luego de 100% a 0% */</span>
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 4.6 animation-direction: reverse -->
+        <div class="demo">
+          <h3>4.6. animation-direction: reverse</h3>
+          <div class="demo__visual">
+            <div class="box anim-direction-reverse">Al revés</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.anim-direction-reverse</span> {
+  <span class="property">animation:</span> slideColor <span class="value">2s</span> ease infinite reverse;
+  <span class="comment">/* Ejecuta de 100% a 0% */</span>
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 4.7 animation-direction: alternate-reverse -->
+        <div class="demo">
+          <h3>4.7. animation-direction: alternate-reverse</h3>
+          <div class="demo__visual">
+            <div class="box anim-direction-altreverse">Vuelta e ida</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.anim-direction-altreverse</span> {
+  <span class="property">animation:</span> slideColor <span class="value">2s</span> ease infinite alternate-reverse;
+  <span class="comment">/* Empieza al revés, luego alterna */</span>
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 4.8 cubic-bezier personalizado -->
+        <div class="demo">
+          <h3>4.8. cubic-bezier (Timing Personalizado)</h3>
+          <div class="demo__visual">
+            <div class="box anim-cubic-bounce">Bounce effect</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box anim-cubic-bounce"</span><span class="tag">&gt;</span>Bounce<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">@keyframes</span> <span class="anim-name">bounceMove</span> {
+  <span class="keyframe">from</span> {
+    <span class="property">transform:</span> <span class="function">translateX</span>(<span class="value">0</span>);
+  }
+  <span class="keyframe">to</span> {
+    <span class="property">transform:</span> <span class="function">translateX</span>(<span class="value">150px</span>);
+  }
+}
+
+<span class="selector">.anim-cubic-bounce</span> {
+  <span class="property">animation:</span> bounceMove <span class="value">2s</span> <span class="function">cubic-bezier</span>(<span class="value">0.68, -0.55, 0.265, 1.55</span>) infinite alternate;
+  <span class="comment">/* cubic-bezier crea efecto de rebote */</span>
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 4.9 Animación compleja con múltiples keyframes -->
+        <div class="demo">
+          <h3>4.9. Animación Compleja (Múltiples Keyframes)</h3>
+          <div class="demo__visual">
+            <div class="box anim-complex">Complejo</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box anim-complex"</span><span class="tag">&gt;</span>Complejo<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">@keyframes</span> <span class="anim-name">complexPath</span> {
+  <span class="keyframe">0%</span> {
+    <span class="property">transform:</span> <span class="function">translate</span>(<span class="value">0, 0</span>) <span class="function">scale</span>(<span class="value">1</span>) <span class="function">rotate</span>(<span class="value">0deg</span>);
+    <span class="property">background-color:</span> <span class="value">#e74c3c</span>;
+    <span class="property">border-radius:</span> <span class="value">50%</span>;
+  }
+  <span class="keyframe">25%</span> {
+    <span class="property">transform:</span> <span class="function">translate</span>(<span class="value">100px, 0</span>) <span class="function">scale</span>(<span class="value">1.2</span>) <span class="function">rotate</span>(<span class="value">90deg</span>);
+    <span class="property">background-color:</span> <span class="value">#f39c12</span>;
+    <span class="property">border-radius:</span> <span class="value">0%</span>;
+  }
+  <span class="keyframe">50%</span> {
+    <span class="property">transform:</span> <span class="function">translate</span>(<span class="value">100px, -60px</span>) <span class="function">scale</span>(<span class="value">0.8</span>) <span class="function">rotate</span>(<span class="value">180deg</span>);
+    <span class="property">background-color:</span> <span class="value">#2ecc71</span>;
+  }
+  <span class="keyframe">75%</span> {
+    <span class="property">transform:</span> <span class="function">translate</span>(<span class="value">0, -60px</span>) <span class="function">scale</span>(<span class="value">1.2</span>) <span class="function">rotate</span>(<span class="value">270deg</span>);
+    <span class="property">background-color:</span> <span class="value">#3498db</span>;
+  }
+  <span class="keyframe">100%</span> {
+    <span class="property">transform:</span> <span class="function">translate</span>(<span class="value">0, 0</span>) <span class="function">scale</span>(<span class="value">1</span>) <span class="function">rotate</span>(<span class="value">360deg</span>);
+    <span class="property">background-color:</span> <span class="value">#e74c3c</span>;
+  }
+}
+
+<span class="selector">.anim-complex</span> {
+  <span class="property">animation:</span> complexPath <span class="value">4s</span> ease-in-out infinite;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 4.10 animation-play-state: paused -->
+        <div class="demo">
+          <h3>4.10. animation-play-state: paused (hover)</h3>
+          <div class="demo__visual">
+            <div class="box anim-pausable">Pausar con hover</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box anim-pausable"</span><span class="tag">&gt;</span>Pausar<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.anim-pausable</span> {
+  <span class="property">animation:</span> spin <span class="value">3s</span> linear infinite;
+}
+
+<span class="selector">.anim-pausable:hover</span> {
+  <span class="property">animation-play-state:</span> paused;
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================
+         NIVEL 5: SCROLL ANIMATIONS Y COMPONENTES
+         ===================================== -->
+    <section id="nivel5" class="section section--dark">
+      <div class="section__header">
+        <h2 class="section__title">⚡ Nivel 5: Scroll Animations y Componentes</h2>
+        <p class="section__subtitle">Aparición por scroll (CSS y JS), escalonadas, dropdowns, modales</p>
+      </div>
+
+      <div class="demos-grid">
+        <!-- 5.1 Aparición con Scroll (JavaScript) -->
+        <div class="demo demo--full">
+          <h3>5.1. Aparición con Scroll (JavaScript + Intersection Observer)</h3>
+          <div class="demo__visual">
+            <div class="box js-scroll-item">Aparezco al hacer scroll</div>
+            <div class="box js-scroll-item">Yo también</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box js-scroll-item"</span><span class="tag">&gt;</span>Aparezco<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.js-scroll-item</span> {
+  <span class="property">opacity:</span> <span class="value">0</span>;
+  <span class="property">transform:</span> <span class="function">translateY</span>(<span class="value">30px</span>);
+  <span class="property">transition:</span> opacity <span class="value">0.6s</span> ease, transform <span class="value">0.6s</span> ease;
+}
+
+<span class="selector">.js-scroll-item.visible</span> {
+  <span class="property">opacity:</span> <span class="value">1</span>;
+  <span class="property">transform:</span> <span class="function">translateY</span>(<span class="value">0</span>);
+}</code></pre>
+            <p class="code-label">JavaScript:</p>
+            <pre><code><span class="keyword">const</span> items = <span class="var">document</span>.<span class="function">querySelectorAll</span>(<span class="string">'.js-scroll-item'</span>);
+
+<span class="keyword">const</span> observer = <span class="keyword">new</span> <span class="class">IntersectionObserver</span>((entries) => {
+  entries.<span class="function">forEach</span>(entry => {
+    <span class="keyword">if</span> (entry.isIntersecting) {
+      entry.target.classList.<span class="function">add</span>(<span class="string">'visible'</span>);
+    }
+  });
+}, { <span class="property">threshold:</span> <span class="value">0.3</span> });
+
+items.<span class="function">forEach</span>(item => observer.<span class="function">observe</span>(item));</code></pre>
+          </div>
+        </div>
+
+        <!-- 5.2 Aparición Escalonada con CSS (animation-delay) -->
+        <div class="demo demo--full">
+          <h3>5.2. Aparición Escalonada con CSS (animation-delay + nth-child)</h3>
+          <div class="demo__visual stagger-demo">
+            <div class="box stagger-css-item">1</div>
+            <div class="box stagger-css-item">2</div>
+            <div class="box stagger-css-item">3</div>
+            <div class="box stagger-css-item">4</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"stagger-demo"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box stagger-css-item"</span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box stagger-css-item"</span><span class="tag">&gt;</span>2<span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box stagger-css-item"</span><span class="tag">&gt;</span>3<span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box stagger-css-item"</span><span class="tag">&gt;</span>4<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">@keyframes</span> <span class="anim-name">aparecer</span> {
+  <span class="keyframe">from</span> {
+    <span class="property">opacity:</span> <span class="value">0</span>;
+    <span class="property">transform:</span> <span class="function">translateY</span>(<span class="value">50px</span>) <span class="function">scale</span>(<span class="value">0.9</span>);
+  }
+  <span class="keyframe">to</span> {
+    <span class="property">opacity:</span> <span class="value">1</span>;
+    <span class="property">transform:</span> <span class="function">translateY</span>(<span class="value">0</span>) <span class="function">scale</span>(<span class="value">1</span>);
+  }
+}
+
+<span class="selector">.stagger-css-item</span> {
+  <span class="property">opacity:</span> <span class="value">0</span>;
+  <span class="property">animation:</span> aparecer <span class="value">0.8s</span> ease forwards;
+}
+
+<span class="selector">.stagger-css-item:nth-child(1)</span> {
+  <span class="property">animation-delay:</span> <span class="value">0.2s</span>;
+}
+
+<span class="selector">.stagger-css-item:nth-child(2)</span> {
+  <span class="property">animation-delay:</span> <span class="value">0.4s</span>;
+}
+
+<span class="selector">.stagger-css-item:nth-child(3)</span> {
+  <span class="property">animation-delay:</span> <span class="value">0.6s</span>;
+}
+
+<span class="selector">.stagger-css-item:nth-child(4)</span> {
+  <span class="property">animation-delay:</span> <span class="value">0.8s</span>;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 5.3 Aparición Escalonada con JavaScript -->
+        <div class="demo demo--full">
+          <h3>5.3. Aparición Escalonada con JavaScript (setTimeout)</h3>
+          <div class="demo__visual">
+            <div class="box js-stagger-item" data-delay="0">1</div>
+            <div class="box js-stagger-item" data-delay="1">2</div>
+            <div class="box js-stagger-item" data-delay="2">3</div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box js-stagger-item"</span> <span class="attr">data-delay=</span><span class="string">"0"</span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"box js-stagger-item"</span> <span class="attr">data-delay=</span><span class="string">"1"</span><span class="tag">&gt;</span>2<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">JavaScript:</p>
+            <pre><code><span class="keyword">const</span> staggerItems = <span class="var">document</span>.<span class="function">querySelectorAll</span>(<span class="string">'.js-stagger-item'</span>);
+
+<span class="keyword">const</span> staggerObserver = <span class="keyword">new</span> <span class="class">IntersectionObserver</span>((entries) => {
+  entries.<span class="function">forEach</span>(entry => {
+    <span class="keyword">if</span> (entry.isIntersecting) {
+      <span class="keyword">const</span> delay = entry.target.dataset.delay || <span class="value">0</span>;
+
+      <span class="function">setTimeout</span>(() => {
+        entry.target.classList.<span class="function">add</span>(<span class="string">'visible'</span>);
+      }, delay * <span class="value">200</span>);  <span class="comment">// 200ms entre cada elemento</span>
+
+      staggerObserver.<span class="function">unobserve</span>(entry.target);
+    }
+  });
+}, { <span class="property">threshold:</span> <span class="value">0.3</span> });
+
+staggerItems.<span class="function">forEach</span>(item => staggerObserver.<span class="function">observe</span>(item));</code></pre>
+          </div>
+        </div>
+
+        <!-- 5.4 Dropdown / Menú Desplegable -->
+        <div class="demo">
+          <h3>5.4. Dropdown / Menú Desplegable (hover)</h3>
+          <div class="demo__visual">
+            <div class="dropdown-demo">
+              <button class="dropdown-demo__btn">Menú ▼</button>
+              <div class="dropdown-demo__content">
+                <a href="#">Opción 1</a>
+                <a href="#">Opción 2</a>
+                <a href="#">Opción 3</a>
+              </div>
+            </div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"dropdown-demo"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;button</span> <span class="attr">class=</span><span class="string">"dropdown-demo__btn"</span><span class="tag">&gt;</span>Menú ▼<span class="tag">&lt;/button&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"dropdown-demo__content"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attr">href=</span><span class="string">"#"</span><span class="tag">&gt;</span>Opción 1<span class="tag">&lt;/a&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attr">href=</span><span class="string">"#"</span><span class="tag">&gt;</span>Opción 2<span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.dropdown-demo__content</span> {
+  <span class="property">opacity:</span> <span class="value">0</span>;
+  <span class="property">transform:</span> <span class="function">translateY</span>(<span class="value">-10px</span>);
+  <span class="property">pointer-events:</span> none;
+  <span class="property">transition:</span> opacity <span class="value">0.3s</span> ease, transform <span class="value">0.3s</span> ease;
+}
+
+<span class="selector">.dropdown-demo:hover .dropdown-demo__content</span> {
+  <span class="property">opacity:</span> <span class="value">1</span>;
+  <span class="property">transform:</span> <span class="function">translateY</span>(<span class="value">0</span>);
+  <span class="property">pointer-events:</span> auto;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 5.5 Bloque Desplegable con JavaScript (Toggle) -->
+        <div class="demo demo--full">
+          <h3>5.5. Bloque Desplegable con JavaScript (Toggle)</h3>
+          <div class="demo__visual">
+            <div class="collapsible-js">
+              <button class="collapsible-js__btn">▼ Click para expandir</button>
+              <div class="collapsible-js__content">
+                <p>Este contenido se muestra/oculta con JavaScript.</p>
+                <ul>
+                  <li>Punto 1</li>
+                  <li>Punto 2</li>
+                  <li>Punto 3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"collapsible-js"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;button</span> <span class="attr">class=</span><span class="string">"collapsible-js__btn"</span><span class="tag">&gt;</span>▼ Click<span class="tag">&lt;/button&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"collapsible-js__content"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;p&gt;</span>Contenido...<span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.collapsible-js__content</span> {
+  <span class="property">max-height:</span> <span class="value">500px</span>;
+  <span class="property">opacity:</span> <span class="value">1</span>;
+  <span class="property">transition:</span> max-height <span class="value">0.4s</span> ease, opacity <span class="value">0.4s</span> ease;
+}
+
+<span class="selector">.collapsible-js__content.cerrado</span> {
+  <span class="property">max-height:</span> <span class="value">0</span>;
+  <span class="property">opacity:</span> <span class="value">0</span>;
+  <span class="property">overflow:</span> hidden;
+}</code></pre>
+            <p class="code-label">JavaScript:</p>
+            <pre><code><span class="keyword">const</span> toggle = <span class="var">document</span>.<span class="function">querySelector</span>(<span class="string">'.collapsible-js__btn'</span>);
+<span class="keyword">const</span> content = <span class="var">document</span>.<span class="function">querySelector</span>(<span class="string">'.collapsible-js__content'</span>);
+
+<span class="comment">// Estado inicial: cerrado</span>
+content.classList.<span class="function">add</span>(<span class="string">'cerrado'</span>);
+
+toggle.<span class="function">addEventListener</span>(<span class="string">'click'</span>, () => {
+  content.classList.<span class="function">toggle</span>(<span class="string">'cerrado'</span>);
+
+  <span class="keyword">const</span> isOpen = !content.classList.<span class="function">contains</span>(<span class="string">'cerrado'</span>);
+  toggle.textContent = isOpen ? <span class="string">'▲ Click para colapsar'</span> : <span class="string">'▼ Click para expandir'</span>;
+});</code></pre>
+          </div>
+        </div>
+
+        <!-- 5.6 Bloque Desplegable con CSS (checkbox hack) -->
+        <div class="demo demo--full">
+          <h3>5.6. Bloque Desplegable con CSS PURO (checkbox hack)</h3>
+          <div class="demo__visual">
+            <div class="collapsible-css">
+              <input type="checkbox" id="toggle-css" class="collapsible-css__input">
+              <label for="toggle-css" class="collapsible-css__label">▼ Click para expandir (CSS puro)</label>
+              <div class="collapsible-css__content">
+                <p>Este bloque se abre/cierra con CSS puro, sin JavaScript.</p>
+                <ul>
+                  <li>Usa el checkbox hack</li>
+                  <li>Selector :checked</li>
+                  <li>100% CSS</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"collapsible-css"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">type=</span><span class="string">"checkbox"</span> <span class="attr">id=</span><span class="string">"toggle-css"</span> <span class="attr">class=</span><span class="string">"collapsible-css__input"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;label</span> <span class="attr">for=</span><span class="string">"toggle-css"</span> <span class="attr">class=</span><span class="string">"collapsible-css__label"</span><span class="tag">&gt;</span>▼ Click<span class="tag">&lt;/label&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"collapsible-css__content"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;p&gt;</span>Contenido...<span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.collapsible-css__input</span> {
+  <span class="property">display:</span> none;  <span class="comment">/* Ocultar checkbox */</span>
+}
+
+<span class="selector">.collapsible-css__label</span> {
+  <span class="property">display:</span> block;
+  <span class="property">cursor:</span> pointer;
+  <span class="property">padding:</span> <span class="value">0.5rem</span>;
+  <span class="property">background:</span> <span class="value">#2563eb</span>;
+  <span class="property">color:</span> white;
+}
+
+<span class="selector">.collapsible-css__content</span> {
+  <span class="property">max-height:</span> <span class="value">0</span>;
+  <span class="property">opacity:</span> <span class="value">0</span>;
+  <span class="property">overflow:</span> hidden;
+  <span class="property">transition:</span> max-height <span class="value">0.4s</span> ease, opacity <span class="value">0.4s</span> ease;
+}
+
+<span class="selector">.collapsible-css__input:checked ~ .collapsible-css__content</span> {
+  <span class="property">max-height:</span> <span class="value">500px</span>;
+  <span class="property">opacity:</span> <span class="value">1</span>;
+}
+
+<span class="comment">/* Cambiar el icono cuando está abierto */</span>
+<span class="selector">.collapsible-css__input:checked + .collapsible-css__label::before</span> {
+  <span class="property">content:</span> <span class="string">'▲ '</span>;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 5.7 Skeleton Loader Demo -->
+        <div class="sk-wrapper">
+          <h3>5.7. Skeleton Loader (Efecto de Carga)</h3>
+
+          <div class="sk-card">
+            <div class="sk-block sk-block--img"></div>
+            <div class="sk-block"></div>
+            <div class="sk-block sk-block--short"></div>
+          </div>
+
+
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code>
+<span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"sk-wrapper"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"sk-card"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"sk-block sk-block--img"</span><span class="tag">&gt;&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"sk-block"</span><span class="tag">&gt;&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"sk-block sk-block--short"</span><span class="tag">&gt;&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+</code></pre>
+
+            <p class="code-label">CSS:</p>
+            <pre><code>
+<span class="selector">@keyframes</span> <span class="anim-name">sk-wave</span> {
+  <span class="keyframe">0%</span> {
+    <span class="property">background-position:</span> <span class="value">-200px 0</span>;
+  }
+  <span class="keyframe">100%</span> {
+    <span class="property">background-position:</span> <span class="value">calc(200px + 100%) 0</span>;
+  }
+}
+
+<span class="selector">.sk-wrapper</span> {
+  <span class="property">background:</span> <span class="value">#1e293b</span>;
+  <span class="property">padding:</span> <span class="value">1rem</span>;
+  <span class="property">border-radius:</span> <span class="value">12px</span>;
+  <span class="property">max-width:</span> <span class="value">300px</span>;
+}
+
+<span class="selector">.sk-card</span> {
+  <span class="property">display:</span> <span class="value">flex</span>;
+  <span class="property">flex-direction:</span> <span class="value">column</span>;
+}
+
+<span class="selector">.sk-block</span> {
+  <span class="property">height:</span> <span class="value">20px</span>;
+  <span class="property">margin-bottom:</span> <span class="value">0.5rem</span>;
+  <span class="property">border-radius:</span> <span class="value">4px</span>;
+  <span class="property">background:</span> <span class="value">#f0f0f0</span>;
+  <span class="property">background-image:</span> <span class="function">linear-gradient</span>(
+    <span class="value">90deg</span>,
+    <span class="value">#f0f0f0 0px</span>,
+    <span class="value">#e0e0e0 40px</span>,
+    <span class="value">#f0f0f0 80px</span>
+  );
+  <span class="property">background-size:</span> <span class="value">200px</span>;
+  <span class="property">animation:</span> <span class="value">sk-wave 1.5s infinite</span>;
+}
+
+<span class="selector">.sk-block--img</span> {
+  <span class="property">height:</span> <span class="value">150px</span>;
+  <span class="property">border-radius:</span> <span class="value">8px</span>;
+  <span class="property">margin-bottom:</span> <span class="value">1rem</span>;
+}
+
+<span class="selector">.sk-block--short</span> {
+  <span class="property">width:</span> <span class="value">60%</span>;
+}
+</code></pre>
+          </div>
+        </div>
+
+        <!-- 5.8 Tooltip -->
+        <div class="demo">
+          <h3>5.8. Tooltip Animado</h3>
+          <div class="demo__visual">
+            <div class="tooltip-demo">
+              <span class="tooltip-demo__text">Pasa el ratón aquí</span>
+              <div class="tooltip-demo__tooltip">Este es un tooltip!</div>
+            </div>
+          </div>
+          <div class="code-block">
+            <p class="code-label">HTML:</p>
+            <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"tooltip-demo"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;span</span> <span class="attr">class=</span><span class="string">"tooltip-demo__text"</span><span class="tag">&gt;</span>Pasa el ratón<span class="tag">&lt;/span&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="string">"tooltip-demo__tooltip"</span><span class="tag">&gt;</span>Tooltip!<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></code></pre>
+            <p class="code-label">CSS:</p>
+            <pre><code><span class="selector">.tooltip-demo</span> {
+  <span class="property">position:</span> relative;
+}
+
+<span class="selector">.tooltip-demo__tooltip</span> {
+  <span class="property">position:</span> absolute;
+  <span class="property">bottom:</span> <span class="value">100%</span>;
+  <span class="property">left:</span> <span class="value">50%</span>;
+  <span class="property">transform:</span> <span class="function">translateX</span>(<span class="value">-50%</span>) <span class="function">translateY</span>(<span class="value">-5px</span>);
+  <span class="property">opacity:</span> <span class="value">0</span>;
+  <span class="property">pointer-events:</span> none;
+  <span class="property">transition:</span> opacity <span class="value">0.3s</span> ease, transform <span class="value">0.3s</span> ease;
+}
+
+<span class="selector">.tooltip-demo:hover .tooltip-demo__tooltip</span> {
+  <span class="property">opacity:</span> <span class="value">1</span>;
+  <span class="property">transform:</span> <span class="function">translateX</span>(<span class="value">-50%</span>) <span class="function">translateY</span>(<span class="value">0</span>);
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer__text">Chuleta Completa - Transiciones y Animaciones CSS/JS</p>
+    <p class="footer__text">Todos los conceptos de la Unidad en una sola página</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

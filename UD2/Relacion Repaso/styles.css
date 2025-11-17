@@ -72,10 +72,36 @@ body {
   padding: 0;
 }
 
+/* ========================================
+   EJERCICIO 8: Menú de navegación animado
+   ======================================== */
+
 .nav__link {
   text-decoration: none;
   color: #e5e7eb;
   font-size: 0.95rem;
+  position: relative;
+  padding-bottom: 0.3rem;
+  transition: color 0.3s ease;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #2563eb, #4f46e5);
+  transition: width 0.3s ease;
+}
+
+.nav__link:hover {
+  color: #93c5fd;
+}
+
+.nav__link:hover::after {
+  width: 100%;
 }
 
 /* SECCIONES GENERALES */
@@ -278,32 +304,19 @@ body {
   border-radius: 1rem;
   padding: 1.5rem;
   border: 1px solid rgba(148, 163, 184, 0.6);
-}
-
-.translate-yPos {
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 
 .translate-yPos:hover {
-  transform: translateY(30px);
-}
-
-
-
-.translate-y {
-  transition: transform 0.4s ease;
+  transform: translateY(30px) !important;
 }
 
 .translate-y:hover {
-  transform: translateY(-30px);
-}
-
-.translate-both {
-  transition: transform 0.4s ease;
+  transform: translateY(-30px) !important;
 }
 
 .translate-both:hover {
-  transform: translate(50px, -20px);
+  transform: translate(50px, -20px) !important;
 }
 
 .card-expo__title {
@@ -392,13 +405,98 @@ body {
   font-size: 0.95rem;
 }
 
-/* BLOQUE DESPLEGABLE (ESTADO INICIAL ABIERTO PARA QUE SE VEA EL CONTENIDO) */
+/* ========================================
+   EJERCICIO 6.1: Aparición por scroll
+   ======================================== */
+
+.js-scroll-item {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.js-scroll-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Transición específica para elementos que NO son cards de exposiciones */
+.exp-card.js-scroll-item,
+.entradas-extra.js-scroll-item {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Para las cards de exposiciones: permitir que el hover funcione */
+.card-expo.js-scroll-item {
+  transition: opacity 0.6s ease;
+}
+
+.card-expo.js-scroll-item.visible {
+  opacity: 1;
+  /* NO forzamos transform aquí para que el hover funcione */
+}
+
+/* ========================================
+   EJERCICIO 6.2: Animación escalonada
+   ======================================== */
+
+.cards-grid .card-expo:nth-child(1) {
+  animation: aparecer-escalonado 0.8s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.cards-grid .card-expo:nth-child(2) {
+  animation: aparecer-escalonado 0.8s ease forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.cards-grid .card-expo:nth-child(3) {
+  animation: aparecer-escalonado 0.8s ease forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+@keyframes aparecer-escalonado {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ========================================
+   EJERCICIO 7: Animación respiración
+   ======================================== */
+
+.btn-respiracion {
+  animation: respiracion 2s ease-in-out infinite;
+}
+
+@keyframes respiracion {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(37, 99, 235, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
+  }
+}
+
+/* ========================================
+   EJERCICIO 9: Bloque desplegable
+   ======================================== */
 
 .bloque-desplegable {
   background: rgba(15, 23, 42, 0.95);
   border-radius: 1rem;
   border: 1px solid rgba(75, 85, 99, 0.8);
   padding: 1rem;
+  overflow: hidden;
 }
 
 .bloque-desplegable__toggle {
@@ -408,14 +506,30 @@ body {
   color: #e5e7eb;
   font-weight: 500;
   text-align: left;
-  padding: 0;
-  margin: 0 0 0.75rem;
+  padding: 0.5rem 0;
+  margin: 0;
   cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.bloque-desplegable__toggle:hover {
+  color: #93c5fd;
 }
 
 .bloque-desplegable__contenido {
   font-size: 0.9rem;
   color: #9ca3af;
+  max-height: 500px;
+  opacity: 1;
+  transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+  margin-top: 0.75rem;
+}
+
+.bloque-desplegable__contenido.cerrado {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  overflow: hidden;
 }
 
 .bloque-desplegable__contenido ul {
