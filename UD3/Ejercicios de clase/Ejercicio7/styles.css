@@ -15,4 +15,58 @@ footer {
     color: #fff;
 }
 
-/* Espacio para añadir animaciones y transiciones personalizadas */
+/* Animaciones y transiciones personalizadas */
+
+/* Animación del navbar collapse */
+.navbar-collapse {
+    transition: all 0.4s ease-in-out;
+}
+
+/* Modal con animación personalizada */
+.modal.fade .modal-dialog {
+    transform: translate(0, -50px);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.modal.show .modal-dialog {
+    transform: translate(0, 0);
+}
+
+/* Transiciones suaves en botones */
+.btn {
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Transiciones en enlaces del navbar */
+.nav-link {
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #4CAF50 !important;
+}
+
+/* Animación de las tarjetas */
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Transiciones en enlaces del footer */
+footer a {
+    transition: color 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #4CAF50 !important;
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Proteínas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">💪 GymBro Suplementos™</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#productos">Productos Legendarios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">No hay whatsapp</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero bg-primary text-light text-center py-5" id="inicio">
+        <div class="container">
+            <h1 class="display-4">GymBro Suplementos™</h1>
+            <p class="lead">Porque tu cuerpo escombro necesita ayuda urgente</p>
+            <a href="#productos" class="btn btn-light btn-lg mt-3">Quiero estar cachas</a>
+        </div>
+    </header>
+
+    <!-- Sección de Productos -->
+    <section class="container my-5" id="productos">
+        <h2 class="text-center mb-5">Nuestros Productos Ilegales</h2>
+        <div class="row">
+            <!-- Producto 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://placehold.co/400x300/007bff/ffffff?text=RAFALEITOR PRO MAX" class="card-img-top" alt="Whey Protein">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Proteína "El Rafaleitor"</h5>
+                        <p class="card-text">Con esto estarás como Rafaleitor en sus mejores días. Incluye suscripción a su canal.</p>
+                        <p class="text-danger fw-bold fs-4 mt-auto">69.99€</p>
+                        <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#modalProducto1">Quiero ser un dios</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://placehold.co/400x300/28a745/ffffff?text=CREATINA ENOLAGAY" class="card-img-top" alt="Creatina">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Creatina Radioactiva ☢️</h5>
+                        <p class="card-text">Con esto brillarás en la oscuridad (literalmente). Tu orina tendrá más colores que un RGB de Razer.</p>
+                        <p class="text-success fw-bold fs-4 mt-auto">42.69€</p>
+                        <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#modalProducto2">Ser una lámpara humana</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://placehold.co/400x300/dc3545/ffffff?text=INSEMINATOR 10000" class="card-img-top" alt="BCAA">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Pre-Entreno "Adiós Futuro"</h5>
+                        <p class="card-text">Despídete de tener descendencia pero hola a levantar el doble. Testículos NOT included después de 3 meses.</p>
+                        <p class="text-warning fw-bold fs-4 mt-auto">99.99€ </p>
+                        <button class="btn btn-danger mt-2" data-bs-toggle="modal" data-bs-target="#modalProducto3">Sacrificio aceptado</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modales de Productos -->
+    <!-- Modal Producto 1 -->
+    <div class="modal fade" id="modalProducto1" tabindex="-1" aria-labelledby="modalProducto1Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProducto1Label">Proteína "El Rafaleitor"</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://placehold.co/400x300/007bff/ffffff?text=RAFALEITOR" class="img-fluid mb-3" alt="Rafaleitor">
+                    <p><strong>Precio:</strong> 69.99€</p>
+                    <p><strong>Descripción:</strong> La proteína favorita de los streamers que odian la luz del sol.</p>
+                    <p><strong>Beneficios Cuestionables:</strong></p>
+                    <ul>
+                        <li>40g de proteína por scoop </li>
+                        <li>Sabor a Doritos con Monster Energy</li>
+                        <li>Tu sudor olerá a setup gaming</li>
+                       
+                    </ul>
+                    <p><strong>Contenido:</strong> 1kg </p>
+                    <p class="text-danger"><small>⚠️ Advertencia: No responsable de pérdida de vida social</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Soy un cobarde</button>
+                    <button type="button" class="btn btn-primary">SHUT UP AND TAKE MY MONEY</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Producto 2 -->
+    <div class="modal fade" id="modalProducto2" tabindex="-1" aria-labelledby="modalProducto2Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="modalProducto2Label">Creatina Radioactiva ☢️ "Chernobyl Edition"</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://placehold.co/400x300/28a745/ffffff?text=CREATINA ENOLAGAY" class="img-fluid mb-3" alt="Creatina Radiactiva">
+                    <p><strong>Precio:</strong> 42.69€ (Tu salud: PRICELESS)</p>
+                    <p><strong>Descripción:</strong> Directamente importada de la zona de exclusión. Brillarás literalmente.</p>
+                    <p><strong>Efectos Secundarios (todos garantizados):</strong></p>
+                    <ul>
+                        <li>Brillas en la oscuridad = Adiós factura de luz 💡</li>
+                        <li>Tu orina es fosforescente (haz tus necesidades con estilo)</li>
+                        <li>Incluye partículas de RGB para +10 FPS</li>
+                        <li>Posible tercera tetilla (viene gratis)</li>
+                        <li>Te detectan en los aeropuertos sin pasar por el scanner</li>
+                    </ul>
+                    <p><strong>Contenido:</strong> 500g de puro Uranio.</p>
+                    <p class="text-danger"><strong>⚠️ DISCLAIMER IMPORTANTE:</strong></p>
+                    <p><small>No responsable de mutaciones genéticas, calvicie prematura, visitas frecuentes al médico, rechazo social por tu brillo verde, o cualquier superpoder que desarrolles </small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Valoro mi vida</button>
+                    <button type="button" class="btn btn-success">Quiero brillar como estrella</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Producto 3 -->
+    <div class="modal fade" id="modalProducto3" tabindex="-1" aria-labelledby="modalProducto3Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-danger">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="modalProducto3Label">⚠️ Pre-Entreno "Adiós Futuro" ⚠️</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://placehold.co/400x300/dc3545/ffffff?text=INSEMINATOR 2000" class="img-fluid mb-3" alt="Pre-Entreno">
+                    <p><strong>Precio:</strong> 99.99€ + Tu fertilidad</p>
+                    <p><strong>Descripción:</strong> El pre-entreno que te hace levantar el doble pero también te deja sin herederos.</p>
+
+                    <div class="alert alert-warning">
+                        <strong>⚠️ LEER ANTES DE COMPRAR:</strong> 
+                    </div>
+
+                    <p><strong>Lo que GANAS:</strong></p>
+                    <ul>
+                        <li>+150% de fuerza </li>
+                        <li>Energía infinita (o un infarto, 50/50)</li>
+                        <li>Venas más grandes que autopistas</li>
+                        <li>El respeto del tío más cachas del gym</li>
+                        <li>Tu propio código postal </li>
+                    </ul>
+
+                    <p><strong>Lo que PIERDES:</strong></p>
+                    <ul class="text-danger">
+                        <li>Testículos funcionales (decorativos after 3 meses)</li>
+                        <li>La posibilidad de tener hijos (adoption is the way)</li>
+                        <li>Voz grave (hello Mickey Mouse)</li>
+                        <li>Pelo (all of it, everywhere, except back)</li>
+                        <li>Tu ex te dirá "ya no eres el mismo" (literalmente)</li>
+                    </ul>
+
+                    <p><strong>Contenido:</strong> 300g de "no me arrepiento de nada"</p>
+
+                    <div class="alert alert-danger mt-3">
+                        <p class="mb-1"><strong>CONSENTIMIENTO INFORMADO:</strong></p>
+                        <small>Al comprar este producto aceptas que:<br>
+                        - No tendrás mini-yos corriendo por ahí<br>
+                        - Tu pareja te odiará (pero estarás muy fuerte)<br>
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quiero tener hijos algún día</button>
+                    <button type="button" class="btn btn-danger">YOLO - ACEPTO EL SACRIFICIO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario de Contacto -->
+    <section class="bg-light py-5" id="contacto">
+        <div class="container">
+            <h2 class="text-center mb-4">¿Te arrepentiste? Llora aquí 😢</h2>
+            <p class="text-center text-muted mb-4">Atención al cliente 24/7* (*mentira, solo contestamos cuando nos da la gana)</p>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre (o alias porque te da vergüenza)</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Ej: El_Cachas_69" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email (para spam y más spam)</label>
+                            <input type="email" class="form-control" id="email" placeholder="morenito_pulianillas@gimnasio.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Cuéntanos tus problemas</label>
+                            <textarea class="form-control" id="mensaje" rows="5" placeholder="Ej: Compré el pre-entreno y ahora brillo en la oscuridad, ¿es normal?" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">Enviar y rezar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p class="mb-2">Síguenos para más dudosas decisiones:</p>
+            <div class="mb-3">
+                <a href="#" class="text-light me-3">📘 Facebook si eres boomers</a>
+                <a href="#" class="text-light me-3">🐦 Twitter (saca el hate que llevas dentro)</a>
+                <a href="#" class="text-light me-3">📸 Instagram y sube esa foto sin camiseta en el espejo del gym</a>
+                <a href="#" class="text-light">▶️ YouTube</a>
+            </div>
+            <p class="mb-1">&copy; 2025 GymBro Suplementos™ - No nos hacemos responsables de NADA</p>
+            <p class="text-light"><small>*Darwin Award garantizado 🏆</small></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
