@@ -1,0 +1,35 @@
+# ---------------------------------------
+# Node / Bootstrap / Sass
+# ---------------------------------------
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# ---------------------------------------
+# Carpetas generadas por Sass
+# ---------------------------------------
+*.css.map
+*.sass-cache/
+.sass-cache/
+.cache/
+dist/css/*.map
+
+# ---------------------------------------
+# Archivos de Bootstrap que NO deben subirse
+# (se instalan desde npm automáticamente)
+# ---------------------------------------
+/node_modules/bootstrap/
+/node_modules/@popperjs/
+
+
+# ---------------------------------------
+# Archivos temporales del editor
+# ---------------------------------------
+.vscode/
+.idea/
+
+# ---------------------------------------
+# Compilados que NO quieres subir
+# ---------------------------------------
+dist/css/custom-bootstrap.css
+dist/css/custom-bootstrap.css.map
