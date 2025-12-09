@@ -3,7 +3,9 @@
     "allow": [
       "Bash(mkdir:*)",
       "Bash(dir \"C:\\Users\\Usuario\\Documents\\GitHub\\2ºDAW\\DisenioInterfacesWeb\\UD3\\Ejercicios de clase\")",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(find:*)",
+      "Bash(findstr:*)"
     ],
     "deny": [],
     "ask": []

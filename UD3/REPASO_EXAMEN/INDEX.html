@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UD3 - Índice de Repaso para el Examen</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 0;
+    }
+
+    .main-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .folder-card {
+      transition: all 0.3s ease;
+      border: 2px solid #e9ecef;
+      height: 100%;
+    }
+
+    .folder-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      border-color: #007bff;
+    }
+
+    .folder-icon {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .badge-star {
+      background: linear-gradient(45deg, #FFD700, #FFA500);
+      color: white;
+      font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .priority-high {
+      border-left: 5px solid #dc3545;
+    }
+
+    .priority-medium {
+      border-left: 5px solid #ffc107;
+    }
+
+    .priority-low {
+      border-left: 5px solid #28a745;
+    }
+
+    .header-gradient {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 20px 20px 0 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="main-card">
+      <!-- Header -->
+      <div class="header-gradient text-center">
+        <h1 class="display-4 fw-bold mb-3">📚 UD3 - Bootstrap y Sass</h1>
+        <h2 class="h3 mb-0">Repaso Completo para el Examen</h2>
+        <p class="mt-3 mb-0">Todos los conceptos organizados y listos para estudiar</p>
+      </div>
+
+      <!-- Instructions -->
+      <div class="p-4 bg-light">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <div class="card border-danger h-100">
+              <div class="card-body text-center">
+                <h5 class="card-title text-danger">🔴 Prioridad Alta</h5>
+                <p class="card-text small">Imprescindible para el examen</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="card border-warning h-100">
+              <div class="card-body text-center">
+                <h5 class="card-title text-warning">🟡 Prioridad Media</h5>
+                <p class="card-text small">Muy importante conocer</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="card border-success h-100">
+              <div class="card-body text-center">
+                <h5 class="card-title text-success">🟢 Prioridad Baja</h5>
+                <p class="card-text small">Complementario y útil</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Folders Grid -->
+      <div class="p-4">
+        <div class="row g-4">
+
+          <!-- Chuleta Completa -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card folder-card priority-high">
+              <div class="card-body text-center">
+                <div class="folder-icon">⭐</div>
+                <h5 class="card-title">00 - Chuleta Completa</h5>
+                <span class="badge badge-star mb-3">EMPIEZA AQUÍ</span>
+                <p class="card-text small text-muted">
+                  Todo en una sola página para repaso rápido antes del examen
+                </p>
+                <div class="mt-3">
+                  <span class="badge bg-danger">Prioridad Alta</span>
+                  <span class="badge bg-info">15 min</span>
+                </div>
+                <a href="00_CHULETA_COMPLETA/index.html" class="btn btn-primary w-100 mt-3">
+                  Abrir Chuleta
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bootstrap Grid -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card folder-card priority-high">
+              <div class="card-body text-center">
+                <div class="folder-icon">📐</div>
+                <h5 class="card-title">01 - Bootstrap Grid</h5>
+                <p class="card-text small text-muted">
+                  Sistema de 12 columnas, breakpoints, gutters, alineación
+                </p>
+                <div class="mt-3">
+                  <span class="badge bg-danger">Prioridad Alta</span>
+                  <span class="badge bg-info">30 min</span>
+                </div>
+                <div class="d-grid gap-2 mt-3">
+                  <a href="01_Bootstrap_Grid/index.html" class="btn btn-primary">Ejercicios</a>
+                  <a href="01_Bootstrap_Grid/README.md" class="btn btn-outline-secondary btn-sm">Leer Guía</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Componentes Bootstrap -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card folder-card priority-high">
+              <div class="card-body text-center">
+                <div class="folder-icon">🧩</div>
+                <h5 class="card-title">02 - Componentes Bootstrap</h5>
+                <p class="card-text small text-muted">
+                  Botones, formularios, navbar, cards, modales, dropdown, carousel
+                </p>
+                <div class="mt-3">
+                  <span class="badge bg-danger">Prioridad Alta</span>
+                  <span class="badge bg-info">45 min</span>
+                </div>
+                <div class="d-grid gap-2 mt-3">
+                  <a href="02_Componentes_Bootstrap/index.html" class="btn btn-primary">Ejercicios</a>
+                  <a href="02_Componentes_Bootstrap/README.md" class="btn btn-outline-secondary btn-sm">Leer Guía</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Utilidades Bootstrap -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card folder-card priority-medium">
+              <div class="card-body text-center">
+                <div class="folder-icon">🛠️</div>
+                <h5 class="card-title">03 - Utilidades Bootstrap</h5>
+                <p class="card-text small text-muted">
+                  Espaciado, display, flexbox, texto, colores, bordes
+                </p>
+                <div class="mt-3">
+                  <span class="badge bg-warning">Prioridad Media</span>
+                  <span class="badge bg-info">25 min</span>
+                </div>
+                <div class="d-grid gap-2 mt-3">
+                  <a href="03_Utilidades_Bootstrap/index.html" class="btn btn-primary">Ejercicios</a>
+                  <a href="03_Utilidades_Bootstrap/README.md" class="btn btn-outline-secondary btn-sm">Leer Guía</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sass Básico -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card folder-card priority-medium">
+              <div class="card-body text-center">
+                <div class="folder-icon">🎨</div>
+                <h5 class="card-title">04 - Sass Básico</h5>
+                <p class="card-text small text-muted">
+                  Variables, nesting, mixins, personalización de Bootstrap
+                </p>
+                <div class="mt-3">
+                  <span class="badge bg-warning">Prioridad Media</span>
+                  <span class="badge bg-info">20 min</span>
+                </div>
+                <div class="d-grid gap-2 mt-3">
+                  <a href="04_Sass_Basico/index.html" class="btn btn-primary">Ver Proyecto</a>
+                  <a href="04_Sass_Basico/README.md" class="btn btn-outline-secondary btn-sm">Leer Guía</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Animaciones -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card folder-card priority-low">
+              <div class="card-body text-center">
+                <div class="folder-icon">✨</div>
+                <h5 class="card-title">05 - Animaciones Bootstrap</h5>
+                <p class="card-text small text-muted">
+                  Transiciones, @keyframes, hover effects, transforms
+                </p>
+                <div class="mt-3">
+                  <span class="badge bg-success">Prioridad Baja</span>
+                  <span class="badge bg-info">20 min</span>
+                </div>
+                <div class="d-grid gap-2 mt-3">
+                  <a href="05_Animaciones_Bootstrap/index.html" class="btn btn-primary">Ejercicios</a>
+                  <a href="05_Animaciones_Bootstrap/README.md" class="btn btn-outline-secondary btn-sm">Leer Guía</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Layout Completo -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card folder-card priority-high">
+              <div class="card-body text-center">
+                <div class="folder-icon">🏗️</div>
+                <h5 class="card-title">06 - Layout Completo</h5>
+                <p class="card-text small text-muted">
+                  Proyecto integrador con todos los conceptos aplicados
+                </p>
+                <div class="mt-3">
+                  <span class="badge bg-danger">Prioridad Alta</span>
+                  <span class="badge bg-info">40 min</span>
+                </div>
+                <a href="06_Layout_Completo/index.html" class="btn btn-primary w-100 mt-3">
+                  Ver Proyecto
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Study Plan -->
+      <div class="p-4 bg-light border-top">
+        <h3 class="text-center mb-4">📅 Plan de Estudio Recomendado</h3>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-3">
+              <div class="card-header bg-primary text-white">
+                <strong>Día 1 - Fundamentos (2 horas)</strong>
+              </div>
+              <div class="card-body">
+                <ol class="mb-0">
+                  <li>Chuleta Completa (lectura rápida) - 15 min</li>
+                  <li>Bootstrap Grid - 45 min</li>
+                  <li>Componentes Bootstrap - 60 min</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card mb-3">
+              <div class="card-header bg-success text-white">
+                <strong>Día 2 - Práctica (1.5 horas)</strong>
+              </div>
+              <div class="card-body">
+                <ol class="mb-0">
+                  <li>Utilidades Bootstrap - 25 min</li>
+                  <li>Sass Básico - 20 min</li>
+                  <li>Layout Completo (análisis) - 40 min</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card mb-3">
+              <div class="card-header bg-warning">
+                <strong>Día 3 - Repaso (1 hora)</strong>
+              </div>
+              <div class="card-body">
+                <ol class="mb-0">
+                  <li>Animaciones - 20 min</li>
+                  <li>Chuleta Completa (repaso) - 20 min</li>
+                  <li>Practicar desde cero - 20 min</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card mb-3">
+              <div class="card-header bg-danger text-white">
+                <strong>Antes del Examen (30 min)</strong>
+              </div>
+              <div class="card-body">
+                <ol class="mb-0">
+                  <li>Chuleta Completa - 15 min</li>
+                  <li>Grid System (tabla breakpoints) - 5 min</li>
+                  <li>Componentes más usados - 10 min</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tips -->
+      <div class="p-4">
+        <div class="alert alert-info">
+          <h5 class="alert-heading">💡 Consejos de Estudio</h5>
+          <ul class="mb-0">
+            <li>Redimensiona la ventana del navegador para ver cómo funcionan los breakpoints</li>
+            <li>Modifica el código en DevTools para experimentar</li>
+            <li>Practica escribiendo código de memoria sin mirar</li>
+            <li>La Chuleta Completa es tu mejor amiga antes del examen</li>
+            <li>Enfócate primero en Grid, Componentes y Layout Completo (prioridad alta)</li>
+          </ul>
+        </div>
+
+        <div class="alert alert-success">
+          <h5 class="alert-heading">✅ Checklist del Examen</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="check1">
+            <label class="form-check-label" for="check1">
+              Sé usar el sistema de Grid (12 columnas, breakpoints)
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="check2">
+            <label class="form-check-label" for="check2">
+              Puedo crear una navbar responsive
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="check3">
+            <label class="form-check-label" for="check3">
+              Conozco los componentes principales (botones, cards, modales, formularios)
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="check4">
+            <label class="form-check-label" for="check4">
+              Entiendo las utilidades más comunes (m-*, p-*, d-flex, text-center)
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="check5">
+            <label class="form-check-label" for="check5">
+              Sé personalizar Bootstrap con Sass
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="check6">
+            <label class="form-check-label" for="check6">
+              Puedo crear un proyecto completo desde cero
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="p-4 bg-dark text-white text-center rounded-bottom">
+        <p class="mb-2">Creado para repasar la UD3 - Bootstrap y Sass</p>
+        <p class="mb-0 small">Basado en los ejercicios del profesor Miguel • Diseño de Interfaces Web • 2º DAW</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

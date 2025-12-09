@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 - Sass Básico</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1 class="hero__title">Sass Básico</h1>
+            <p class="hero__subtitle">Personalización de Bootstrap con Sass</p>
+        </header>
+
+        <section class="section">
+            <h2 class="section__title">¿Qué es Sass?</h2>
+            <div class="card">
+                <div class="card__body">
+                    <p><strong>Sass (Syntactically Awesome Style Sheets)</strong> es un preprocesador de CSS que te permite usar características que no existen en CSS puro:</p>
+                    <ul>
+                        <li><strong>Variables</strong> - Para reutilizar valores</li>
+                        <li><strong>Nesting</strong> - Anidar selectores</li>
+                        <li><strong>Mixins</strong> - Funciones reutilizables</li>
+                        <li><strong>Imports</strong> - Dividir CSS en archivos</li>
+                        <li><strong>Herencia</strong> - Compartir propiedades entre selectores</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section__title">1. Variables</h2>
+            <div class="card card--primary">
+                <div class="card__body">
+                    <h3>Ejemplo de variables</h3>
+                    <p>En lugar de repetir colores, defines una variable y la reutilizas:</p>
+                    <div class="code">
+<strong>// Sass</strong>
+$color-primary: #667eea;
+$color-secondary: #764ba2;
+$spacing-base: 1rem;
+
+.button {
+    background-color: $color-primary;
+    padding: $spacing-base;
+}
+                    </div>
+                    <p>Esta sección usa las variables personalizadas definidas en custom.scss</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section__title">2. Nesting (Anidamiento)</h2>
+            <div class="card card--success">
+                <div class="card__body">
+                    <h3>Estructura jerárquica</h3>
+                    <p>Puedes anidar selectores para que el código sea más legible:</p>
+                    <div class="code">
+<strong>// Sass</strong>
+.card {
+    background: white;
+    padding: 20px;
+
+    &__title {
+        font-size: 24px;
+        color: blue;
+    }
+
+    &__body {
+        margin-top: 10px;
+    }
+
+    &:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+}
+
+<strong>// Se compila a CSS:</strong>
+.card { background: white; padding: 20px; }
+.card__title { font-size: 24px; color: blue; }
+.card__body { margin-top: 10px; }
+.card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+                    </div>
+                    <p>El símbolo <code>&</code> representa el selector padre.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section__title">3. Mixins</h2>
+            <div class="card card--warning">
+                <div class="card__body">
+                    <h3>Funciones reutilizables</h3>
+                    <p>Los mixins son como funciones que generan código CSS:</p>
+                    <div class="code">
+<strong>// Sass - Definir mixin</strong>
+@mixin button-style($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+<strong>// Usar el mixin</strong>
+.btn-primary {
+    @include button-style(#007bff, white);
+}
+
+.btn-danger {
+    @include button-style(#dc3545, white);
+}
+                    </div>
+                    <div class="button-demo">
+                        <button class="btn btn--primary">Botón Primary</button>
+                        <button class="btn btn--danger">Botón Danger</button>
+                        <button class="btn btn--success">Botón Success</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section__title">4. Personalizar Bootstrap con Sass</h2>
+            <div class="card card--info">
+                <div class="card__body">
+                    <h3>Sobrescribir variables de Bootstrap</h3>
+                    <p>Puedes cambiar los colores y estilos por defecto de Bootstrap:</p>
+                    <div class="code">
+<strong>// custom.scss</strong>
+
+// 1. Definir tus propias variables ANTES de importar Bootstrap
+$primary: #667eea;
+$secondary: #764ba2;
+$success: #10b981;
+$danger: #ef4444;
+$warning: #f59e0b;
+$info: #3b82f6;
+
+// 2. Importar Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// 3. Agregar tus estilos personalizados
+.mi-clase-custom {
+    color: $primary;
+    background: $secondary;
+}
+                    </div>
+                    <p><strong>Importante:</strong> Las variables deben definirse ANTES de importar Bootstrap para sobrescribirlas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section__title">5. Compilar Sass</h2>
+            <div class="card card--danger">
+                <div class="card__body">
+                    <h3>Proceso de compilación</h3>
+                    <p>Los navegadores no entienden Sass, hay que compilarlo a CSS:</p>
+                    <div class="code">
+<strong># Instalar Sass</strong>
+npm install sass --save-dev
+
+<strong># Compilar Sass a CSS</strong>
+npx sass scss/custom.scss styles.css
+
+<strong># Watch mode (recompilar automáticamente al guardar)</strong>
+npx sass --watch scss/custom.scss:styles.css
+
+<strong># En package.json agregar script:</strong>
+{
+    "scripts": {
+        "sass": "sass --watch scss/custom.scss:styles.css"
+    }
+}
+
+<strong># Ejecutar con:</strong>
+npm run sass
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section__title">Ejemplo Visual</h2>
+            <div class="grid">
+                <div class="grid__item">
+                    <div class="demo-box demo-box--primary">
+                        <h4>Primary</h4>
+                        <p>Color personalizado con Sass</p>
+                    </div>
+                </div>
+                <div class="grid__item">
+                    <div class="demo-box demo-box--secondary">
+                        <h4>Secondary</h4>
+                        <p>Color personalizado con Sass</p>
+                    </div>
+                </div>
+                <div class="grid__item">
+                    <div class="demo-box demo-box--success">
+                        <h4>Success</h4>
+                        <p>Color personalizado con Sass</p>
+                    </div>
+                </div>
+                <div class="grid__item">
+                    <div class="demo-box demo-box--danger">
+                        <h4>Danger</h4>
+                        <p>Color personalizado con Sass</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section__title">Tips Importantes</h2>
+            <div class="card">
+                <div class="card__body">
+                    <ul class="tips">
+                        <li><strong>Variables:</strong> Usa <code>$nombre-variable</code> para definirlas</li>
+                        <li><strong>Nesting:</strong> No anides más de 3 niveles (puede ser difícil de mantener)</li>
+                        <li><strong>Mixins:</strong> Perfectos para código que se repite mucho</li>
+                        <li><strong>Import:</strong> Organiza tu código en múltiples archivos .scss</li>
+                        <li><strong>BEM:</strong> Sass funciona perfecto con la metodología BEM (.block__element--modifier)</li>
+                        <li><strong>Compilación:</strong> Siempre compila a CSS antes de usar en producción</li>
+                        <li><strong>Bootstrap:</strong> Define variables ANTES de importar Bootstrap para sobrescribir</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <a href="../README.md" class="btn btn--primary">Volver al índice principal</a>
+        </footer>
+    </div>
+</body>
+</html>

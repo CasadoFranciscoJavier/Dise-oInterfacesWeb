@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 - Animaciones Bootstrap y CSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Hero animado -->
+        <div class="row">
+            <div class="col-12">
+                <div class="hero fade-in">
+                    <h1 class="hero-title">Animaciones CSS y Bootstrap</h1>
+                    <p class="hero-subtitle">Guía completa de transiciones, animaciones y efectos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRANSICIONES -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="section">
+                    <h2 class="section-title">1. TRANSICIONES CSS (transition)</h2>
+                    <p>Las transiciones suavizan los cambios entre estados CSS (hover, focus, etc.)</p>
+
+                    <div class="demo-box">
+                        <h4>Botones con transiciones</h4>
+                        <button class="btn-transition btn-transition-1">Hover me - Básico</button>
+                        <button class="btn-transition btn-transition-2">Hover me - Elevación</button>
+                        <button class="btn-transition btn-transition-3">Hover me - Escala</button>
+                        <button class="btn-transition btn-transition-4">Hover me - Rotación</button>
+
+                        <div class="code-snippet">
+/* SINTAXIS */
+transition: property duration timing-function delay;
+
+/* EJEMPLO */
+.btn-transition {
+    transition: all 0.3s ease;
+}
+
+.btn-transition:hover {
+    background-color: blue;
+    transform: translateY(-5px);
+}
+
+/* PROPIEDADES INDIVIDUALES */
+.btn {
+    transition-property: background-color, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+                        </div>
+                    </div>
+
+                    <div class="demo-box mt-3">
+                        <h4>Cards con transición</h4>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card card-hover-1 h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Hover Básico</h5>
+                                        <p class="card-text">Sombra suave al pasar el mouse.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card card-hover-2 h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Hover Elevación</h5>
+                                        <p class="card-text">Se eleva con sombra pronunciada.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card card-hover-3 h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Hover Escala</h5>
+                                        <p class="card-text">Crece ligeramente al pasar el mouse.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ANIMACIONES KEYFRAMES -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="section">
+                    <h2 class="section-title">2. ANIMACIONES @keyframes</h2>
+                    <p>Las animaciones @keyframes permiten crear movimientos complejos y repetitivos.</p>
+
+                    <div class="demo-box">
+                        <h4>Ejemplos de animaciones</h4>
+                        <div class="row text-center">
+                            <div class="col-md-3 mb-3">
+                                <div class="animation-box fade-in-animation">
+                                    <h5>Fade In</h5>
+                                    <p>Aparece gradualmente</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="animation-box slide-in-animation">
+                                    <h5>Slide In</h5>
+                                    <p>Entra desde abajo</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="animation-box bounce-animation">
+                                    <h5>Bounce</h5>
+                                    <p>Rebota continuamente</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="animation-box pulse-animation">
+                                    <h5>Pulse</h5>
+                                    <p>Pulsa continuamente</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="code-snippet">
+/* SINTAXIS DE @keyframes */
+@keyframes nombre-animacion {
+    from {
+        /* Estado inicial */
+    }
+    to {
+        /* Estado final */
+    }
+}
+
+/* O con porcentajes para más control */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* APLICAR ANIMACIÓN */
+.elemento {
+    animation: fade-in 1s ease-out;
+}
+
+/* PROPIEDADES DE ANIMATION */
+.elemento {
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1; /* O infinite */
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+                        </div>
+                    </div>
+
+                    <div class="demo-box mt-3">
+                        <h4>Animaciones más complejas</h4>
+                        <div class="row text-center">
+                            <div class="col-md-4 mb-3">
+                                <div class="animation-box rotate-animation">
+                                    <h5>Rotate</h5>
+                                    <p>Rotación continua</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="animation-box shake-animation">
+                                    <h5>Shake</h5>
+                                    <p>Sacudida</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="animation-box gradient-animation">
+                                    <h5>Gradient</h5>
+                                    <p>Fondo animado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TIMING FUNCTIONS -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="section">
+                    <h2 class="section-title">3. TIMING FUNCTIONS (Funciones de tiempo)</h2>
+                    <p>Controlan la velocidad de la animación a lo largo del tiempo.</p>
+
+                    <div class="demo-box">
+                        <h4>Compara las diferentes funciones (Haz clic en "Animar")</h4>
+                        <button class="btn btn-primary mb-3" onclick="animateBoxes()">Animar</button>
+
+                        <div class="timing-demo">
+                            <div class="timing-box timing-linear">linear</div>
+                            <div class="timing-box timing-ease">ease (defecto)</div>
+                            <div class="timing-box timing-ease-in">ease-in</div>
+                            <div class="timing-box timing-ease-out">ease-out</div>
+                            <div class="timing-box timing-ease-in-out">ease-in-out</div>
+                        </div>
+
+                        <div class="code-snippet">
+/* TIMING FUNCTIONS */
+
+linear          - Velocidad constante
+ease            - Lento al inicio y final (defecto)
+ease-in         - Lento al inicio, rápido al final
+ease-out        - Rápido al inicio, lento al final
+ease-in-out     - Lento al inicio y final
+
+/* CUSTOM (cubic-bezier) */
+transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRANSFORM -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="section">
+                    <h2 class="section-title">4. TRANSFORM (Transformaciones)</h2>
+                    <p>Permite rotar, escalar, mover y sesgar elementos sin afectar el flujo del documento.</p>
+
+                    <div class="demo-box">
+                        <h4>Transformaciones básicas</h4>
+                        <div class="row text-center">
+                            <div class="col-md-3 mb-3">
+                                <div class="transform-box transform-translate">
+                                    <p>translate</p>
+                                    <code>translateY(-10px)</code>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="transform-box transform-rotate">
+                                    <p>rotate</p>
+                                    <code>rotate(15deg)</code>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="transform-box transform-scale">
+                                    <p>scale</p>
+                                    <code>scale(1.2)</code>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="transform-box transform-skew">
+                                    <p>skew</p>
+                                    <code>skew(10deg)</code>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="code-snippet">
+/* TRANSFORM - TRANSLATE (Mover) */
+transform: translateX(50px);      /* Mover horizontal */
+transform: translateY(-20px);     /* Mover vertical */
+transform: translate(50px, -20px); /* Ambos */
+
+/* TRANSFORM - SCALE (Escalar) */
+transform: scale(1.5);            /* Agrandar 150% */
+transform: scale(0.5);            /* Reducir 50% */
+transform: scale(1.2, 0.8);       /* X e Y diferentes */
+
+/* TRANSFORM - ROTATE (Rotar) */
+transform: rotate(45deg);         /* Rotar 45 grados */
+transform: rotate(-90deg);        /* Rotar -90 grados */
+
+/* TRANSFORM - SKEW (Sesgar) */
+transform: skewX(10deg);          /* Sesgar horizontal */
+transform: skewY(5deg);           /* Sesgar vertical */
+
+/* COMBINAR TRANSFORMACIONES */
+transform: translate(50px, -20px) rotate(45deg) scale(1.2);
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ANIMACIONES DE BOOTSTRAP -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="section">
+                    <h2 class="section-title">5. COMPONENTES ANIMADOS DE BOOTSTRAP</h2>
+                    <p>Bootstrap incluye componentes con animaciones incorporadas.</p>
+
+                    <div class="demo-box">
+                        <h4>Spinner (Cargando)</h4>
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-border text-success" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-danger" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-warning" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+
+                        <div class="code-snippet">
+&lt;!-- Spinner border --&gt;
+&lt;div class="spinner-border" role="status"&gt;
+    &lt;span class="visually-hidden"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Spinner grow --&gt;
+&lt;div class="spinner-grow" role="status"&gt;
+    &lt;span class="visually-hidden"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+                        </div>
+                    </div>
+
+                    <div class="demo-box mt-3">
+                        <h4>Progress bar animado</h4>
+                        <div class="progress mb-2" role="progressbar">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"></div>
+                        </div>
+                        <div class="progress" role="progressbar">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 50%"></div>
+                        </div>
+
+                        <div class="code-snippet">
+&lt;div class="progress"&gt;
+    &lt;div class="progress-bar progress-bar-striped progress-bar-animated"
+         style="width: 75%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EJEMPLOS PRÁCTICOS -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="section">
+                    <h2 class="section-title">6. EJEMPLOS PRÁCTICOS PARA EL EXAMEN</h2>
+
+                    <div class="demo-box">
+                        <h4>Botón con efecto ripple al hacer click</h4>
+                        <button class="btn-ripple">Click me!</button>
+
+                        <h4 class="mt-4">Card que se voltea al hacer hover</h4>
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h5>Frente</h5>
+                                    <p>Pasa el mouse</p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h5>Reverso</h5>
+                                    <p>¡Información oculta!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="mt-4">Menú hamburguesa animado</h4>
+                        <div class="hamburger" onclick="this.classList.toggle('active')">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <p class="text-muted"><small>Click en el icono hamburguesa</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TIPS -->
+        <div class="row mt-4 mb-4">
+            <div class="col-12">
+                <div class="section">
+                    <h2 class="section-title">TIPS IMPORTANTES PARA EL EXAMEN</h2>
+                    <div class="alert alert-success">
+                        <ul class="mb-0">
+                            <li><strong>Transitions:</strong> Usa <code>all 0.3s ease</code> para efectos hover suaves</li>
+                            <li><strong>Transforms:</strong> No afecta el flujo del documento (mejor que margin/padding para animaciones)</li>
+                            <li><strong>@keyframes:</strong> Para animaciones complejas o infinitas</li>
+                            <li><strong>Performance:</strong> Anima solo <code>transform</code> y <code>opacity</code> para mejor rendimiento</li>
+                            <li><strong>Timing:</strong> <code>ease-out</code> para hover, <code>ease-in-out</code> para animaciones</li>
+                            <li><strong>Bootstrap:</strong> Usa <code>spinner-border</code> para indicadores de carga</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <a href="../README.md" class="btn btn-primary btn-lg">Volver al índice principal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function animateBoxes() {
+            const boxes = document.querySelectorAll('.timing-box');
+            boxes.forEach(box => {
+                box.classList.remove('move');
+                void box.offsetWidth; // Trigger reflow
+                box.classList.add('move');
+            });
+
+            setTimeout(() => {
+                boxes.forEach(box => box.classList.remove('move'));
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

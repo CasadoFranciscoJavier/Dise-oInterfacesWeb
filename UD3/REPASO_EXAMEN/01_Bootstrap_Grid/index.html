@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Grid System - Ejercicios de Repaso</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Estilos para visualizar mejor las columnas */
+    .demo-box {
+      background-color: #007bff;
+      color: white;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      text-align: center;
+      border: 2px solid #0056b3;
+    }
+
+    .demo-box-secondary {
+      background-color: #6c757d;
+      border-color: #495057;
+    }
+
+    .demo-box-success {
+      background-color: #28a745;
+      border-color: #1e7e34;
+    }
+
+    .demo-box-danger {
+      background-color: #dc3545;
+      border-color: #c82333;
+    }
+
+    .demo-box-warning {
+      background-color: #ffc107;
+      color: #212529;
+      border-color: #d39e00;
+    }
+
+    .ejercicio {
+      margin-bottom: 50px;
+      padding: 30px;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+    }
+
+    .ejercicio h2 {
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+
+    .ejercicio-numero {
+      background-color: #007bff;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .explicacion {
+      background-color: #e7f1ff;
+      padding: 15px;
+      border-left: 4px solid #007bff;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    .codigo {
+      background-color: #282c34;
+      color: #61dafb;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <div class="container my-5">
+    <h1 class="text-center mb-4">📐 Bootstrap Grid System - Ejercicios de Repaso</h1>
+    <p class="text-center lead">12 ejercicios prácticos del sistema de cuadrícula de Bootstrap 5</p>
+    <p class="text-center text-muted">Redimensiona la ventana del navegador para ver cómo responden las columnas</p>
+  </div>
+
+  <!-- Ejercicio 1: Grid Básico -->
+  <div class="container ejercicio">
+    <span class="ejercicio-numero">Ejercicio 1</span>
+    <h2>Grid Básico - 3 Columnas Iguales</h2>
+
+    <div class="explicacion">
+      <strong>Concepto:</strong> Sistema de 12 columnas dividido en 3 partes iguales (4+4+4=12).<br>
+      <strong>Clases usadas:</strong> <code>container</code>, <code>row</code>, <code>col-4</code><br>
+      <strong>Resultado:</strong> 3 columnas iguales en todos los tamaños de pantalla
+    </div>
+
+    <div class="codigo">
+      &lt;div class="row"&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-4"&gt;Columna 1&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-4"&gt;Columna 2&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-4"&gt;Columna 3&lt;/div&gt;<br>
+      &lt;/div&gt;
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <div class="demo-box">Columna 1 (4/12)</div>
+      </div>
+      <div class="col-4">
+        <div class="demo-box">Columna 2 (4/12)</div>
+      </div>
+      <div class="col-4">
+        <div class="demo-box">Columna 3 (4/12)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ejercicio 2: Columnas Automáticas -->
+  <div class="container ejercicio">
+    <span class="ejercicio-numero">Ejercicio 2</span>
+    <h2>Columnas Automáticas - Ancho Igual</h2>
+
+    <div class="explicacion">
+      <strong>Concepto:</strong> Usando solo <code>col</code> sin número, las columnas se distribuyen automáticamente.<br>
+      <strong>Clases usadas:</strong> <code>col</code><br>
+      <strong>Resultado:</strong> Las columnas ocupan el mismo espacio disponible
+    </div>
+
+    <div class="codigo">
+      &lt;div class="row"&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col"&gt;Columna 1&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col"&gt;Columna 2&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col"&gt;Columna 3&lt;/div&gt;<br>
+      &lt;/div&gt;
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="demo-box demo-box-secondary">Columna Auto 1</div>
+      </div>
+      <div class="col">
+        <div class="demo-box demo-box-secondary">Columna Auto 2</div>
+      </div>
+      <div class="col">
+        <div class="demo-box demo-box-secondary">Columna Auto 3</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ejercicio 3: Breakpoints Responsivos -->
+  <div class="container ejercicio">
+    <span class="ejercicio-numero">Ejercicio 3</span>
+    <h2>Breakpoints Responsivos - Mobile First</h2>
+
+    <div class="explicacion">
+      <strong>Concepto:</strong> Las columnas cambian de tamaño según el dispositivo.<br>
+      <strong>Clases usadas:</strong> <code>col-12</code> (móvil), <code>col-md-6</code> (tablet), <code>col-lg-4</code> (desktop)<br>
+      <strong>Resultado:</strong><br>
+      • Móvil (&lt;768px): 1 columna por fila (col-12)<br>
+      • Tablet (≥768px): 2 columnas por fila (col-md-6)<br>
+      • Desktop (≥992px): 3 columnas por fila (col-lg-4)
+    </div>
+
+    <div class="codigo">
+      &lt;div class="row"&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-12 col-md-6 col-lg-4"&gt;Columna 1&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-12 col-md-6 col-lg-4"&gt;Columna 2&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-12 col-md-6 col-lg-4"&gt;Columna 3&lt;/div&gt;<br>
+      &lt;/div&gt;
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="demo-box demo-box-success">Responsive 1</div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="demo-box demo-box-success">Responsive 2</div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="demo-box demo-box-success">Responsive 3</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ejercicio 4: Anchos Diferentes -->
+  <div class="container ejercicio">
+    <span class="ejercicio-numero">Ejercicio 4</span>
+    <h2>Columnas con Anchos Diferentes</h2>
+
+    <div class="explicacion">
+      <strong>Concepto:</strong> Combinar diferentes tamaños de columnas (3+6+3=12, 2+8+2=12, etc.)<br>
+      <strong>Clases usadas:</strong> <code>col-3</code>, <code>col-6</code>, <code>col-2</code>, <code>col-8</code><br>
+      <strong>Resultado:</strong> Layout tipo sidebar + contenido principal
+    </div>
+
+    <div class="codigo">
+      &lt;div class="row"&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-3"&gt;Sidebar (3/12)&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-9"&gt;Contenido Principal (9/12)&lt;/div&gt;<br>
+      &lt;/div&gt;
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-3">
+        <div class="demo-box demo-box-danger">Sidebar (3/12)</div>
+      </div>
+      <div class="col-9">
+        <div class="demo-box demo-box-warning">Contenido Principal (9/12)</div>
+      </div>
+    </div>
+
+    <div class="codigo">
+      &lt;div class="row"&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-2"&gt;Pequeño (2/12)&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-8"&gt;Grande (8/12)&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-2"&gt;Pequeño (2/12)&lt;/div&gt;<br>
+      &lt;/div&gt;
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+        <div class="demo-box demo-box-danger">2/12</div>
+      </div>
+      <div class="col-8">
+        <div class="demo-box demo-box-warning">8/12 - Contenido Central</div>
+      </div>
+      <div class="col-2">
+        <div class="demo-box demo-box-danger">2/12</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ejercicio 5: Gutters (Espaciado) -->
+  <div class="container ejercicio">
+    <span class="ejercicio-numero">Ejercicio 5</span>
+    <h2>Gutters - Control del Espaciado</h2>
+
+    <div class="explicacion">
+      <strong>Concepto:</strong> Controlar el espaciado entre columnas con clases gutter.<br>
+      <strong>Clases usadas:</strong> <code>g-*</code> (ambos lados), <code>gx-*</code> (horizontal), <code>gy-*</code> (vertical)<br>
+      <strong>Valores:</strong> 0 (sin espacio), 1, 2, 3, 4, 5 (máximo espacio)
+    </div>
+
+    <div class="codigo">
+      &lt;div class="row g-5"&gt; &lt;!-- Espaciado grande --&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-4"&gt;Columna 1&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-4"&gt;Columna 2&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-4"&gt;Columna 3&lt;/div&gt;<br>
+      &lt;/div&gt;
+    </div>
+
+    <h5>Sin espaciado (g-0):</h5>
+    <div class="row g-0 mb-4">
+      <div class="col-4">
+        <div class="demo-box">Sin espacio</div>
+      </div>
+      <div class="col-4">
+        <div class="demo-box">Sin espacio</div>
+      </div>
+      <div class="col-4">
+        <div class="demo-box">Sin espacio</div>
+      </div>
+    </div>
+
+    <h5>Espaciado grande (g-5):</h5>
+    <div class="row g-5">
+      <div class="col-4">
+        <div class="demo-box demo-box-secondary">Con espacio</div>
+      </div>
+      <div class="col-4">
+        <div class="demo-box demo-box-secondary">Con espacio</div>
+      </div>
+      <div class="col-4">
+        <div class="demo-box demo-box-secondary">Con espacio</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ejercicio 6: Alineación Vertical -->
+  <div class="container ejercicio">
+    <span class="ejercicio-numero">Ejercicio 6</span>
+    <h2>Alineación Vertical con Flexbox</h2>
+
+    <div class="explicacion">
+      <strong>Concepto:</strong> Alinear columnas verticalmente dentro de una fila.<br>
+      <strong>Clases usadas:</strong> <code>align-items-start</code>, <code>align-items-center</code>, <code>align-items-end</code><br>
+      <strong>Resultado:</strong> Control de la alineación vertical
+    </div>
+
+    <div class="codigo">
+      &lt;div class="row align-items-center" style="height: 150px;"&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-4"&gt;Centrado verticalmente&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-4"&gt;Centrado verticalmente&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-4"&gt;Centrado verticalmente&lt;/div&gt;<br>
+      &lt;/div&gt;
+    </div>
+
+    <h5>Alineación al inicio (align-items-start):</h5>
+    <div class="row align-items-start mb-4" style="height: 150px; background-color: #e9ecef; border-radius: 5px;">
+      <div class="col-4">
+        <div class="demo-box demo-box-success">Arriba</div>
+      </div>
+      <div class="col-4">
+        <div class="demo-box demo-box-success">Arriba</div>
+      </div>
+      <div class="col-4">
+        <div class="demo-box demo-box-success">Arriba</div>
+      </div>
+    </div>
+
+    <h5>Alineación al centro (align-items-center):</h5>
+    <div class="row align-items-center mb-4" style="height: 150px; background-color: #e9ecef; border-radius: 5px;">
+      <div class="col-4">
+        <div class="demo-box demo-box-warning">Centro</div>
+      </div>
+      <div class="col-4">
+        <div class="demo-box demo-box-warning">Centro</div>
+      </div>
+      <div class="col-4">
+        <div class="demo-box demo-box-warning">Centro</div>
+      </div>
+    </div>
+
+    <h5>Alineación al final (align-items-end):</h5>
+    <div class="row align-items-end" style="height: 150px; background-color: #e9ecef; border-radius: 5px;">
+      <div class="col-4">
+        <div class="demo-box demo-box-danger">Abajo</div>
+      </div>
+      <div class="col-4">
+        <div class="demo-box demo-box-danger">Abajo</div>
+      </div>
+      <div class="col-4">
+        <div class="demo-box demo-box-danger">Abajo</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ejercicio 7: Alineación Horizontal -->
+  <div class="container ejercicio">
+    <span class="ejercicio-numero">Ejercicio 7</span>
+    <h2>Alineación Horizontal con Justify Content</h2>
+
+    <div class="explicacion">
+      <strong>Concepto:</strong> Distribuir columnas horizontalmente en una fila.<br>
+      <strong>Clases usadas:</strong> <code>justify-content-start</code>, <code>justify-content-center</code>, <code>justify-content-end</code>, <code>justify-content-between</code>, <code>justify-content-around</code><br>
+      <strong>Resultado:</strong> Control de la distribución horizontal
+    </div>
+
+    <div class="codigo">
+      &lt;div class="row justify-content-center"&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-3"&gt;Centrado&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-3"&gt;Centrado&lt;/div&gt;<br>
+      &lt;/div&gt;
+    </div>
+
+    <h5>Centrado (justify-content-center):</h5>
+    <div class="row justify-content-center mb-3">
+      <div class="col-3">
+        <div class="demo-box">Columna 1</div>
+      </div>
+      <div class="col-3">
+        <div class="demo-box">Columna 2</div>
+      </div>
+    </div>
+
+    <h5>Espacio entre elementos (justify-content-between):</h5>
+    <div class="row justify-content-between mb-3">
+      <div class="col-3">
+        <div class="demo-box demo-box-secondary">Izquierda</div>
+      </div>
+      <div class="col-3">
+        <div class="demo-box demo-box-secondary">Derecha</div>
+      </div>
+    </div>
+
+    <h5>Espacio alrededor (justify-content-around):</h5>
+    <div class="row justify-content-around">
+      <div class="col-3">
+        <div class="demo-box demo-box-success">Columna 1</div>
+      </div>
+      <div class="col-3">
+        <div class="demo-box demo-box-success">Columna 2</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ejercicio 8: Orden de Columnas -->
+  <div class="container ejercicio">
+    <span class="ejercicio-numero">Ejercicio 8</span>
+    <h2>Reordenamiento de Columnas</h2>
+
+    <div class="explicacion">
+      <strong>Concepto:</strong> Cambiar el orden visual de las columnas sin modificar el HTML.<br>
+      <strong>Clases usadas:</strong> <code>order-1</code>, <code>order-2</code>, <code>order-3</code><br>
+      <strong>Resultado:</strong> Las columnas se muestran en diferente orden
+    </div>
+
+    <div class="codigo">
+      &lt;div class="row"&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col order-3"&gt;Primero en HTML, tercero visual&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col order-1"&gt;Segundo en HTML, primero visual&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col order-2"&gt;Tercero en HTML, segundo visual&lt;/div&gt;<br>
+      &lt;/div&gt;
+    </div>
+
+    <h5>Orden original en el código HTML: 1, 2, 3</h5>
+    <h5>Orden visual con clases: 2, 3, 1</h5>
+    <div class="row">
+      <div class="col order-3">
+        <div class="demo-box demo-box-danger">Primero en HTML<br>order-3 (tercero visual)</div>
+      </div>
+      <div class="col order-1">
+        <div class="demo-box demo-box-success">Segundo en HTML<br>order-1 (primero visual)</div>
+      </div>
+      <div class="col order-2">
+        <div class="demo-box demo-box-warning">Tercero en HTML<br>order-2 (segundo visual)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ejercicio 9: Offset (Desplazamiento) -->
+  <div class="container ejercicio">
+    <span class="ejercicio-numero">Ejercicio 9</span>
+    <h2>Offset - Desplazamiento de Columnas</h2>
+
+    <div class="explicacion">
+      <strong>Concepto:</strong> Desplazar columnas hacia la derecha creando espacio vacío.<br>
+      <strong>Clases usadas:</strong> <code>offset-*</code> (donde * es de 1 a 11)<br>
+      <strong>Resultado:</strong> Columnas con espacio vacío a la izquierda
+    </div>
+
+    <div class="codigo">
+      &lt;div class="row"&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-4 offset-4"&gt;Centrado con offset-4&lt;/div&gt;<br>
+      &lt;/div&gt;
+    </div>
+
+    <h5>Columna centrada con offset:</h5>
+    <div class="row mb-3">
+      <div class="col-4 offset-4">
+        <div class="demo-box">4 columnas centradas<br>(offset-4 + col-4 = 8, quedan 4 a la derecha)</div>
+      </div>
+    </div>
+
+    <h5>Dos columnas con offset:</h5>
+    <div class="row">
+      <div class="col-3 offset-3">
+        <div class="demo-box demo-box-secondary">offset-3 + col-3</div>
+      </div>
+      <div class="col-3">
+        <div class="demo-box demo-box-secondary">col-3</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ejercicio 10: Cuadrículas Anidadas -->
+  <div class="container ejercicio">
+    <span class="ejercicio-numero">Ejercicio 10</span>
+    <h2>Cuadrículas Anidadas (Nested Grids)</h2>
+
+    <div class="explicacion">
+      <strong>Concepto:</strong> Crear filas y columnas dentro de otras columnas.<br>
+      <strong>Clases usadas:</strong> <code>row</code> dentro de <code>col</code><br>
+      <strong>Resultado:</strong> Subdivisiones dentro de las columnas principales
+    </div>
+
+    <div class="codigo">
+      &lt;div class="row"&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-8"&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;Columna principal<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="row"&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col-6"&gt;Anidada 1&lt;/div&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col-6"&gt;Anidada 2&lt;/div&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;/div&gt;<br>
+      &lt;/div&gt;
+    </div>
+
+    <div class="row">
+      <div class="col-8">
+        <div class="demo-box demo-box-success" style="padding: 20px;">
+          <strong>Columna Principal (8/12)</strong>
+          <div class="row g-2 mt-2">
+            <div class="col-6">
+              <div class="demo-box" style="background-color: #0056b3;">Anidada 1 (6/12 de la principal)</div>
+            </div>
+            <div class="col-6">
+              <div class="demo-box" style="background-color: #0056b3;">Anidada 2 (6/12 de la principal)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="demo-box demo-box-danger" style="height: 100%;">Sidebar (4/12)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ejercicio 11: Layout Complejo Responsive -->
+  <div class="container ejercicio">
+    <span class="ejercicio-numero">Ejercicio 11</span>
+    <h2>Layout Complejo - Sidebar Responsive</h2>
+
+    <div class="explicacion">
+      <strong>Concepto:</strong> Layout con sidebar que se apila en móvil.<br>
+      <strong>Clases usadas:</strong> Combinación de breakpoints para crear un layout adaptable<br>
+      <strong>Resultado:</strong><br>
+      • Móvil: Sidebar arriba, contenido abajo (ambos col-12)<br>
+      • Desktop: Sidebar izquierda (col-md-3), contenido derecha (col-md-9)
+    </div>
+
+    <div class="codigo">
+      &lt;div class="row"&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-12 col-md-3"&gt;Sidebar&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-12 col-md-9"&gt;Contenido&lt;/div&gt;<br>
+      &lt;/div&gt;
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-3 mb-3 mb-md-0">
+        <div class="demo-box demo-box-danger" style="min-height: 200px;">
+          <strong>Sidebar</strong><br>
+          En móvil: arriba<br>
+          En desktop: izquierda (3/12)
+        </div>
+      </div>
+      <div class="col-12 col-md-9">
+        <div class="demo-box demo-box-warning" style="min-height: 200px;">
+          <strong>Contenido Principal</strong><br>
+          En móvil: abajo<br>
+          En desktop: derecha (9/12)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ejercicio 12: Grid Completo con Cards -->
+  <div class="container ejercicio">
+    <span class="ejercicio-numero">Ejercicio 12</span>
+    <h2>Grid para Cards - Caso Real</h2>
+
+    <div class="explicacion">
+      <strong>Concepto:</strong> Grid típico para mostrar tarjetas de productos/servicios.<br>
+      <strong>Clases usadas:</strong> <code>col-12 col-sm-6 col-md-4 col-lg-3</code><br>
+      <strong>Resultado:</strong><br>
+      • Extra small (&lt;576px): 1 card por fila<br>
+      • Small (≥576px): 2 cards por fila<br>
+      • Medium (≥768px): 3 cards por fila<br>
+      • Large (≥992px): 4 cards por fila
+    </div>
+
+    <div class="codigo">
+      &lt;div class="row g-4"&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-12 col-sm-6 col-md-4 col-lg-3"&gt;Card 1&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-12 col-sm-6 col-md-4 col-lg-3"&gt;Card 2&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-12 col-sm-6 col-md-4 col-lg-3"&gt;Card 3&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="col-12 col-sm-6 col-md-4 col-lg-3"&gt;Card 4&lt;/div&gt;<br>
+      &lt;/div&gt;
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="demo-box demo-box-success">Card 1</div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="demo-box demo-box-success">Card 2</div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="demo-box demo-box-success">Card 3</div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="demo-box demo-box-success">Card 4</div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="demo-box demo-box-warning">Card 5</div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="demo-box demo-box-warning">Card 6</div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="demo-box demo-box-warning">Card 7</div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="demo-box demo-box-warning">Card 8</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Resumen Final -->
+  <div class="container my-5">
+    <div class="card bg-primary text-white">
+      <div class="card-body">
+        <h3 class="card-title">📌 Resumen de Conceptos del Grid System</h3>
+        <ul class="mb-0">
+          <li><strong>Sistema de 12 columnas:</strong> Divide el espacio en 12 partes iguales</li>
+          <li><strong>Breakpoints:</strong> xs (&lt;576px), sm (≥576px), md (≥768px), lg (≥992px), xl (≥1200px), xxl (≥1400px)</li>
+          <li><strong>Columnas:</strong> col-* (fijo), col (automático), col-{breakpoint}-* (responsive)</li>
+          <li><strong>Gutters:</strong> g-*, gx-* (horizontal), gy-* (vertical) - valores de 0 a 5</li>
+          <li><strong>Alineación:</strong> align-items-*, justify-content-* (flexbox)</li>
+          <li><strong>Orden:</strong> order-1, order-2, order-3, etc.</li>
+          <li><strong>Offset:</strong> offset-* para desplazar columnas</li>
+          <li><strong>Anidación:</strong> Rows dentro de cols para layouts complejos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

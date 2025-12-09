@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHULETA COMPLETA - Bootstrap 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding-bottom: 50px;
+        }
+
+        .chuleta-header {
+            background: white;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            position: sticky;
+            top: 10px;
+            z-index: 1000;
+        }
+
+        .chuleta-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .section-chuleta {
+            background: white;
+            margin: 20px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-chuleta h2 {
+            color: #667eea;
+            font-weight: bold;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.75rem;
+        }
+
+        .section-chuleta h3 {
+            color: #764ba2;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .code-inline {
+            background: #2d2d2d;
+            color: #50fa7b;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+            margin: 10px 0;
+            white-space: pre;
+            line-height: 1.5;
+        }
+
+        .demo-mini {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .table-chuleta {
+            font-size: 14px;
+        }
+
+        .table-chuleta th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .nav-chuleta {
+            position: fixed;
+            right: 20px;
+            top: 150px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 200px;
+            z-index: 999;
+        }
+
+        .nav-chuleta a {
+            display: block;
+            padding: 5px 10px;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .nav-chuleta a:hover {
+            background: #f8f9fa;
+        }
+
+        @media (max-width: 992px) {
+            .nav-chuleta {
+                display: none;
+            }
+
+            .chuleta-title {
+                font-size: 1.75rem;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .chuleta-header,
+            .nav-chuleta {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="chuleta-header">
+        <h1 class="chuleta-title">CHULETA COMPLETA</h1>
+        <p class="mb-0">Todo Bootstrap 5 en una sola página</p>
+        <small class="text-muted">Repaso rápido para el examen</small>
+    </div>
+
+    <!-- NAVEGACIÓN RÁPIDA -->
+    <div class="nav-chuleta d-none d-lg-block">
+        <strong>Ir a:</strong>
+        <a href="#grid">Grid</a>
+        <a href="#componentes">Componentes</a>
+        <a href="#utilidades">Utilidades</a>
+        <a href="#sass">Sass</a>
+        <a href="#animaciones">Animaciones</a>
+    </div>
+
+    <!-- GRID SYSTEM -->
+    <div id="grid" class="section-chuleta">
+        <h2>1. GRID SYSTEM</h2>
+
+        <h3>Breakpoints</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered table-chuleta">
+                <thead>
+                    <tr>
+                        <th>Clase</th>
+                        <th>Ancho</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-inline">col-</code></td>
+                        <td>&lt; 576px</td>
+                        <td><code class="code-inline">col-12</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">col-sm-</code></td>
+                        <td>≥ 576px</td>
+                        <td><code class="code-inline">col-sm-6</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">col-md-</code></td>
+                        <td>≥ 768px</td>
+                        <td><code class="code-inline">col-md-4</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">col-lg-</code></td>
+                        <td>≥ 992px</td>
+                        <td><code class="code-inline">col-lg-3</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">col-xl-</code></td>
+                        <td>≥ 1200px</td>
+                        <td><code class="code-inline">col-xl-2</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">col-xxl-</code></td>
+                        <td>≥ 1400px</td>
+                        <td><code class="code-inline">col-xxl-1</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Grid básico</h3>
+        <div class="code-block">&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-4"&gt;1/3&lt;/div&gt;
+        &lt;div class="col-md-4"&gt;1/3&lt;/div&gt;
+        &lt;div class="col-md-4"&gt;1/3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+
+        <h3>Grid responsive común</h3>
+        <div class="code-block">&lt;!-- Móvil: 1 columna, Tablet: 2, Desktop: 3 --&gt;
+&lt;div class="col-12 col-md-6 col-lg-4"&gt;Contenido&lt;/div&gt;</div>
+    </div>
+
+    <!-- COMPONENTES ESENCIALES -->
+    <div id="componentes" class="section-chuleta">
+        <h2>2. COMPONENTES ESENCIALES</h2>
+
+        <h3>Botones</h3>
+        <div class="demo-mini">
+            <button class="btn btn-primary btn-sm">Pequeño</button>
+            <button class="btn btn-success">Normal</button>
+            <button class="btn btn-danger btn-lg">Grande</button>
+            <button class="btn btn-outline-warning">Outline</button>
+        </div>
+        <div class="code-block">&lt;button class="btn btn-primary"&gt;Botón&lt;/button&gt;
+&lt;button class="btn btn-outline-success"&gt;Outline&lt;/button&gt;
+&lt;button class="btn btn-danger btn-lg"&gt;Grande&lt;/button&gt;</div>
+
+        <h3>Card con altura igual (IMPORTANTE)</h3>
+        <div class="code-block">&lt;div class="card h-100 d-flex flex-column"&gt;
+    &lt;img src="..." class="card-img-top" alt="..."&gt;
+    &lt;div class="card-body d-flex flex-column"&gt;
+        &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Texto...&lt;/p&gt;
+        &lt;a href="#" class="btn btn-primary mt-auto"&gt;Botón&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+        <p><span class="highlight">h-100</span> = altura 100% | <span class="highlight">d-flex flex-column</span> = flexbox vertical | <span class="highlight">mt-auto</span> = empuja al final</p>
+
+        <h3>Navbar responsive</h3>
+        <div class="code-block">&lt;nav class="navbar navbar-expand-lg navbar-dark bg-dark"&gt;
+    &lt;div class="container-fluid"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;Logo&lt;/a&gt;
+        &lt;button class="navbar-toggler" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
+            &lt;ul class="navbar-nav ms-auto"&gt;
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</div>
+
+        <h3>Modal</h3>
+        <div class="code-block">&lt;!-- Botón --&gt;
+&lt;button data-bs-toggle="modal" data-bs-target="#miModal"&gt;Abrir&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class="modal fade" id="miModal" tabindex="-1"&gt;
+    &lt;div class="modal-dialog"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;div class="modal-header"&gt;
+                &lt;h5 class="modal-title"&gt;Título&lt;/h5&gt;
+                &lt;button class="btn-close" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-body"&gt;Contenido&lt;/div&gt;
+            &lt;div class="modal-footer"&gt;
+                &lt;button class="btn btn-secondary" data-bs-dismiss="modal"&gt;Cerrar&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+
+        <h3>Formulario con validación</h3>
+        <div class="code-block">&lt;form class="needs-validation" novalidate&gt;
+    &lt;div class="mb-3"&gt;
+        &lt;label for="email" class="form-label"&gt;Email&lt;/label&gt;
+        &lt;input type="email" class="form-control" id="email" required&gt;
+        &lt;div class="invalid-feedback"&gt;Email inválido&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button type="submit" class="btn btn-primary"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</div>
+
+        <h3>Carousel</h3>
+        <div class="code-block">&lt;div id="carouselExample" class="carousel slide" data-bs-ride="carousel"&gt;
+    &lt;div class="carousel-inner"&gt;
+        &lt;div class="carousel-item active"&gt;
+            &lt;img src="..." class="d-block w-100" alt="..."&gt;
+        &lt;/div&gt;
+        &lt;div class="carousel-item"&gt;
+            &lt;img src="..." class="d-block w-100" alt="..."&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class="carousel-control-prev" data-bs-target="#carouselExample" data-bs-slide="prev"&gt;
+        &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class="carousel-control-next" data-bs-target="#carouselExample" data-bs-slide="next"&gt;
+        &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;</div>
+    </div>
+
+    <!-- UTILIDADES -->
+    <div id="utilidades" class="section-chuleta">
+        <h2>3. UTILIDADES (LAS MÁS USADAS)</h2>
+
+        <h3>Espaciado</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered table-chuleta table-sm">
+                <thead>
+                    <tr>
+                        <th>Clase</th>
+                        <th>Significado</th>
+                        <th>Tamaño</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-inline">m-3</code></td>
+                        <td>Margin todos los lados</td>
+                        <td>1rem</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">mt-3</code></td>
+                        <td>Margin top</td>
+                        <td>1rem</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">mb-3</code></td>
+                        <td>Margin bottom (muy usado)</td>
+                        <td>1rem</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">mx-auto</code></td>
+                        <td>Margin horizontal auto (centrar)</td>
+                        <td>auto</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">mt-auto</code></td>
+                        <td>Margin top auto (empujar abajo en flexbox)</td>
+                        <td>auto</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">p-3</code></td>
+                        <td>Padding todos los lados</td>
+                        <td>1rem</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">px-3</code></td>
+                        <td>Padding horizontal</td>
+                        <td>1rem</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">py-3</code></td>
+                        <td>Padding vertical</td>
+                        <td>1rem</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p><strong>Tamaños:</strong> 0=0, 1=0.25rem, 2=0.5rem, 3=1rem, 4=1.5rem, 5=3rem</p>
+
+        <h3>Display y Responsive</h3>
+        <div class="code-block">&lt;!-- Ocultar en móvil, mostrar en tablet+ --&gt;
+&lt;div class="d-none d-md-block"&gt;Visible en tablet+&lt;/div&gt;
+
+&lt;!-- Mostrar en móvil, ocultar en tablet+ --&gt;
+&lt;div class="d-block d-md-none"&gt;Solo móvil&lt;/div&gt;
+
+&lt;!-- Flexbox solo en desktop --&gt;
+&lt;div class="d-none d-lg-flex"&gt;Flex en desktop&lt;/div&gt;</div>
+
+        <h3>Flexbox</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered table-chuleta table-sm">
+                <thead>
+                    <tr>
+                        <th>Clase</th>
+                        <th>Efecto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-inline">d-flex</code></td>
+                        <td>Activar flexbox</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">flex-row</code></td>
+                        <td>Horizontal (defecto)</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">flex-column</code></td>
+                        <td>Vertical</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">justify-content-start</code></td>
+                        <td>Alinear al inicio</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">justify-content-center</code></td>
+                        <td>Centrar horizontalmente</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">justify-content-end</code></td>
+                        <td>Alinear al final</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">justify-content-between</code></td>
+                        <td>Espaciado entre elementos</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">align-items-start</code></td>
+                        <td>Alinear arriba</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">align-items-center</code></td>
+                        <td>Centrar verticalmente</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-inline">align-items-end</code></td>
+                        <td>Alinear abajo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Centrado perfecto</h3>
+        <div class="code-block">&lt;div class="d-flex justify-content-center align-items-center" style="height: 200px;"&gt;
+    Centrado horizontal y vertical
+&lt;/div&gt;</div>
+
+        <h3>Texto</h3>
+        <div class="demo-mini">
+            <p class="text-center"><code class="code-inline">text-center</code> - Centrado</p>
+            <p class="fs-1"><code class="code-inline">fs-1</code> - Tamaño 1 (grande)</p>
+            <p class="fw-bold"><code class="code-inline">fw-bold</code> - Negrita</p>
+            <p class="text-primary"><code class="code-inline">text-primary</code> - Color azul</p>
+        </div>
+
+        <h3>Colores</h3>
+        <div class="demo-mini">
+            <span class="badge bg-primary">bg-primary</span>
+            <span class="badge bg-success">bg-success</span>
+            <span class="badge bg-danger">bg-danger</span>
+            <span class="badge bg-warning text-dark">bg-warning</span>
+            <span class="badge bg-info">bg-info</span>
+            <span class="badge bg-dark">bg-dark</span>
+        </div>
+
+        <h3>Ancho y Alto</h3>
+        <div class="code-block">w-25, w-50, w-75, w-100    (ancho)
+h-25, h-50, h-75, h-100    (alto)</div>
+    </div>
+
+    <!-- SASS -->
+    <div id="sass" class="section-chuleta">
+        <h2>4. SASS BÁSICO</h2>
+
+        <h3>Variables</h3>
+        <div class="code-block">$color-primary: #667eea;
+$spacing: 1rem;
+
+.button {
+    background-color: $color-primary;
+    padding: $spacing;
+}</div>
+
+        <h3>Nesting (Anidamiento)</h3>
+        <div class="code-block">.card {
+    background: white;
+    padding: 20px;
+
+    &__title {
+        font-size: 24px;
+    }
+
+    &:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+}</div>
+
+        <h3>Mixins</h3>
+        <div class="code-block">@mixin button-style($bg-color) {
+    background-color: $bg-color;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    @include button-style(#007bff);
+}</div>
+
+        <h3>Personalizar Bootstrap</h3>
+        <div class="code-block">// 1. Variables ANTES de importar
+$primary: #667eea;
+$secondary: #764ba2;
+
+// 2. Importar Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// 3. Tus estilos personalizados</div>
+
+        <h3>Compilar</h3>
+        <div class="code-block"># Watch mode
+npx sass --watch scss/custom.scss:styles.css
+
+# Compilar una vez
+npx sass scss/custom.scss:styles.css</div>
+    </div>
+
+    <!-- ANIMACIONES -->
+    <div id="animaciones" class="section-chuleta">
+        <h2>5. ANIMACIONES Y TRANSICIONES</h2>
+
+        <h3>Transition (para hover)</h3>
+        <div class="code-block">.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}</div>
+
+        <h3>Animation @keyframes</h3>
+        <div class="code-block">@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}</div>
+
+        <h3>Transform (las 4 básicas)</h3>
+        <div class="code-block">transform: translate(50px, -20px);  /* Mover */
+transform: scale(1.2);              /* Escalar */
+transform: rotate(45deg);           /* Rotar */
+transform: skew(10deg);             /* Sesgar */
+
+/* Combinar */
+transform: translate(50px) rotate(45deg) scale(1.2);</div>
+
+        <h3>Timing Functions</h3>
+        <div class="code-block">ease          /* Defecto, suave inicio y final */
+ease-in       /* Lento inicio */
+ease-out      /* Lento final (para hover) */
+ease-in-out   /* Lento inicio y final */
+linear        /* Velocidad constante */</div>
+
+        <h3>Spinner de Bootstrap</h3>
+        <div class="demo-mini">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        <div class="code-block">&lt;div class="spinner-border" role="status"&gt;
+    &lt;span class="visually-hidden"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;</div>
+    </div>
+
+    <!-- TIPS FINALES -->
+    <div class="section-chuleta">
+        <h2>6. TIPS PARA EL EXAMEN</h2>
+
+        <div class="alert alert-warning">
+            <h4 class="alert-heading">Estructura HTML básica</h4>
+            <div class="code-block">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Título&lt;/title&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Contenido --&gt;
+
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+        </div>
+
+        <div class="alert alert-success">
+            <h4 class="alert-heading">Errores comunes a evitar</h4>
+            <ul>
+                <li>Olvidar <code class="code-inline">container</code> o <code class="code-inline">row</code> en el grid</li>
+                <li>No usar <code class="code-inline">h-100</code> para cards con altura igual</li>
+                <li>Olvidar <code class="code-inline">data-bs-toggle</code> y <code class="code-inline">data-bs-target</code> en modales</li>
+                <li>No inicializar tooltips con JavaScript</li>
+                <li>Usar <code class="code-inline">col-</code> sin especificar el número (1-12)</li>
+                <li>Olvidar <code class="code-inline">navbar-toggler</code> en navbar responsive</li>
+            </ul>
+        </div>
+
+        <div class="alert alert-info">
+            <h4 class="alert-heading">Combinaciones más usadas</h4>
+            <ul>
+                <li><strong>Card con altura igual:</strong> <code class="code-inline">h-100 d-flex flex-column</code> + <code class="code-inline">mt-auto</code> en botón</li>
+                <li><strong>Centrado perfecto:</strong> <code class="code-inline">d-flex justify-content-center align-items-center</code></li>
+                <li><strong>Ocultar en móvil:</strong> <code class="code-inline">d-none d-md-block</code></li>
+                <li><strong>Espaciado vertical:</strong> <code class="code-inline">mb-3</code> entre elementos</li>
+                <li><strong>Transición suave:</strong> <code class="code-inline">transition: all 0.3s ease;</code></li>
+            </ul>
+        </div>
+
+        <div class="alert alert-primary">
+            <h4 class="alert-heading">Checklist del examen</h4>
+            <ul>
+                <li>¿Incluí Bootstrap CDN en el <code class="code-inline">&lt;head&gt;</code>?</li>
+                <li>¿Incluí Bootstrap JS antes de <code class="code-inline">&lt;/body&gt;</code>?</li>
+                <li>¿Usé <code class="code-inline">container</code> y <code class="code-inline">row</code> correctamente?</li>
+                <li>¿Las cards tienen <code class="code-inline">h-100</code> y <code class="code-inline">mt-auto</code>?</li>
+                <li>¿La navbar es responsive con <code class="code-inline">navbar-toggler</code>?</li>
+                <li>¿Los modales tienen IDs únicos?</li>
+                <li>¿El formulario tiene validación con <code class="code-inline">needs-validation</code>?</li>
+                <li>¿Las animaciones son suaves y tienen <code class="code-inline">transition</code>?</li>
+            </ul>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="../README.md" class="btn btn-primary btn-lg">Volver al índice principal</a>
+            <button class="btn btn-success btn-lg" onclick="window.print()">Imprimir chuleta</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
