@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Sass + Bootstrap</title>
+  <link rel="stylesheet" href="dist/css/custom-bootstrap.css">
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">🎄 Mercadillo de Navidad 2025</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#productos">Puestos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Actividades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <button class="btn btn-warning me-2">Comprar tickets</button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <div class="container my-5">
+    <p class="mb-4 text-white text-center">Consulta lo que está pasando hoy en el mercadillo</p>
+        <!-- Carrusel principal -->
+    <div id="heroCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+      <!-- Indicadores -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Diapositiva 3"></button>
+      </div>
+
+      <!-- Imágenes -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://placehold.co/800x400?text=Primera+diapositiva" class="d-block w-100" alt="Primera imagen">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Primera diapositiva</h5>
+            <p>Texto descriptivo de la primera imagen.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="https://placehold.co/800x400?text=Segunda+diapositiva" class="d-block w-100" alt="Segunda imagen">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Segunda diapositiva</h5>
+            <p>Más contenido de ejemplo.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="https://placehold.co/800x400?text=Tercera+diapositiva" class="d-block w-100" alt="Tercera imagen">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Tercera diapositiva</h5>
+            <p>Última imagen del carrusel.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controles anterior / siguiente -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+     
+  </div>
+
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
