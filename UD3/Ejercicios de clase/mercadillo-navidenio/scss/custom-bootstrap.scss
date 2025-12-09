@@ -5,9 +5,12 @@ $light: #fdf7f0;          // tono crema
 $dark: #1b1b1b;           // carbón
 
 $body-bg: #0b1220;        // azul noche
-$body-color: #f9fafb;     // blanco nieve
+$body-color: #f9fafb; 
+$nieve: #96c0eb;    // blanco nieve
 
 $font-family-sans-serif: 'Segoe UI', system-ui, sans-serif;
 $border-radius: 0.75rem;
+
+
 
 @import "../node_modules/bootstrap/scss/bootstrap";
